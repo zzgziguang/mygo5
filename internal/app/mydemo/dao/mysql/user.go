@@ -6,12 +6,13 @@ import (
 	"gorm.io/gorm"
 )
 
-func CreateUser(newUser model.User) (result *gorm.DB) {
-	result = DB.Create(&newUser)
+func CreateUser(newUser *model.User) (result *gorm.DB) {
+	result = DB.Create(newUser)
 	return
 }
-func GerUserById(id int) (result *gorm.DB, dbUser model.User) {
-	result = DB.First(&dbUser, id)
+func GerUserById(id int) (result *gorm.DB, dbUser *model.User) {
+	dbUser = &model.User{} //给结构体申请空间
+	result = DB.First(dbUser, id)
 	return
 }
 func UpdateUserById(id int, username string) (result *gorm.DB) {

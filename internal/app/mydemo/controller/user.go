@@ -109,7 +109,7 @@ func AddUserHandler(c *gin.Context) { //c
 	fmt.Println(tianq)
 
 	// 构造用户对象
-	newUser := model.User{ //其中包含自动生成的id
+	newUser := &model.User{ //其中包含自动生成的id
 		Username: username,
 		Email:    email,
 		Age:      age,

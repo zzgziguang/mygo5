@@ -16,7 +16,7 @@ func GetUserFromCache(id int) (*model.User, error) {
 }
 
 // 保存用户到 Redis 缓存
-func SetUserToCache(user model.User, ttl time.Duration) error {
+func SetUserToCache(user *model.User, ttl time.Duration) error {
 	return redis.SetUserToCache(user, ttl)
 }
 
@@ -26,12 +26,12 @@ func DelRedisUser(idStr string) (err error) {
 }
 
 // 在数据库添加用户
-func CreateUser(newUser model.User) (result *gorm.DB) {
+func CreateUser(newUser *model.User) (result *gorm.DB) {
 	return mysql.CreateUser(newUser)
 }
 
 // 从mysql根据id查询用户
-func GerUserById(id int) (result *gorm.DB, dbUser model.User) {
+func GerUserById(id int) (result *gorm.DB, dbUser *model.User) {
 	return mysql.GerUserById(id)
 }
 

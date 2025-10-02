@@ -32,8 +32,8 @@ func GetUserFromCache(id int) (*model.User, error) {
 }
 
 // 保存用户到 Redis 缓存
-func SetUserToCache(user model.User, ttl time.Duration) error {
-	key := "user:" + strconv.Itoa(user.ID)
+func SetUserToCache(user *model.User, ttl time.Duration) error {
+	key := "user:" + strconv.Itoa(user.Id)
 	var data map[string]interface{}
 	if err := mapstructure.WeakDecode(user, &data); err != nil {
 		return err
