@@ -40,7 +40,7 @@ func main() {
 		log.Fatal(err2)
 	}
 
-	// 始化 Redis
+	//初始化 Redis
 	service.ServiceInitRedis(service.Cfg.Redis.Addr, service.Cfg.Redis.Password, service.Cfg.Redis.DB)
 
 	//创建 Gin 路由引擎
