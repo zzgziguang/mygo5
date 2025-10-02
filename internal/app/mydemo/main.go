@@ -43,7 +43,7 @@ func main() {
 	// 初始化 Redis
 	service.ServiceInitRedis(service.Cfg.Redis.Addr, service.Cfg.Redis.Password, service.Cfg.Redis.DB)
 
-	// 创建 Gin 路由引擎
+	//创建 Gin 路由引擎
 	r := gin.Default()
 
 	// 注册路由
