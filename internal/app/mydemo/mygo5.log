@@ -1,0 +1,97 @@
+{"L":"INFO","T":"2025-09-30T23:02:02.557+0800","C":"demo1/main.go:445","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-09-30T23:02:02.557+0800","C":"demo1/main.go:448","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-09-30T23:02:02.557+0800","C":"demo1/main.go:463","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T09:54:23.086+0800","C":"demo1/main.go:445","M":"user值","user":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"INFO","T":"2025-10-01T09:54:23.087+0800","C":"demo1/main.go:447","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T09:54:23.087+0800","C":"demo1/main.go:450","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T09:54:23.087+0800","C":"demo1/main.go:465","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T10:02:31.482+0800","C":"demo1/main.go:449","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T10:02:31.482+0800","C":"demo1/main.go:450","M":"m值","m":{"a":1,"b":2}}
+{"L":"INFO","T":"2025-10-01T10:02:31.482+0800","C":"demo1/main.go:452","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T10:02:31.482+0800","C":"demo1/main.go:455","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T10:02:31.482+0800","C":"demo1/main.go:470","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T10:11:10.314+0800","C":"demo1/main.go:448","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T10:11:10.314+0800","C":"demo1/main.go:449","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T10:11:10.314+0800","C":"demo1/main.go:450","M":"m值","m":{"a":1,"b":2}}
+{"L":"INFO","T":"2025-10-01T10:11:10.315+0800","C":"demo1/main.go:453","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T10:11:10.315+0800","C":"demo1/main.go:456","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T10:11:10.315+0800","C":"demo1/main.go:471","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T10:22:48.827+0800","C":"demo1/main.go:448","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T10:22:48.828+0800","C":"demo1/main.go:449","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T10:22:48.828+0800","C":"demo1/main.go:450","M":"m值","m":{"a":1,"b":2}}
+{"L":"INFO","T":"2025-10-01T10:22:48.828+0800","C":"demo1/main.go:456","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T10:22:48.828+0800","C":"demo1/main.go:459","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T10:22:48.828+0800","C":"demo1/main.go:474","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:448","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:449","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:450","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:454","M":"users值","users":"users值[{1 赵 zhao@test.com 25 0} {11 李 qian@test.com 22 123} {14 周 @zhou.com 20 1234} {15 吴 @wu.com 18 1199} {16 王 @wang.com 16 1120} {17 郑 @zheng.com 17 1110} {18 qq @zheng.co 17 1110} {19 qq qq@zheng.com 22 11100000} {20 yyy yyy@22.com 4 123456}]"}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:455","M":"user值","user":"user值{ID:1 Username:赵 Email:zhao@test.com Age:25 Phone:0}"}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:456","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:459","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:462","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T10:26:54.185+0800","C":"demo1/main.go:477","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:13:44.300+0800","C":"controller/user.go:310","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.870+0800","C":"controller/user.go:311","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.870+0800","C":"controller/user.go:312","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.870+0800","C":"controller/user.go:316","M":"users值","users":"users值[{1 赵 zhao@test.com 25 0} {11 李 qian@test.com 22 123} {14 周 @zhou.com 20 1234} {15 吴 @wu.com 18 1199} {16 王 @wang.com 16 1120} {17 郑 @zheng.com 17 1110} {18 qq @zheng.co 17 1110} {19 qq qq@zheng.com 22 11100000} {20 yyy yyy@22.com 4 123456}]"}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.871+0800","C":"controller/user.go:317","M":"user值","user":"user值{ID:1 Username:赵 Email:zhao@test.com Age:25 Phone:0}"}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.871+0800","C":"controller/user.go:318","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:13:46.871+0800","C":"controller/user.go:321","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T19:13:46.871+0800","C":"controller/user.go:324","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:13:46.871+0800","C":"controller/user.go:339","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.734+0800","C":"controller/user.go:310","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:311","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:312","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:316","M":"users值","users":"users值[{1 赵 zhao@test.com 25 0} {11 李 qian@test.com 22 123} {14 周 @zhou.com 20 1234} {15 吴 @wu.com 18 1199} {16 王 @wang.com 16 1120} {17 郑 @zheng.com 17 1110} {18 qq @zheng.co 17 1110} {19 qq qq@zheng.com 22 11100000} {20 yyy yyy@22.com 4 123456}]"}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:317","M":"user值","user":"user值{ID:1 Username:赵 Email:zhao@test.com Age:25 Phone:0}"}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:318","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:321","M":"数据库查询成功","用户数量":9}
+{"L":"DEBUG","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:324","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:14:25.735+0800","C":"controller/user.go:339","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.990+0800","C":"controller/user.go:310","M":"users值","users":[{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120}]}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:311","M":"user值","user":{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123}}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:312","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:316","M":"users值","users":"users值[{1 赵 zhao@test.com 25 0} {11 李 qian@test.com 22 123} {14 周 @zhou.com 20 1234} {15 吴 @wu.com 18 1199} {16 王 @wang.com 16 1120}]"}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:317","M":"user值","user":"user值{ID:1 Username:赵 Email:zhao@test.com Age:25 Phone:0}"}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:318","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:321","M":"数据库查询成功","用户数量":5}
+{"L":"DEBUG","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:324","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:17:52.991+0800","C":"controller/user.go:339","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:310","M":"users值","users":[{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456}]}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:311","M":"user值","user":{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110}}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:312","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:316","M":"users值","users":"users值[{17 郑 @zheng.com 17 1110} {18 qq @zheng.co 17 1110} {19 qq qq@zheng.com 22 11100000} {20 yyy yyy@22.com 4 123456}]"}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:317","M":"user值","user":"user值{ID:17 Username:郑 Email:@zheng.com Age:17 Phone:1110}"}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:318","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:321","M":"数据库查询成功","用户数量":4}
+{"L":"DEBUG","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:324","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:18:45.805+0800","C":"controller/user.go:339","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.695+0800","C":"controller/user.go:309","M":"users值","users":[{"id":15,"username":"吴","email":"@wu.com","age":18,"phone":1199},{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234},{"id":11,"username":"李","email":"qian@test.com","age":22,"phone":123},{"id":1,"username":"赵","email":"zhao@test.com","age":25,"phone":0}]}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.696+0800","C":"controller/user.go:310","M":"user值","user":{"id":14,"username":"周","email":"@zhou.com","age":20,"phone":1234}}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:311","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:315","M":"users值","users":"users值[{15 吴 @wu.com 18 1199} {14 周 @zhou.com 20 1234} {11 李 qian@test.com 22 123} {1 赵 zhao@test.com 25 0}]"}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:316","M":"user值","user":"user值{ID:15 Username:吴 Email:@wu.com Age:18 Phone:1199}"}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:317","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:320","M":"数据库查询成功","用户数量":4}
+{"L":"DEBUG","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:323","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:31:12.697+0800","C":"controller/user.go:338","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"ERROR","T":"2025-10-01T19:31:28.061+0800","C":"controller/user.go:286","M":"格式错误","pagestr":"","error":"strconv.Atoi: parsing \"\": invalid syntax","S":"demo1/internal/app/mydemo/controller.GetUsersHandlerAge\n\tC:/goproject/src/mygo5/internal/app/mydemo/controller/user.go:286\ngithub.com/gin-gonic/gin.(*Context).Next\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/context.go:192\ngithub.com/gin-gonic/gin.CustomRecoveryWithWriter.func1\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/recovery.go:92\ngithub.com/gin-gonic/gin.(*Context).Next\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/context.go:192\ngithub.com/gin-gonic/gin.LoggerWithConfig.func1\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/logger.go:249\ngithub.com/gin-gonic/gin.(*Context).Next\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/context.go:192\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/gin.go:689\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\tC:/goproject/pkg/mod/github.com/gin-gonic/gin@v1.11.0/gin.go:643\nnet/http.serverHandler.ServeHTTP\n\tC:/Program Files/Go/src/net/http/server.go:3301\nnet/http.(*conn).serve\n\tC:/Program Files/Go/src/net/http/server.go:2102"}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:309","M":"users值","users":[{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120}]}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:310","M":"user值","user":{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000}}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:311","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:315","M":"users值","users":"users值[{20 yyy yyy@22.com 4 123456} {19 qq qq@zheng.com 22 11100000} {18 qq @zheng.co 17 1110} {17 郑 @zheng.com 17 1110} {16 王 @wang.com 16 1120}]"}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:316","M":"user值","user":"user值{ID:20 Username:yyy Email:yyy@22.com Age:4 Phone:123456}"}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:317","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:320","M":"数据库查询成功","用户数量":5}
+{"L":"DEBUG","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:323","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:31:33.997+0800","C":"controller/user.go:338","M":"成功返回用户列表","按order排序":"asc"}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:309","M":"users值","users":[{"id":20,"username":"yyy","email":"yyy@22.com","age":4,"phone":123456},{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000},{"id":18,"username":"qq","email":"@zheng.co","age":17,"phone":1110},{"id":17,"username":"郑","email":"@zheng.com","age":17,"phone":1110},{"id":16,"username":"王","email":"@wang.com","age":16,"phone":1120}]}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:310","M":"user值","user":{"id":19,"username":"qq","email":"qq@zheng.com","age":22,"phone":11100000}}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:311","M":"m值","m":{"a":1,"b":2}}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:315","M":"users值","users":"users值[{20 yyy yyy@22.com 4 123456} {19 qq qq@zheng.com 22 11100000} {18 qq @zheng.co 17 1110} {17 郑 @zheng.com 17 1110} {16 王 @wang.com 16 1120}]"}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:316","M":"user值","user":"user值{ID:20 Username:yyy Email:yyy@22.com Age:4 Phone:123456}"}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.342+0800","C":"controller/user.go:317","M":"m值","m":"m值map[a:1 b:2]"}
+{"L":"INFO","T":"2025-10-01T19:35:22.343+0800","C":"controller/user.go:320","M":"数据库查询成功","用户数量":5}
+{"L":"DEBUG","T":"2025-10-01T19:35:22.343+0800","C":"controller/user.go:323","M":"order获取成功","order":"asc"}
+{"L":"INFO","T":"2025-10-01T19:35:22.343+0800","C":"controller/user.go:338","M":"成功返回用户列表","按order排序":"asc"}
