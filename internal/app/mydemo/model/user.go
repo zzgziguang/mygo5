@@ -2,12 +2,17 @@ package model
 
 // User 定义用户结构体
 type User struct {
-	ID       int    `json:"id" gorm:"primaryKey" mapstructure:"id"`
-	Username string `json:"username" gorm:"not null;size:100" mapstructure:"username"`
-	Email    string `json:"email" gorm:"unique;not null;size:100" mapstructure:"email"`
-	Age      int    `json:"age" gorm:"check:age >= 0 AND age <= 150" mapstructure:"age"`
-	Phone    int    `json:"phone" gorm:"type:int" mapstructure:"phone"`
-	//Tianqi   string `json:"tianqi" gorm:"type:string" mapstructure:"tianqi"`
+	Id       int    `json:"id" gorm:"column:id" mapstructure:"id"`
+	Username string `json:"username" gorm:"column:username" mapstructure:"username"`
+	Email    string `json:"email" gorm:"column:email" mapstructure:"email"`
+	Age      int    `json:"age" gorm:"column:age" mapstructure:"age"`
+	Phone    int    `json:"phone" gorm:"column:phone" mapstructure:"phone"`
+	//Tianqi   string `json:"tianqi" mapstructure:"tianqi"`
+}
+
+// 指定User对应的表名
+func (User) TableName() string {
+	return "users"
 }
 
 // 按年龄升序排序
