@@ -9,6 +9,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// 添加checkin到mysql数据
 func CreateCheckin(newcheckin *model.Checkin) (result *gorm.DB) {
 	return mysql.CreateCheckin(newcheckin)
 }
@@ -16,4 +17,15 @@ func CreateCheckin(newcheckin *model.Checkin) (result *gorm.DB) {
 // 保存用户到 Redis 缓存
 func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) error {
 	return redis.SetCheckinToCache(checkin, ttl)
+}
+
+/*
+// 查询checkin的所有redis数据
+
+	func GetCheckinFormCache(id int) (checkin *model.Checkin, err error) {
+		return redis.GetCheckinFormCache(id)
+	}
+*/
+func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Checkin, err error) {
+	return mysql.GetCheckinOrderId(page, pagesize, isasc)
 }

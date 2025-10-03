@@ -40,6 +40,7 @@ func UpdateUserById(id int, username string) (result *gorm.DB) {
 	return mysql.UpdateUserById(id, username)
 }
 
+// 在mysql查询并排序
 func GetUserByPage(page int, pagesize int, isasc bool) (users []model.User, err error) {
 	return mysql.GetUserByPage(page, pagesize, isasc)
 }

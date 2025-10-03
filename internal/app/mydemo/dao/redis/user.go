@@ -13,22 +13,24 @@ import (
 var Ctx = context.Background()
 
 // 从 Redis 缓存获取用户
-func GetUserFromCache(id int) (*model.User, error) {
+func GetUserFromCache(id int) (user *model.User, err error) {
 	key := "user:" + strconv.Itoa(id)
 	data, err := RedisClient.HGetAll(Ctx, key).Result()
 	if err != nil {
-		return nil, err
-	}
-	if len(data) == 0 {
-		return nil, redis.Nil // 缓存未命中
-	}
+		if err == redis.Nil {
+			err = nil
+			return
+		} else {
+			return
+		}
 
-	var user model.User
+	}
+	user = &model.User{}
 	// 使用 mapstructure 将 map 转为结构体（支持类型转换）
-	if err := mapstructure.WeakDecode(data, &user); err != nil {
+	if err = mapstructure.WeakDecode(data, &user); err != nil {
 		return nil, err
 	}
-	return &user, nil
+	return user, nil
 }
 
 // 保存用户到 Redis 缓存

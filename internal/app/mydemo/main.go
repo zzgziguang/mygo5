@@ -52,7 +52,8 @@ func main() {
 	r.POST("/api/user/update", controller.UpdateUserHandler) //修改
 	r.GET("/api/users/all", controller.GetUsersHandlerAll)   //查询age排序
 
-	r.POST("/api/checkin/add", controller.AddCheckinHandler)
+	r.POST("/api/checkin/add", controller.AddCheckinHandler)   //添加checkin
+	r.GET("/api/checkin/all", controller.GetCheckinHandlerAll) //查询Checkin，根据id排序
 	// 启动服务器
 	log.Println("服务器启动在 :8080 端口")
 	log.Fatal(r.Run(":8080"))
