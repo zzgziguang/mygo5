@@ -7,21 +7,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 func AddCheckinHandler(c *gin.Context) {
 	title := c.PostForm("title")
-	//createat := time.t
-	var checkinstatus int
-
-	checkinstatus = model.CheckinNormal
-	newCheckin := &model.Checkin{
-		Title: title,
-		// CreateAt:      creatat,
-		// UpdateAt:      updateat,
-		CheckinStatus: checkinstatus,
-	}
-
 	if title == "" {
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
@@ -29,10 +19,20 @@ func AddCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+	createat := time.Now()
+	checkinstatus := model.CheckinNormal
+
+	newCheckin := &model.Checkin{
+		Title:         title,
+		CreateAt:      &createat,
+		UpdateAt:      &createat,
+		CheckinStatus: checkinstatus,
+	}
 
 	//插入数据库
 	result := service.CreateCheckin(newCheckin)
 	if result.Error != nil {
+		service.Logger.Error("CreateCheckin错误", zap.Any("newCheckin", newCheckin), zap.String("err1", result.Error.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
 			Error:   "插入数据库错误",

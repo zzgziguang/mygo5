@@ -3,11 +3,11 @@ package model
 import "time"
 
 type Checkin struct {
-	Id            int       `json:"id" gorm:"column:id" mapstructure:"id"`
-	Title         string    `json:"title" gorm:"column:title" mapstructure:"title"`
-	CreateAt      time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"createAt"`
-	UpdateAt      time.Time `json:"updateAt" gorm:"column:update_at" mapstructure:"updateAt"`
-	CheckinStatus int       `json:"checkinStatus" gorm:"column:checkin_status" mapstructure:"checkinStatus"`
+	Id            int        `json:"id" gorm:"column:id" mapstructure:"id"`
+	Title         string     `json:"title" gorm:"column:title" mapstructure:"title"`
+	CreateAt      *time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"createAt"`
+	UpdateAt      *time.Time `json:"updateAt" gorm:"column:update_at" mapstructure:"updateAt"`
+	CheckinStatus int        `json:"checkinStatus" gorm:"column:checkin_status" mapstructure:"checkinStatus"`
 }
 
 const (
