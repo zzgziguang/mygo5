@@ -26,6 +26,7 @@ func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) error {
 		return redis.GetCheckinFormCache(id)
 	}
 */
+//查询全部
 func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Checkin, err error) {
 	return mysql.GetCheckinOrderId(page, pagesize, isasc)
 }
