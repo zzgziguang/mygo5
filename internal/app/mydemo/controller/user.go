@@ -127,16 +127,6 @@ func AddUserHandler(c *gin.Context) { //c
 		return
 	}
 
-	// 添加成功后写入 Redis 缓存
-	var ttl = time.Duration(service.Cfg.Redis.CacheTTL) * time.Second
-	err = service.SetUserToCache(newUser, ttl)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "写入redis失败: " + err.Error(),
-		})
-		return
-	}
 	// 返回成功响应
 	c.JSON(http.StatusOK, model.APIResponse{
 		Success: true,
