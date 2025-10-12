@@ -54,6 +54,13 @@ func main() {
 
 	r.POST("/api/checkin/add", controller.AddCheckinHandler)   //添加checkin
 	r.GET("/api/checkin/all", controller.GetCheckinHandlerAll) //查询Checkin，根据id排序
+
+	//打卡信息
+	r.POST("/api/userCheckin/add", controller.AddUserCheckinHandler)
+	//获取用户每日打卡
+	r.POST("/api/userCheckin/get", controller.GetUserCheckinRecordHandler)
+	//
+	//r.POST("/api/userCheckin/getuid", controller.GetUserCheckinJoinRecordByuid)
 	// 启动服务器
 	log.Println("服务器启动在 :8080 端口")
 	log.Fatal(r.Run(":8080"))
