@@ -14,7 +14,7 @@ type Config struct {
 		Addr     string `yaml:"addr"`
 		Password string `yaml:"password"`
 		DB       int    `yaml:"db"`
-		CacheTTL int    `yaml:"cache_ttl"` // 秒
+		CacheTTL int    `yaml:"cache_ttl"`
 	} `yaml:"redis"`
 	Class []string `yaml:"class"`
 }
