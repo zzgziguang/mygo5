@@ -61,8 +61,11 @@ func AddCheckinHandler(c *gin.Context) {
 
 // 查询所有ckeckin根据id排序分页
 func GetCheckinHandlerAll(c *gin.Context) {
+
 	strpage := c.Query("page")
 	order := c.Query("order")
+	//uid := 0 //TODO
+	struid := c.Query("uid")
 
 	if strpage == "" {
 		c.JSON(http.StatusBadRequest, model.APIResponse{
@@ -76,6 +79,13 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
 			Error:   "order只能是desc或asc",
+		})
+		return
+	}
+	if struid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid不能为空",
 		})
 		return
 	}
@@ -97,13 +107,23 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+	uid, err := strconv.Atoi(struid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid类型转换错误",
+		})
+		return
+	}
 
 	isasc := true
 	if order == "desc" {
 		isasc = false
 	}
 	pagesize := 3
-	result, err := service.GetCheckinOrderId(page, pagesize, isasc)
+	//获取全部
+	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
+	checkinSlice, err := service.GetCheckinOrderId(page, pagesize, isasc)
 	if err != nil {
 		service.Logger.Error("数据库查询失败", zap.String("err:", err.Error()))
 		c.JSON(http.StatusBadRequest, model.APIResponse{
@@ -113,16 +133,66 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		return
 	}
 
+	time := time.Now()
+	date := time.Year()*10000 + int(time.Month())*100 + time.Day()
+
+	//TODO 根据uid获取用户所有的已参与打卡，转换为map[cid]Join，和今日所有的打卡记录转换为map[cid]Record
+	//根据uid查询join表
+
+	joinSlice, err := service.GetUserCheckinJoinByuid(uid)
+	if err != nil {
+		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询参与数据库的错误",
+		})
+		return
+	}
+	userCheckinJoinMap := make(map[int]*model.UserCheckinJoin, 0)
+	for _, userCheckinJoin := range joinSlice {
+		userCheckinJoinMap[userCheckinJoin.Cid] = userCheckinJoin //TODO确认此处可能产生的错误
+	}
+
+	recordSlice, err := service.GetUserCheckinRecordByUidDate(uid, date)
+	if err != nil {
+		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询参与数据库的错误",
+		})
+		return
+	}
+	userCheckinRecordMap := make(map[int]*model.UserCheckinRecord, 0)
+	for _, userCheckinRecord := range recordSlice {
+		userCheckinRecordMap[userCheckinRecord.Cid] = &userCheckinRecord
+	}
+
 	responsecheckin := make([]model.ResponseCheckinItem, 0)
 	//var responsecheckin []model.ResponseCheckinItem=make([]model.ResponseCheckinItem, 3,3)
 	//responsecheckin := make([]model.ResponseCheckinItem,0)
-	for _, v := range result {
+	for _, v := range checkinSlice {
+		cid := v.Id
+		joinBool := false
+		recordBool := false
+		_, ok := userCheckinJoinMap[cid]
+		if ok {
+			joinBool = true
+		}
+		_, ok = userCheckinRecordMap[cid]
+		if ok {
+			joinBool = true
+		}
+
 		checkinre := model.ResponseCheckinItem{
 			Id:            v.Id,
 			Title:         v.Title,
 			CreateAt:      v.CreateAt.Format("2006年01月02日 15点04分05秒"),
 			UpdateAt:      v.UpdateAt.Format("2006年01月02日 15点04分05秒"),
 			CheckinStatus: v.CheckinStatus,
+			JoinBool:      joinBool,   //是否参与
+			RecordBool:    recordBool, //是否打卡
+			//是否已参与 _, ok := map[cid]
+			//今日是否已打卡
 		}
 		responsecheckin = append(responsecheckin, checkinre)
 	}
