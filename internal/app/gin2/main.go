@@ -1,104 +1,48 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-	"strconv"
-	"time"
-)
+import "fmt"
 
-type Student struct {
-	Id    int
-	Name  string
-	Class int
-}
-
-func (s *Student) SayHello(t time.Time) (text string) {
-	afternoon := t.Hour() <= 12
-	if afternoon {
-		text = fmt.Sprintf("大家上午好，我是 %s", s.Name)
-	} else {
-		text = fmt.Sprintf("大家下午好，我是 %s", s.Name)
-	}
-	return
-}
-
-func AssignClass(studentid int) (class int) {
-	switch studentid % 3 {
-	case 1:
-		class = 1
-	case 2:
-		class = 2
-	default:
-		class = 3
-	}
-	return
+type people struct {
+	Name string
+	Age  int
 }
 
 func main() {
-	var s1 Student
-	s1 = Student{
-		Id:   1,
-		Name: "aaa",
+	var p1 people
+	p1 = people{
+		Name: "赵",
+		Age:  11,
 	}
-	s1.Class = AssignClass(s1.Id)
-
-	var s2 = Student{
-		Id:   2,
-		Name: "bbb",
+	var p2 = people{
+		Name: "钱",
+		Age:  22,
 	}
-	s2.Class = AssignClass(s2.Id)
-
-	s3 := Student{
-		Id:   3,
-		Name: "ccc",
+	p3 := people{
+		Name: "孙",
+		Age:  33,
 	}
-	s3.Class = AssignClass(s3.Id)
-
-	s4 := Student{
-		Id:   4,
-		Name: "ddd",
+	var p4 []people
+	p4 = append(p4, p1, p2, p3)
+	p4len := len(p4)
+	for i, v := range p4 {
+		if i == p4len-2 {
+			p4[i-1] = v
+			v.Age = 5
+			fmt.Println(p4[i-1],v)
+		}
 	}
-	s4.Class = AssignClass(s4.Id)
-	t1 := time.Now()
-	text := s4.SayHello(t1)
-	fmt.Println(text)
-
-	var ss []Student
-	ss = append(ss, s1, s2, s3, s4)
-
-	ssLen := len(ss)
-
-	i := rand.Intn(9)
-	if i >= 0 && i < ssLen {
-		studenti := ss[i]
-		studenti.Name = "学生" + strconv.Itoa(i+1)
-		ss[i] = studenti
+	var p5 map[string]people
+	p5 = make(map[string]people, 0)
+	p5["a"]=p1
+	p5["b"]=p2
+	p6 := map[string]people{
+		"c":people{
+			Age: 44,
+			Name: "李",
+		}
 	}
-
-	var sm map[int]Student
-	sm = make(map[int]Student, 0)
-	studentmap := make(map[int]Student, 0)
-	fmt.Println(studentmap)
-
-	for i, v := range ss {
-		v.SayHello(t1)
-		v = ss[i]
-		ss[i] = v
-		sm[v.Id] = v
+	for k,v:=range p5{
+		pm1,ok:=p5[]
 	}
-
-	k := rand.Intn(9)
-	studentk, ok := sm[k]
-	if ok {
-		studentk.Class = 1
-		sm[k] = studentk
-	}
-	for k, v := range sm {
-		v.SayHello(t1)
-		v = sm[k]
-		sm[k] = v
-	}
-	// s2 = s[1]
-	// k["a"]
+	
 }
