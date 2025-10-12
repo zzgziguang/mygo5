@@ -1,0 +1,422 @@
+package controller
+
+import (
+	"demo1/internal/app/mydemo/model"
+	"demo1/internal/app/mydemo/service"
+	"fmt"
+	"net/http"
+	"strconv"
+	"time"
+
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
+)
+
+func AddUserCheckinHandler(c *gin.Context) {
+	// AddUserCheckinHandler2(c)
+	// return
+
+	struid := c.PostForm("uid")
+	if struid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid不能为空",
+		})
+		return
+	}
+
+	strcid := c.PostForm("cid")
+	if strcid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid不能为空",
+		})
+		return
+	}
+
+	uid, err := strconv.Atoi(struid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid类型转换错误",
+		})
+		return
+	}
+	cid, err := strconv.Atoi(strcid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid类型转换错误",
+		})
+		return
+	}
+
+	recordTime := time.Now()
+	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
+
+	//get join from cache
+	userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
+	if err != nil {
+		// 有错误
+		//if err redisn il
+		service.Logger.Error("getUserCheckinJoinFromCacheErr", zap.String("err=", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "缓存获取参与错误",
+		})
+		return
+	} else {
+		//无错误
+		//返回return
+	}
+	if userCheckinJoin != nil {
+		//缓存中有join数据
+		//直接使用缓存的join数据
+
+		service.Logger.Debug("userCheckinJoin!=nil", zap.String("userCheckinJoin=", fmt.Sprintf("%v", userCheckinJoin)))
+	} else {
+		//缓存中没有join数据
+		//从db中取join数据
+		userCheckinJoin, err = service.GetUserCheckinJoin(uid, cid)
+		if err != nil {
+			service.Logger.Error("userCheckinJoin!=nil", zap.String("userCheckinJoin=", fmt.Sprintf("%v", userCheckinJoin)))
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "查询参与数据库的错误",
+			})
+			return
+		}
+		if userCheckinJoin == nil {
+			//未参与
+			//参与，写db
+			joinTime := time.Now()
+			userCheckinJoin = &model.UserCheckinJoin{
+				Uid:      uid,
+				Cid:      cid,
+				JoinTime: &joinTime,
+				CreateAt: &joinTime,
+				UpdateAt: &joinTime,
+				Status:   model.JoinStatusNormal,
+			}
+			err = service.AddUserCheckinJoin(userCheckinJoin)
+
+			if err != nil {
+				service.Logger.Error("json表添加错误", zap.String("err为", err.Error()))
+				c.JSON(http.StatusNotFound, model.APIResponse{
+					Success: false,
+					Error:   "错误err为" + err.Error(),
+				})
+				return
+			}
+
+			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+
+		} else {
+
+			service.Logger.Debug("查询参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+		}
+		var ttl = time.Duration(service.Cfg.Redis.CacheTTL) * time.Second
+		err = service.SetUserCheckinJoinToCache(userCheckinJoin, ttl)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "保存redis失败 " + err.Error(),
+			})
+			return
+		}
+	}
+
+	//get record
+	userCheckinRecord, err := service.GetUserCheckinRecord(uid, cid, date)
+	if err != nil {
+		service.Logger.Error("查询打卡错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询打卡错误",
+		})
+		return
+	}
+	if userCheckinRecord != nil {
+		//今日已打卡
+		//返回已打卡
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户今日已打卡",
+			Data: map[string]interface{}{
+				"userCheckinJoin":   userCheckinJoin,   //参与表数据
+				"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+			},
+		})
+		return
+	} else {
+		userCheckinRecord = &model.UserCheckinRecord{
+			Uid:      uid,
+			Cid:      cid,
+			Date:     date,
+			CreateAt: &recordTime,
+			UpdateAt: &recordTime,
+			Status:   model.JoinStatusNormal,
+		}
+
+		err = service.AddUserCheckinRecord(userCheckinRecord)
+		if err != nil {
+			service.Logger.Error("打卡错误", zap.String("err为", err.Error()))
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "打卡错误",
+			})
+			return
+		}
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户打卡成功",
+			Data: map[string]interface{}{
+				"userCheckinJoin":   userCheckinJoin,   //参与表中数据
+				"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+			},
+		})
+
+	}
+
+}
+
+func AddUserCheckinHandler2(c *gin.Context) {
+
+	struid := c.PostForm("uid")
+	if struid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid不能为空",
+		})
+		return
+	}
+
+	strcid := c.PostForm("cid")
+	if strcid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid不能为空",
+		})
+		return
+	}
+
+	uid, err := strconv.Atoi(struid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid类型转换错误",
+		})
+		return
+	}
+	cid, err := strconv.Atoi(strcid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid类型转换错误",
+		})
+		return
+	}
+
+	//先查询join表
+	userCheckinJoin, err := service.GetUserCheckinJoin(uid, cid)
+	if err != nil {
+		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询参与数据库的错误",
+		})
+		return
+	}
+	var checkinJoin string
+	if userCheckinJoin != nil {
+		checkinJoin = "用户先前已参与打卡"
+		service.Logger.Debug("查询参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+	} else {
+		//没有参与就先添加join表
+		joinTime := time.Now()
+		userCheckinJoin = &model.UserCheckinJoin{
+			Uid:      uid,
+			Cid:      cid,
+			JoinTime: &joinTime,
+			CreateAt: &joinTime,
+			UpdateAt: &joinTime,
+			Status:   model.JoinStatusNormal,
+		}
+		err = service.AddUserCheckinJoin(userCheckinJoin)
+
+		if err != nil {
+			service.Logger.Error("json表添加错误", zap.String("err为", err.Error()))
+			c.JSON(http.StatusNotFound, model.APIResponse{
+				Success: false,
+				Error:   "错误err为" + err.Error(),
+			})
+			return
+		}
+
+		checkinJoin = "用户今日才参与打卡"
+		service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+
+	}
+
+	//查询每天的打卡
+	recordTime := time.Now()
+	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
+	userCheckinRecord, err := service.GetUserCheckinRecord(uid, cid, date)
+	if err != nil {
+		service.Logger.Error("查询打卡错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询打卡错误",
+		})
+		return
+	}
+	if userCheckinRecord != nil {
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户今日已打卡",
+			Data: map[string]interface{}{
+				"checkinJoin":       checkinJoin,       // 何时参与的打卡
+				"userCheckinJoin":   userCheckinJoin,   //参与表中数据
+				"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+			},
+		})
+		return
+	} else {
+		//没有打卡就打卡
+		userCheckinRecord = &model.UserCheckinRecord{
+			Uid:      uid,
+			Cid:      cid,
+			Date:     date,
+			CreateAt: &recordTime,
+			UpdateAt: &recordTime,
+			Status:   model.JoinStatusNormal,
+		}
+
+		err = service.AddUserCheckinRecord(userCheckinRecord)
+		if err != nil {
+			service.Logger.Error("打卡错误", zap.String("err为", err.Error()))
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "打卡错误",
+			})
+			return
+		}
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户打卡成功",
+			Data: map[string]interface{}{
+				"checkinJoin":       checkinJoin,       // 何时参与的打卡
+				"userCheckinJoin":   userCheckinJoin,   //参与表中数据
+				"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+			},
+		})
+
+	}
+}
+
+// list
+func GetUserCheckinRecordHandler(c *gin.Context) {
+
+	struid := c.PostForm("uid")
+	if struid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid不能为空",
+		})
+		return
+	}
+
+	strcid := c.PostForm("cid")
+	if strcid == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid不能为空",
+		})
+		return
+	}
+
+	uid, err := strconv.Atoi(struid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "uid类型转换错误",
+		})
+		return
+	}
+	cid, err := strconv.Atoi(strcid)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "cid类型转换错误",
+		})
+		return
+	}
+
+	recordTime := time.Now()
+	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
+
+	//设置升序
+	isasc := true
+	//获取全部打卡列表
+	// TODO  select * from record表 where uid=1 cid=1
+	userCheckinRecordList, err := service.GetUserCheckinRecordList(uid, cid, isasc)
+	if err != nil {
+		service.Logger.Error("查询全部打卡记录错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询全部打卡记录错误",
+		})
+		return
+	}
+	var strUserCheckinRecord string
+	var userCheckinRecord interface{}
+	if len(userCheckinRecordList) > 0 { //优先使用len判断slice是否有数据，比只判断=nil更健壮
+		//有record数据
+		for _, v := range userCheckinRecordList {
+			if v.Date == date {
+				//今天已打卡
+				strUserCheckinRecord = "用户今日已打卡"
+				userCheckinRecord = v
+				service.Logger.Debug("添加参与数据库成功", zap.String("v", fmt.Sprintf("%V", v)))
+			} else {
+				//今天没有打卡
+				strUserCheckinRecord = "用户今日未打卡"
+				userCheckinRecord = map[string]string{}
+				service.Logger.Debug("添加参与数据库成功", zap.String("v", fmt.Sprintf("%V", v)))
+			}
+		}
+
+	}
+	//未参与
+	//查询join表
+	userCheckinJoin, err := service.GetUserCheckinJoin(uid, cid)
+	if err != nil {
+		service.Logger.Error("查询参与错误", zap.String("err为", err.Error()))
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "查询参与的错误",
+		})
+		return
+	}
+
+	if userCheckinJoin == nil { //一个数据只可以使用=nil判断是否有数据
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户未参与打卡",
+			Data:    map[string]string{},
+		})
+		return
+	} else {
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "用户已参与打卡",
+			Data: map[string]interface{}{
+				"strUserCheckinRecord": strUserCheckinRecord, //今日有没有打卡
+				"userCheckinRecord":    userCheckinRecord,    //打卡数据
+				"userCheckinJoin":      userCheckinJoin,      //参与表中数据
+
+			},
+		})
+	}
+
+}
