@@ -3,6 +3,7 @@ package redis
 import (
 	"context"
 	"demo1/internal/app/mydemo/model"
+	"encoding/json"
 	"strconv"
 	"time"
 
@@ -25,18 +26,22 @@ func GetUserFromCache(id int) (user *model.User, err error) {
 		}
 
 	}
+	if len(data) == 0 {
+		return
+	}
 	user = &model.User{}
 	// 使用 mapstructure 将 map 转为结构体（支持类型转换）
 	if err = mapstructure.WeakDecode(data, &user); err != nil {
-		return nil, err
+		return
 	}
-	return user, nil
+	return
 }
 
 // 保存用户到 Redis 缓存
-func SetUserToCache(user *model.User, ttl time.Duration) error {
+func SetUserToCache(user *model.User) error {
 	key := "user:" + strconv.Itoa(user.Id)
 	var data map[string]interface{}
+	ttl := 5 * time.Minute
 	if err := mapstructure.WeakDecode(user, &data); err != nil {
 		return err
 	}
@@ -54,5 +59,34 @@ func DelRedisUser(idStr string) (err error) {
 
 	cacheKey := "user:" + idStr
 	err = RedisClient.Del(Ctx, cacheKey).Err()
+	return
+}
+
+// 查询列表缓存
+func GetRedisUserSlice(order string, page int, pagesize int) (strSlice string, err error) {
+	sliceKey := "users:" + order + strconv.Itoa(page) + strconv.Itoa(page)
+	strSlice, err = RedisClient.Get(Ctx, sliceKey).Result()
+	if err != nil {
+		if err == redis.Nil {
+			err = nil
+			return
+		}
+	}
+	return
+}
+
+// 添加列表缓存
+func SetRedisUserSlice(users []model.User, order string, page int, pagesize int) (strSlice string, err error) {
+	sliceKey := "users:" + order + strconv.Itoa(page) + strconv.Itoa(page)
+	byteSlice, err := json.Marshal(users)
+	if err != nil {
+		return
+	}
+	strSlice = string(byteSlice)
+	ttl := 5 * time.Minute
+	err = RedisClient.Set(Ctx, sliceKey, strSlice, ttl).Err()
+	if err != nil {
+		return
+	}
 	return
 }
