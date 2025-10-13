@@ -8,6 +8,7 @@ type Checkin struct {
 	CreateAt      *time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"createAt"`
 	UpdateAt      *time.Time `json:"updateAt" gorm:"column:update_at" mapstructure:"updateAt"`
 	CheckinStatus int        `json:"checkinStatus" gorm:"column:checkin_status" mapstructure:"checkinStatus"`
+	JoinNumber    int        `json:"join_number" gorm:"column:join_number" mapstructure:"join_number"`
 }
 
 const (
