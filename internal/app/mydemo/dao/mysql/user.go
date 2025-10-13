@@ -28,3 +28,7 @@ func GetUserByPage(page int, pagesize int, isasc bool) (users []model.User, err 
 	err = DB.Order(orderby).Offset(offset).Limit(pagesize).Find(&users).Error
 	return
 }
+func GetUserCount() (total int64, err error) {
+	err = DB.Model(&model.User{}).Where("1=1").Count(&total).Error
+	return
+}
