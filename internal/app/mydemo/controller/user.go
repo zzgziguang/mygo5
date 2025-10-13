@@ -9,7 +9,6 @@ import (
 	"io"
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -158,49 +157,60 @@ func GetUserHandler(c *gin.Context) { //
 
 	//查 Redis
 	user, cacheErr := service.GetUserFromCache(id)
-	if cacheErr == nil && user != nil {
+	if cacheErr != nil {
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Message: "从缓存获取失败",
+		})
+		return
+	} else {
+
+	}
+	if user != nil {
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
 			Message: "从缓存获取",
 			Data:    user,
 		})
-		return
-	}
 
-	//redis没有，查数据库
-	result, dbUser := service.GerUserById(id)
-	if result.Error != nil {
-		if result.Error == gorm.ErrRecordNotFound {
-			c.JSON(http.StatusNotFound, model.APIResponse{
-				Success: false,
-				Error:   "用户不存在",
-			})
-			return
-		} else {
+	} else {
+		//redis没有，查数据库
+		var result *gorm.DB
+		result, user = service.GerUserById(id)
+		if result.Error != nil {
+			if result.Error == gorm.ErrRecordNotFound {
+				c.JSON(http.StatusNotFound, model.APIResponse{
+					Success: false,
+					Error:   "用户不存在",
+				})
+				return
+			} else {
+				c.JSON(http.StatusInternalServerError, model.APIResponse{
+					Success: false,
+					Error:   "数据库查询失败: " + result.Error.Error(),
+				})
+				return
+			}
+
+		}
+
+		//写入redis
+		err = service.SetUserToCache(user)
+		if err != nil {
 			c.JSON(http.StatusInternalServerError, model.APIResponse{
 				Success: false,
-				Error:   "数据库查询失败: " + result.Error.Error(),
+				Error:   "写入redis失败 " + err.Error(),
 			})
 			return
 		}
-
-	}
-
-	//写入redis
-	var ttl = time.Duration(service.Cfg.Redis.CacheTTL) * time.Second
-	err = service.SetUserToCache(dbUser, ttl)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "写入redis失败 " + err.Error(),
+		//响应成功
+		c.JSON(http.StatusOK, model.APIResponse{
+			Success: true,
+			Message: "新加入缓存",
+			Data:    user,
 		})
-		return
 	}
-	//响应成功
-	c.JSON(http.StatusOK, model.APIResponse{
-		Success: true,
-		Data:    dbUser,
-	})
+
 }
 
 // 更新用户名
@@ -269,7 +279,14 @@ func UpdateUserHandler(c *gin.Context) {
 
 // 获取所有用户并按年龄排序
 func GetUsersHandlerAll(c *gin.Context) {
-
+	order := c.Query("order")
+	if order != "desc" && order != "asc" {
+		c.JSON(http.StatusBadRequest, model.APIResponse{
+			Success: false,
+			Error:   "order只能是desc或asc",
+		})
+		return
+	}
 	pagestr := c.Query("page")
 	page, err := strconv.Atoi(pagestr)
 	if err != nil {
@@ -280,63 +297,126 @@ func GetUsersHandlerAll(c *gin.Context) {
 		})
 		return
 	}
-	pagesize := 5
-	m := map[string]int{
-		"a": 1,
-		"b": 2,
+	pagesize := 3
+	isasc := true
+	if order == "desc" {
+		isasc = false
 	}
-	users, err := service.GetUserByPage(page, pagesize, false)
+	var hasNext bool
+
+	//TODO获取总条数，使用sql count()
+	//先获取个数
+	total, err := service.GetUserCount()
 	if err != nil {
-		// 记录错误日志
-		service.Logger.Error("数据库查询失败",
-			zap.Error(err))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
-			Error:   "查询失败: " + err.Error(),
+			Error:   "查询redis失败: " + err.Error(),
 		})
 		return
 	}
-	service.Logger.Debug("users值", zap.Any("users", users))
-	service.Logger.Debug("user值", zap.Any("user", users[1]))
-	service.Logger.Debug("m值", zap.Any("m", m))
-	strusers := fmt.Sprintf("users值%v", users)
-	struser := fmt.Sprintf("user值%+v", users[0])
-	strm := fmt.Sprintf("m值%v", m)
-	service.Logger.Debug("users值", zap.String("users", strusers))
-	service.Logger.Debug("user值", zap.String("user", struser))
-	service.Logger.Debug("m值", zap.String("m", strm))
 
-	// 记录查到的用户数量
-	service.Logger.Info("数据库查询成功", zap.Int("用户数量", len(users)))
+	if int(total)/pagesize > page {
+		hasNext = true
+	} else {
+		hasNext = false
+	}
 
-	order := c.Query("order") //获取order
-	service.Logger.Debug("order获取成功", zap.String("order", order))
-	switch order {
-	case "asc":
-		//sort.Sort(model.ByAgeAsc(users))
-	case "desc":
-		//sort.Sort(model.ByAgeDesc(users))
-	default:
-		service.Logger.Debug("无效的排序参数", zap.String("无效order", order))
-		c.JSON(http.StatusBadRequest, model.APIResponse{
+	//查询redis列表
+	//ToDo查出的数据要为slice，如果没有数据，应该存"[]"
+	strSlice, err := service.GetRedisUserSlice(order, page, pagesize)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
-			Error:   "order 参数必须是 'asc' 或 'desc'",
+			Error:   "查询redis失败: " + err.Error(),
 		})
 		return
-	}
+	} else {
 
-	service.Logger.Info("成功返回用户列表", zap.String("按order排序", order))
-	if order == "desc" {
+	}
+	if strSlice != "" {
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
-			Message: "按年龄降序排序",
-			Data:    users,
+			Message: "redis查询表成功",
+			Data:    strSlice,
 		})
 	} else {
+
+		users, err := service.GetUserByPage(page, pagesize, isasc)
+		if err != nil {
+			// 记录错误日志
+			service.Logger.Error("数据库查询失败", zap.Error(err))
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "查询失败: " + err.Error(),
+			})
+			return
+		}
+
+		// if len(users) > page*pagesize {
+		// 	hasNext = true
+		// } else {
+		// 	hasNext = false
+		// }
+
+		//添加缓存
+		strSlice, err = service.SetRedisUserSlice(users, order, page, pagesize)
+		//ToDo没有数据缓存存什么？
+		if err != nil {
+			service.Logger.Error("添加缓存失败", zap.Error(err))
+			c.JSON(http.StatusInternalServerError, model.APIResponse{
+				Success: false,
+				Error:   "添加缓存失败: " + err.Error(),
+			})
+			return
+		}
+		service.Logger.Debug("users值", zap.Any("users", users))
+		service.Logger.Debug("user值", zap.Any("user", users[1]))
+		strusers := fmt.Sprintf("users值%v", users)
+		struser := fmt.Sprintf("user值%+v", users[0])
+		service.Logger.Debug("users值", zap.String("users", strusers))
+		service.Logger.Debug("user值", zap.String("user", struser))
+
+		// 记录查到的用户数量
+		service.Logger.Info("数据库查询成功", zap.Int("用户数量", len(users)))
+
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
-			Message: "按年龄升序排序",
-			Data:    users,
+			Message: "新添加redis成功",
+			Data: map[string]interface{}{
+				"strSlice": strSlice, //缓存
+				"hasNext":  hasNext,  //判断是否有下一页
+			},
 		})
 	}
+
+	//order = c.Query("order") //获取order
+	// service.Logger.Debug("order获取成功", zap.String("order", order))
+	// switch order {
+	// case "asc":
+	// 	//sort.Sort(model.ByAgeAsc(users))
+	// case "desc":
+	// 	//sort.Sort(model.ByAgeDesc(users))
+	// default:
+	// 	service.Logger.Debug("无效的排序参数", zap.String("无效order", order))
+	// 	c.JSON(http.StatusBadRequest, model.APIResponse{
+	// 		Success: false,
+	// 		Error:   "order 参数必须是 'asc' 或 'desc'",
+	// 	})
+	// 	return
+	// }
+
+	// service.Logger.Info("成功返回用户列表", zap.String("按order排序", order))
+	// if order == "desc" {
+	// 	c.JSON(http.StatusOK, model.APIResponse{
+	// 		Success: true,
+	// 		Message: "按年龄降序排序",
+	// 		Data:    users,
+	// 	})
+	// } else {
+	// 	c.JSON(http.StatusOK, model.APIResponse{
+	// 		Success: true,
+	// 		Message: "按年龄升序排序",
+	// 		Data:    users,
+	// 	})
+	// }
 }
