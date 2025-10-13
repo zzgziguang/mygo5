@@ -112,14 +112,27 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		isasc = false
 	}
 	pagesize := 3
+	// var joinNumber int
+
+	// joinList, err := service.GetUserCheckinJoin(uid,cid)
+	// joinNumber = len(joinList)
+	// if err != nil {
+	// 	service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+	// 	c.JSON(http.StatusInternalServerError, model.APIResponse{
+	// 		Success: false,
+	// 		Error:   "查询参与数据库的错误",
+	// 	})
+	// 	return
+	// }
+
 	//获取全部
 	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
 	checkinSlice, err := service.GetCheckinOrderId(page, pagesize, isasc)
 	if err != nil {
-		service.Logger.Error("数据库查询失败", zap.String("err:", err.Error()))
+		service.Logger.Error("redis查询失败", zap.String("err:", err.Error()))
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
-			Error:   "数据库查询失败" + err.Error(),
+			Error:   "redis查询失败" + err.Error(),
 		})
 		return
 	}
@@ -131,6 +144,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	//根据uid查询join表
 
 	joinSlice, err := service.GetUserCheckinJoinByuid(uid)
+	//joinNumber = len(joinSlice)
 	if err != nil {
 		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
@@ -182,6 +196,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			CheckinStatus: v.CheckinStatus,
 			JoinBool:      joinBool,   //是否参与
 			RecordBool:    recordBool, //是否打卡
+			//JoinNumber:    joinNumber, //参与人数
 			//是否已参与 _, ok := map[cid]
 			//今日是否已打卡
 		}
