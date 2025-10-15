@@ -12,7 +12,7 @@ import (
 // 从 Redis 缓存获取用户
 func GetUserCheckinRecordFromCache(uid int, cid int, date int) (userRedisCheckinRecord *model.UserCheckinRecord, err error) {
 	key := "checkinRecord:" + strconv.Itoa(uid) + strconv.Itoa(cid) + strconv.Itoa(date)
-	data, err := RedisClient.HGetAll(Ctx, key).Result() //TODO 这个hgetall怎么返回
+	data, err := RedisClient.HGetAll(Ctx, key).Result()
 	if err != nil {
 		if err == redis.Nil {
 			err = nil
@@ -21,7 +21,7 @@ func GetUserCheckinRecordFromCache(uid int, cid int, date int) (userRedisCheckin
 			return nil, err
 		}
 	} else {
-		if len(data) > 0 { //TODO 判断map是否为空
+		if len(data) > 0 {
 			userRedisCheckinRecord = &model.UserCheckinRecord{}
 			err = mapstructure.WeakDecode(data, &userRedisCheckinRecord)
 			if err != nil {
