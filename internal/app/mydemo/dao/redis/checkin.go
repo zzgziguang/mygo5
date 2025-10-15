@@ -5,25 +5,56 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"github.com/mitchellh/mapstructure"
 )
 
 //var Ctx = context.Background()
 
 // 保存checkin到 Redis 缓存
-func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) error {
+func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) (err error) {
 	key := "user:" + strconv.Itoa(checkin.Id)
 	var data map[string]interface{}
-	if err := mapstructure.WeakDecode(checkin, &data); err != nil {
+	err = mapstructure.WeakDecode(checkin, &data)
+	if err != nil {
 		return err
 	}
 	// 写入 hash
-	err := RedisClient.HSet(Ctx, key, data).Err()
+	err = RedisClient.HSet(Ctx, key, data).Err()
 	if err != nil {
 		return err
 	}
 	RedisClient.Expire(Ctx, key, ttl)
 	return nil
+}
+
+// 将更新后打卡人数添加到zset
+func ZaddCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
+	key := "checkinNumber"
+	members := redis.Z{
+		Score:  float64(checkin.JoinNum),
+		Member: cid,
+	}
+	err = RedisClient.ZAdd(Ctx, key, &members).Err()
+
+	if err != nil {
+		return
+	}
+
+	return nil
+}
+
+// 获取zset缓存排名
+func GetZsetCheckinNum(cid int) (zrank int64, err error) {
+	key := "checkinNumber"
+	zrank, err = RedisClient.ZRank(Ctx, key, strconv.Itoa(cid)).Result()
+	if err != nil {
+		if err == redis.Nil {
+			err = nil
+			return
+		}
+	}
+	return
 }
 
 /*
