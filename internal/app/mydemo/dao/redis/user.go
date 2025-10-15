@@ -12,6 +12,7 @@ import (
 )
 
 var Ctx = context.Background()
+var ttl = 5 * time.Minute
 
 // 从 Redis 缓存获取用户
 func GetUserFromCache(id int) (user *model.User, err error) {
@@ -41,7 +42,6 @@ func GetUserFromCache(id int) (user *model.User, err error) {
 func SetUserToCache(user *model.User) error {
 	key := "user:" + strconv.Itoa(user.Id)
 	var data map[string]interface{}
-	ttl := 5 * time.Minute
 	if err := mapstructure.WeakDecode(user, &data); err != nil {
 		return err
 	}
@@ -63,28 +63,46 @@ func DelRedisUser(idStr string) (err error) {
 }
 
 // 查询列表缓存
-func GetRedisUserSlice(order string, page int, pagesize int) (strSlice string, err error) {
-	sliceKey := "users:" + order + strconv.Itoa(page) + strconv.Itoa(page)
-	strSlice, err = RedisClient.Get(Ctx, sliceKey).Result()
+func GetRedisUserSlice(order string, page int, pagesize int) (users []model.User, err error) {
+	sliceKey := "users:" + order + strconv.Itoa(page) + strconv.Itoa(pagesize)
+	strSlice, err := RedisClient.Get(Ctx, sliceKey).Result()
 	if err != nil {
 		if err == redis.Nil {
 			err = nil
 			return
 		}
 	}
+	date := []byte(strSlice)
+	err = json.Unmarshal(date, &users)
+	if err != nil {
+		return
+	}
 	return
 }
 
 // 添加列表缓存
-func SetRedisUserSlice(users []model.User, order string, page int, pagesize int) (strSlice string, err error) {
-	sliceKey := "users:" + order + strconv.Itoa(page) + strconv.Itoa(page)
+func SetRedisUserSlice(users []model.User, order string, page int, pagesize int) (err error) {
+	if users == nil { //users不能等于nil
+		return
+	}
+	key := "users:" + order + strconv.Itoa(page) + strconv.Itoa(pagesize)
 	byteSlice, err := json.Marshal(users)
 	if err != nil {
 		return
 	}
-	strSlice = string(byteSlice)
-	ttl := 5 * time.Minute
-	err = RedisClient.Set(Ctx, sliceKey, strSlice, ttl).Err()
+	str := string(byteSlice)
+	err = RedisClient.Set(Ctx, key, str, ttl).Err()
+	if err != nil {
+		return
+	}
+	return
+}
+
+// 添加用户数量到缓存
+func SetRedisUserCount(total int64) (err error) {
+	key := "usercount"
+	str := strconv.Itoa(int(total))
+	err = RedisClient.Set(Ctx, key, str, ttl).Err()
 	if err != nil {
 		return
 	}

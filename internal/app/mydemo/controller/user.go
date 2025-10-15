@@ -303,16 +303,26 @@ func GetUsersHandlerAll(c *gin.Context) {
 		isasc = false
 	}
 	var hasNext bool
-
-	//TODO获取总条数，使用sql count()
+	//todo先在缓存查用户个数
 	//先获取个数
 	total, err := service.GetUserCount()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
-			Error:   "查询redis失败: " + err.Error(),
+			Error:   "获取用户数量错误" + err.Error(),
 		})
 		return
+	}
+	//在缓存存count
+	err = service.SetRedisUserCount(total)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "存缓存错误" + err.Error(),
+		})
+		return
+	} else {
+		service.Logger.Debug("缓存的用户数量为", zap.String("total", strconv.Itoa(int(total))))
 	}
 
 	if int(total)/pagesize > page {
@@ -322,8 +332,9 @@ func GetUsersHandlerAll(c *gin.Context) {
 	}
 
 	//查询redis列表
-	//ToDo查出的数据要为slice，如果没有数据，应该存"[]"
-	strSlice, err := service.GetRedisUserSlice(order, page, pagesize)
+	//查出的数据要为slice，如果没有数据，应该存"[]"
+	//users := []model.User{}
+	users, err := service.GetRedisUserSlice(order, page, pagesize)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
@@ -333,15 +344,20 @@ func GetUsersHandlerAll(c *gin.Context) {
 	} else {
 
 	}
-	if strSlice != "" {
+	if users != nil {
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
-			Message: "redis查询表成功",
-			Data:    strSlice,
+			Message: "查询redis成功",
+			Data: map[string]interface{}{
+				"strSlice": users,
+				"hasNext":  hasNext,
+			},
 		})
+		return
 	} else {
 
-		users, err := service.GetUserByPage(page, pagesize, isasc)
+		users, err = service.GetUserByPage(page, pagesize, isasc)
+		// page=100时，users，err怎么样，user cap 变为20，值[]
 		if err != nil {
 			// 记录错误日志
 			service.Logger.Error("数据库查询失败", zap.Error(err))
@@ -352,15 +368,9 @@ func GetUsersHandlerAll(c *gin.Context) {
 			return
 		}
 
-		// if len(users) > page*pagesize {
-		// 	hasNext = true
-		// } else {
-		// 	hasNext = false
-		// }
-
 		//添加缓存
-		strSlice, err = service.SetRedisUserSlice(users, order, page, pagesize)
-		//ToDo没有数据缓存存什么？
+		//在没有数据也要存缓存，page=100页，存的是[]
+		err = service.SetRedisUserSlice(users, order, page, pagesize)
 		if err != nil {
 			service.Logger.Error("添加缓存失败", zap.Error(err))
 			c.JSON(http.StatusInternalServerError, model.APIResponse{
@@ -369,12 +379,13 @@ func GetUsersHandlerAll(c *gin.Context) {
 			})
 			return
 		}
+
 		service.Logger.Debug("users值", zap.Any("users", users))
-		service.Logger.Debug("user值", zap.Any("user", users[1]))
+		//service.Logger.Debug("user值", zap.Any("user", users[0]))
 		strusers := fmt.Sprintf("users值%v", users)
-		struser := fmt.Sprintf("user值%+v", users[0])
+		//struser := fmt.Sprintf("user值%+v", users[0])
 		service.Logger.Debug("users值", zap.String("users", strusers))
-		service.Logger.Debug("user值", zap.String("user", struser))
+		//service.Logger.Debug("user值", zap.String("user", struser))
 
 		// 记录查到的用户数量
 		service.Logger.Info("数据库查询成功", zap.Int("用户数量", len(users)))
@@ -383,40 +394,9 @@ func GetUsersHandlerAll(c *gin.Context) {
 			Success: true,
 			Message: "新添加redis成功",
 			Data: map[string]interface{}{
-				"strSlice": strSlice, //缓存
-				"hasNext":  hasNext,  //判断是否有下一页
+				"strSlice": users,   //缓存
+				"hasNext":  hasNext, //判断是否有下一页
 			},
 		})
 	}
-
-	//order = c.Query("order") //获取order
-	// service.Logger.Debug("order获取成功", zap.String("order", order))
-	// switch order {
-	// case "asc":
-	// 	//sort.Sort(model.ByAgeAsc(users))
-	// case "desc":
-	// 	//sort.Sort(model.ByAgeDesc(users))
-	// default:
-	// 	service.Logger.Debug("无效的排序参数", zap.String("无效order", order))
-	// 	c.JSON(http.StatusBadRequest, model.APIResponse{
-	// 		Success: false,
-	// 		Error:   "order 参数必须是 'asc' 或 'desc'",
-	// 	})
-	// 	return
-	// }
-
-	// service.Logger.Info("成功返回用户列表", zap.String("按order排序", order))
-	// if order == "desc" {
-	// 	c.JSON(http.StatusOK, model.APIResponse{
-	// 		Success: true,
-	// 		Message: "按年龄降序排序",
-	// 		Data:    users,
-	// 	})
-	// } else {
-	// 	c.JSON(http.StatusOK, model.APIResponse{
-	// 		Success: true,
-	// 		Message: "按年龄升序排序",
-	// 		Data:    users,
-	// 	})
-	// }
 }

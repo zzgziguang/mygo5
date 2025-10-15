@@ -30,5 +30,8 @@ func GetUserByPage(page int, pagesize int, isasc bool) (users []model.User, err 
 }
 func GetUserCount() (total int64, err error) {
 	err = DB.Model(&model.User{}).Where("1=1").Count(&total).Error
-	return
+	if err != nil {
+		return
+	}
+	return total, nil
 }

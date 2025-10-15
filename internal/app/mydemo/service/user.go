@@ -25,13 +25,18 @@ func DelRedisUser(idStr string) (err error) {
 }
 
 // 从缓存获取用户列表
-func GetRedisUserSlice(order string, page int, pagesize int) (strSlice string, err error) {
+func GetRedisUserSlice(order string, page int, pagesize int) (users []model.User, err error) {
 	return redis.GetRedisUserSlice(order, page, pagesize)
 }
 
 // 保存用户列表到缓存
-func SetRedisUserSlice(users []model.User, order string, page int, pagesize int) (strSlice string, err error) {
+func SetRedisUserSlice(users []model.User, order string, page int, pagesize int) (err error) {
 	return redis.SetRedisUserSlice(users, order, page, pagesize)
+}
+
+// 添加用户数量到缓存
+func SetRedisUserCount(total int64) (err error) {
+	return redis.SetRedisUserCount(total)
 }
 
 // 在数据库添加用户
