@@ -72,7 +72,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 	if userCheckinJoin != nil {
 		//缓存中有join数据
 		//直接使用缓存的join数据
-
 		service.Logger.Debug("userCheckinJoin!=nil", zap.String("userCheckinJoin=", fmt.Sprintf("%v", userCheckinJoin)))
 	} else {
 		//缓存中没有join数据
@@ -99,7 +98,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 				Status:   model.JoinStatusNormal,
 			}
 			err = service.AddUserCheckinJoin(userCheckinJoin)
-
 			if err != nil {
 				service.Logger.Error("json表添加错误", zap.String("err为", err.Error()))
 				c.JSON(http.StatusNotFound, model.APIResponse{
@@ -108,11 +106,39 @@ func AddUserCheckinHandler(c *gin.Context) {
 				})
 				return
 			}
-
 			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+			//获取checkin表的id=cid，看看有没有这个打卡
+			checkin, err := service.GetCheckinBycid(cid)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, model.APIResponse{
+					Success: false,
+					Error:   "查询checkin表错误",
+				})
+				return
+			}
+			//有打卡，就更新参与打卡人数
+			//更新
+			err = service.UpdateCheckinJoinNum(cid, checkin)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, model.APIResponse{
+					Success: false,
+					Error:   "更新参与人数失败",
+				})
+				return
+			}
+
+			//将更新后打卡人数添加到zset
+			err = service.ZaddCheckinJoinNum(cid, checkin)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, model.APIResponse{
+					Success: false,
+					Error:   "添加参与人数缓存失败",
+				})
+				return
+			}
 
 		} else {
-
+			//todo set cache join，首次join不用缓存，非首次join才用添加
 			service.Logger.Debug("查询参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
 		}
 
@@ -216,7 +242,7 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 	//设置升序
 	isasc := true
 	//获取全部打卡列表
-	// TODO  select * from record表 where uid=1 cid=1
+	//select * from record表 where uid=1 cid=1
 	userCheckinRecordList, err := service.GetUserCheckinRecordList(uid, cid, isasc)
 	if err != nil {
 		service.Logger.Error("查询全部打卡记录错误", zap.String("err为", err.Error()))
