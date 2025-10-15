@@ -17,6 +17,11 @@ func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []*model.UserCheckin
 	return mysql.GetUserCheckinJoinByuid(uid)
 }
 
+// 查询表
+func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
+	return mysql.GetUserCheckinJoinCount(uid, cid)
+}
+
 // 添加表
 func AddUserCheckinJoin(newUserCheckinJoin *model.UserCheckinJoin) (err error) {
 	return mysql.AddUserCheckinJoin(newUserCheckinJoin)

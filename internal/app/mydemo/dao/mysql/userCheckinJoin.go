@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// 查询表
+// 根据uid，cid查询表
 func GetUserCheckinJoin(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
 	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
 	if err != nil {
@@ -28,6 +28,18 @@ func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []*model.UserCheckin
 		return nil, err
 	}
 	return userCheckinJoinByuid, nil
+}
+
+// 根据uid，cid查询表
+func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
+	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+		return nil, err
+	}
+	return userCheckinJoin, nil
 }
 
 // 添加表
