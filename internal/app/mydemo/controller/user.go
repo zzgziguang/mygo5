@@ -303,9 +303,20 @@ func GetUsersHandlerAll(c *gin.Context) {
 		isasc = false
 	}
 	var hasNext bool
-	//todo先在缓存查用户个数
+	//先在缓存查用户个数
+	total, err := service.GetRedisUserCount()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "缓存查询用户数量错误" + err.Error(),
+		})
+		return
+	}
+	if total != 0 {
+		service.Logger.Debug("缓存的用户数量为", zap.String("total", strconv.Itoa(int(total))))
+	}
 	//先获取个数
-	total, err := service.GetUserCount()
+	total, err = service.GetUserCount()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,

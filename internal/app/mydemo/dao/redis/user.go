@@ -98,11 +98,31 @@ func SetRedisUserSlice(users []model.User, order string, page int, pagesize int)
 	return
 }
 
+// 从缓存获取用户数量
+func GetRedisUserCount() (total int64, err error) {
+	key := "usercount"
+	count, err := RedisClient.Get(Ctx, key).Result()
+	if err != nil {
+		if err == redis.Nil {
+			err = nil
+			return
+		} else {
+			return
+		}
+
+	}
+	num, err := strconv.Atoi(count)
+	if err != nil {
+		return
+	}
+	total = int64(num)
+	return
+}
+
 // 添加用户数量到缓存
 func SetRedisUserCount(total int64) (err error) {
 	key := "usercount"
-	str := strconv.Itoa(int(total))
-	err = RedisClient.Set(Ctx, key, str, ttl).Err()
+	err = RedisClient.Set(Ctx, key, total, ttl).Err()
 	if err != nil {
 		return
 	}

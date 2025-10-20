@@ -34,6 +34,11 @@ func SetRedisUserSlice(users []model.User, order string, page int, pagesize int)
 	return redis.SetRedisUserSlice(users, order, page, pagesize)
 }
 
+// 从缓存获取用户数量
+func GetRedisUserCount() (total int64, err error) {
+	return redis.GetRedisUserCount()
+}
+
 // 添加用户数量到缓存
 func SetRedisUserCount(total int64) (err error) {
 	return redis.SetRedisUserCount(total)
