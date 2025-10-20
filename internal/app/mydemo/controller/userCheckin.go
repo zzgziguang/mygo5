@@ -137,8 +137,26 @@ func AddUserCheckinHandler(c *gin.Context) {
 				return
 			}
 
+			// //更新参与打卡的权重
+			// err = service.UpdateCheckinWeight(cid, checkin)
+			// if err != nil {
+			// 	c.JSON(http.StatusInternalServerError, model.APIResponse{
+			// 		Success: false,
+			// 		Error:   "更新参与人数失败",
+			// 	})
+			// 	return
+			// }
+
 		} else {
-			//todo set cache join，首次join不用缓存，非首次join才用添加
+			// set cache join，首次join不用缓存，非首次join才用添加
+			// err = service.SetUserCheckinJoinToCache(userCheckinJoin)
+			// if err != nil {
+			// 	c.JSON(http.StatusInternalServerError, model.APIResponse{
+			// 		Success: false,
+			// 		Error:   "添加用户参与缓存失败",
+			// 	})
+			// 	return
+			// }
 			service.Logger.Debug("查询参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
 		}
 
