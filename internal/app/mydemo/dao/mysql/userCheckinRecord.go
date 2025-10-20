@@ -21,7 +21,7 @@ func GetUserCheckinRecord(uid int, cid int, date int) (userCheckinRecord *model.
 
 // 根据uid查询
 func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
-	err = DB.Where("uid=? and date=?", uid, date).Find(&userCheckinRecordByuid).Error
+	err = DB.Where("uid=? and date=? and status=?", uid, date, model.JoinStatusNormal).Find(&userCheckinRecordByuid).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
