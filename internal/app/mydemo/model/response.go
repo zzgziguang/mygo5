@@ -14,9 +14,12 @@ type ResponseCheckinItem struct {
 	CreateAt      string `json:"createAt"`
 	UpdateAt      string `json:"updateAt"`
 	CheckinStatus int    `json:"checkinStatus"`
-	JoinBool      bool   `json:joinBool`
-	RecordBool    bool   `json:recordBool`
-	JoinNumber    int64  `json:joinNumber`
+	JoinBool      bool   `json:"joinBool"`
+	RecordBool    bool   `json:"recordBool"`
+	JoinNumber    int64  `json:"joinNumber"`
+	Rank          int    `json:"rank"`
+	Weight        int    `json:weight`
+	JoinTime      string `json:"joinTime"`
 }
 
 // type ResponseCheckinJoin struct {
