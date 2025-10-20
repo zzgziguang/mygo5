@@ -58,8 +58,9 @@ func GetUserCheckinJoinFromCache(uid int, cid int) (userRedisCheckinJoin *model.
 }
 
 // 保存用户到 Redis 缓存
-func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin, ttl time.Duration) error {
+func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) (err error) {
 	key := "checkinJoin:" + strconv.Itoa(userRedisCheckinJoin.Uid) + strconv.Itoa(userRedisCheckinJoin.Cid)
+	ttl := 5 * time.Minute
 	var data map[string]interface{}
 	//将结构体中时间转为字符串
 	userRedisCheckinJoin.JoinTimeStr = userRedisCheckinJoin.JoinTime.Format("2006-01-02 15:04:05")
@@ -70,7 +71,7 @@ func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin, ttl 
 	}
 
 	// 写入 hash
-	err := RedisClient.HSet(Ctx, key, data).Err()
+	err = RedisClient.HSet(Ctx, key, data).Err()
 	if err != nil {
 		return err
 	}

@@ -4,7 +4,6 @@ import (
 	"demo1/internal/app/mydemo/dao/mysql"
 	"demo1/internal/app/mydemo/dao/redis"
 	"demo1/internal/app/mydemo/model"
-	"time"
 )
 
 // 查询表
@@ -33,6 +32,6 @@ func GetUserCheckinJoinFromCache(uid int, cid int) (userRedisCheckinJoin *model.
 }
 
 // 保存用户到 Redis 缓存
-func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin, ttl time.Duration) error {
-	return redis.SetUserCheckinJoinToCache(userRedisCheckinJoin, ttl)
+func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) error {
+	return redis.SetUserCheckinJoinToCache(userRedisCheckinJoin)
 }
