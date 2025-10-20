@@ -37,6 +37,36 @@ func ZaddCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 	}
 	err = RedisClient.ZAdd(Ctx, key, &members).Err()
 
+	return
+}
+
+// 获取全部zset缓存排名
+func GetZsetCheckinNum() (zrankm map[string]int, err error) {
+	key := "checkinNumber"
+	var start int64 = 0
+	var stop int64 = -1
+	zrankm = make(map[string]int, 0)
+	zranks, err := RedisClient.ZRange(Ctx, key, start, stop).Result()
+	if err != nil {
+		if err == redis.Nil {
+			err = nil
+			return
+		}
+	}
+	for i, v := range zranks {
+		zrankm[v] = i + 1
+	}
+	return
+}
+
+// 更新参与打卡的权重
+func ZaddCheckinWeight(cid int, checkin *model.Checkin) (err error) {
+	key := "checkinWeight"
+	members := redis.Z{
+		Score:  float64(checkin.Weight),
+		Member: cid,
+	}
+	err = RedisClient.ZAdd(Ctx, key, &members).Err()
 	if err != nil {
 		return
 	}
@@ -44,15 +74,21 @@ func ZaddCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 	return nil
 }
 
-// 获取zset缓存排名
-func GetZsetCheckinNum(cid int) (zrank int64, err error) {
-	key := "checkinNumber"
-	zrank, err = RedisClient.ZRank(Ctx, key, strconv.Itoa(cid)).Result()
+// 获取全部zset缓存排名
+func GetZsetCheckinWeight() (zrankm map[string]int, err error) {
+	key := "checkinWeight"
+	var start int64 = 0
+	var stop int64 = -1
+	zrankm = make(map[string]int, 0)
+	zranks, err := RedisClient.ZRange(Ctx, key, start, stop).Result()
 	if err != nil {
 		if err == redis.Nil {
 			err = nil
 			return
 		}
+	}
+	for i, v := range zranks {
+		zrankm[v] = i + 1
 	}
 	return
 }

@@ -32,6 +32,11 @@ func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Che
 	return mysql.GetCheckinOrderId(page, pagesize, isasc)
 }
 
+// 查询全部
+func GetCheckinAll() (checkins []model.Checkin, err error) {
+	return mysql.GetCheckinAll()
+}
+
 // 查询全部joinnumber
 func GetCheckinOrderJoinnumber(page int, pagesize int, isasc bool) (checkins []model.Checkin, err error) {
 	return mysql.GetCheckinOrderJoinnumber(page, pagesize, isasc)
@@ -48,12 +53,17 @@ func UpdateCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 	return mysql.UpdateCheckinJoinNum(cid, checkin)
 }
 
+// 更新weight
+func UpdateCheckinWeight(newCheckin *model.Checkin, weight int) (err error) {
+	return mysql.UpdateCheckinWeight(newCheckin, weight)
+}
+
 // 将更新后打卡人数添加到zset
 func ZaddCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 	return redis.ZaddCheckinJoinNum(cid, checkin)
 }
 
 // 获取zset缓存
-func GetZsetCheckinNum(cid int) (zrank int64, err error) {
-	return redis.GetZsetCheckinNum(cid)
+func GetZsetCheckinNum() (zrankm map[string]int, err error) {
+	return redis.GetZsetCheckinNum()
 }

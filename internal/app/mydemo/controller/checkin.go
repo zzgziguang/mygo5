@@ -4,6 +4,7 @@ import (
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
 	"net/http"
+	"sort"
 	"strconv"
 	"time"
 
@@ -17,6 +18,22 @@ func AddCheckinHandler(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
 			Error:   "标题不能为空",
+		})
+		return
+	}
+	strweight := c.PostForm("weight")
+	if strweight == "" {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "weight不能为空",
+		})
+		return
+	}
+	weight, err := strconv.Atoi(strweight)
+	if err != nil {
+		c.JSON(http.StatusNotFound, model.APIResponse{
+			Success: false,
+			Error:   "weight类型转换错误",
 		})
 		return
 	}
@@ -37,6 +54,16 @@ func AddCheckinHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
 			Error:   "插入数据库错误",
+		})
+		return
+	}
+
+	//更新参与打卡的权重
+	err = service.UpdateCheckinWeight(newCheckin, weight)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "更新参与人数失败",
 		})
 		return
 	}
@@ -106,15 +133,16 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		return
 	}
 
-	isasc := true
-	if order == "desc" {
-		isasc = false
-	}
-	pagesize := 3
+	//isasc := true
+	// if order == "desc" {
+	// 	isasc = false
+	// }
+	//pagesize := 3
 
+	var rank int
 	//获取全部
 	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
-	checkinSlice, err := service.GetCheckinOrderJoinnumber(page, pagesize, isasc)
+	checkinSlice, err := service.GetCheckinAll()
 	if err != nil {
 		service.Logger.Error("redis查询失败", zap.String("err:", err.Error()))
 		c.JSON(http.StatusBadRequest, model.APIResponse{
@@ -124,18 +152,18 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		return
 	}
 
-	time := time.Now()
-	date := time.Year()*10000 + int(time.Month())*100 + time.Day()
+	timeday := time.Now()
+	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
 
-	//获取zset缓存
-	// zrank, err = service.GetZsetCheckinNum(cid)
-	// if err != nil {
-	// 	c.JSON(http.StatusBadRequest, model.APIResponse{
-	// 		Success: false,
-	// 		Error:   "redis查询失败" + err.Error(),
-	// 	})
-	// 	return
-	// }
+	//获取打卡名次zset缓存
+	zrankm, err := service.GetZsetCheckinNum()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, model.APIResponse{
+			Success: false,
+			Error:   "redis查询失败" + err.Error(),
+		})
+		return
+	}
 
 	//根据uid获取用户所有的已参与打卡，转换为map[cid]Join，和今日所有的打卡记录转换为map[cid]Record
 	//根据uid查询join表
@@ -148,6 +176,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	userCheckinJoinMap := make(map[int]*model.UserCheckinJoin, 0)
 	for _, userCheckinJoin := range joinSlice {
 		userCheckinJoinMap[userCheckinJoin.Cid] = userCheckinJoin
@@ -155,10 +184,10 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 	recordSlice, err := service.GetUserCheckinRecordByUidDate(uid, date)
 	if err != nil {
-		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+		service.Logger.Error("查询打卡记录数据库错误", zap.String("err为", err.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
-			Error:   "查询参与数据库的错误",
+			Error:   "查询打卡记录数据库的错误",
 		})
 		return
 	}
@@ -170,31 +199,53 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	responsecheckin := make([]model.ResponseCheckinItem, 0)
 	//var responsecheckin []model.ResponseCheckinItem=make([]model.ResponseCheckinItem, 3,3)
 	//responsecheckin := make([]model.ResponseCheckinItem,0)
-
+	var checkinSortList model.CheckinSlice
 	for _, v := range checkinSlice {
 		cid := v.Id
 		joinBool := false
 		recordBool := false
-		_, ok := userCheckinJoinMap[cid]
+		joinTime := time.Time{}
+		userCheckinJoin, ok := userCheckinJoinMap[cid]
 		if ok {
 			joinBool = true
+			if userCheckinJoin.CreateAt != nil {
+				joinTime = *userCheckinJoin.CreateAt
+			}
 		}
 		_, ok = userCheckinRecordMap[cid]
 		if ok {
 			recordBool = true
 		}
+		rankm, ok := zrankm[strconv.Itoa(cid)]
+		if ok {
+			rank = rankm
+		}
+
+		checkinSortList = append(checkinSortList, model.CheckinSort{
+			Checkin:    v,
+			JoinBool:   joinBool,
+			RecordBool: recordBool,
+			JoinTime:   joinTime,
+			Rank:       rank,
+		})
+	}
+	// 排序
+	sort.Sort(checkinSortList)
+
+	for _, v := range checkinSortList {
 
 		checkinre := model.ResponseCheckinItem{
-			Id:            v.Id,
-			Title:         v.Title,
-			CreateAt:      v.CreateAt.Format("2006年01月02日 15点04分05秒"),
-			UpdateAt:      v.UpdateAt.Format("2006年01月02日 15点04分05秒"),
-			CheckinStatus: v.CheckinStatus,
-			JoinBool:      joinBool,         //是否参与
-			RecordBool:    recordBool,       //是否打卡
-			JoinNumber:    int64(v.JoinNum), //参与人数
-			//是否已参与 _, ok := map[cid]
-			//今日是否已打卡
+			Id:            v.Checkin.Id,
+			Title:         v.Checkin.Title,
+			CreateAt:      v.Checkin.CreateAt.Format("2006年01月02日 15点04分05秒"),
+			UpdateAt:      v.Checkin.UpdateAt.Format("2006年01月02日 15点04分05秒"),
+			CheckinStatus: v.Checkin.CheckinStatus,
+			JoinBool:      v.JoinBool,               //是否参与
+			RecordBool:    v.RecordBool,             //是否打卡
+			JoinNumber:    int64(v.Checkin.JoinNum), //参与人数
+			Rank:          v.Rank,                   //参与人数名次
+			Weight:        v.Checkin.Weight,         //打卡的权重
+			JoinTime:      v.JoinTime.Format("2006年01月02日 15点04分05秒"),
 		}
 		responsecheckin = append(responsecheckin, checkinre)
 	}

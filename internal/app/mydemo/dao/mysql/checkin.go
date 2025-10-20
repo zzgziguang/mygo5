@@ -9,7 +9,19 @@ import (
 func CreateCheckin(newcheckin *model.Checkin) (result *gorm.DB) {
 	result = DB.Create(&newcheckin)
 	return
+
 }
+func GetCheckinAll() (checkins []model.Checkin, err error) {
+	err = DB.Model(&model.Checkin{}).Find(&checkins).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+		return nil, err
+	}
+	return checkins, nil
+}
+
 func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Checkin, err error) {
 	offset := (page - 1) * pagesize
 	var order string
@@ -34,10 +46,20 @@ func GetCheckinOrderJoinnumber(page int, pagesize int, isasc bool) (checkins []m
 	return
 }
 
-// 更新
+// 更新joinnumber
 func UpdateCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 
 	err = DB.Model(&model.Checkin{}).Where("id = ?", cid).Update("join_num", checkin.JoinNum+1).Error
+	if err != nil {
+		return
+	}
+	return
+}
+
+// 更新weight
+func UpdateCheckinWeight(newCheckin *model.Checkin, weight int) (err error) {
+
+	err = DB.Model(&model.Checkin{}).Where("id = ?", newCheckin.Id).Update("weight", weight).Error
 	if err != nil {
 		return
 	}
