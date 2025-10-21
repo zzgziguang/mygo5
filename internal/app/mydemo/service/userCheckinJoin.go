@@ -12,7 +12,7 @@ func GetUserCheckinJoin(uid int, cid int) (userCheckinJoin *model.UserCheckinJoi
 }
 
 // 根据uid查询表
-func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []*model.UserCheckinJoin, err error) {
+func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJoin, err error) {
 	return mysql.GetUserCheckinJoinByuid(uid)
 }
 

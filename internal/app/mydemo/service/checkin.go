@@ -34,6 +34,7 @@ func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Che
 
 // 查询全部
 func GetCheckinAll() (checkins []model.Checkin, err error) {
+
 	return mysql.GetCheckinAll()
 }
 

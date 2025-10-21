@@ -19,7 +19,7 @@ func GetUserCheckinJoin(uid int, cid int) (userCheckinJoin *model.UserCheckinJoi
 }
 
 // 根据uid查询表
-func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []*model.UserCheckinJoin, err error) {
+func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJoin, err error) {
 	err = DB.Where("uid=? and status=?", uid, model.JoinStatusNormal).Find(&userCheckinJoinByuid).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
