@@ -3,9 +3,12 @@ package controller
 import (
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
+	"fmt"
 	"net/http"
 	"sort"
 	"strconv"
+	"sync"
+
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -138,38 +141,95 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	// 	isasc = false
 	// }
 	//pagesize := 3
-
+	timeday := time.Now()
+	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
 	var rank int
+	var wg sync.WaitGroup
+	var (
+		checkinSlice []model.Checkin
+		joinSlice    []model.UserCheckinJoin
+		recordSlice  []model.UserCheckinRecord
+		zrankm       map[string]int
+		err1         error
+		err2         error
+		err3         error
+		err4         error
+	)
+
 	//获取全部
 	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
-	checkinSlice, err := service.GetCheckinAll()
-	if err != nil {
-		service.Logger.Error("redis查询失败", zap.String("err:", err.Error()))
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("GetCheckinAll捕获到错误：%v\n", err)
+			}
+		}()
+		checkinSlice, err1 = service.GetCheckinAll()
+	}()
+
+	//获取打卡名次zset缓存
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("GetZsetCheckinNum捕获到错误：%v\n", err)
+			}
+		}()
+		zrankm, err2 = service.GetZsetCheckinNum()
+	}()
+
+	//根据uid查询join表
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
+			}
+		}()
+		joinSlice, err3 = service.GetUserCheckinJoinByuid(uid)
+		i := 0
+		fmt.Print(uid / i)
+	}()
+
+	// 3. 获取用户今日打卡记录
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("GetUserCheckinRecordByUidDate捕获到错误：%v\n", err)
+			}
+		}()
+		recordSlice, err4 = service.GetUserCheckinRecordByUidDate(uid, date)
+	}()
+
+	wg.Wait()
+
+	if err1 != nil {
+		service.Logger.Error("redis查询失败", zap.String("err:", err1.Error()))
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
-			Error:   "redis查询失败" + err.Error(),
+			Error:   "redis查询失败" + err1.Error(),
 		})
 		return
 	}
 
-	timeday := time.Now()
-	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
-
-	//获取打卡名次zset缓存
-	zrankm, err := service.GetZsetCheckinNum()
-	if err != nil {
+	if err2 != nil {
 		c.JSON(http.StatusBadRequest, model.APIResponse{
 			Success: false,
-			Error:   "redis查询失败" + err.Error(),
+			Error:   "redis查询失败" + err2.Error(),
 		})
 		return
 	}
 
 	//根据uid获取用户所有的已参与打卡，转换为map[cid]Join，和今日所有的打卡记录转换为map[cid]Record
-	//根据uid查询join表
-	joinSlice, err := service.GetUserCheckinJoinByuid(uid)
-	if err != nil {
-		service.Logger.Error("查询参与数据库错误", zap.String("err为", err.Error()))
+
+	if err3 != nil {
+		service.Logger.Error("查询参与数据库错误", zap.String("err为", err3.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
 			Error:   "查询参与数据库的错误",
@@ -177,20 +237,20 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		return
 	}
 
-	userCheckinJoinMap := make(map[int]*model.UserCheckinJoin, 0)
-	for _, userCheckinJoin := range joinSlice {
-		userCheckinJoinMap[userCheckinJoin.Cid] = userCheckinJoin
-	}
-
-	recordSlice, err := service.GetUserCheckinRecordByUidDate(uid, date)
-	if err != nil {
-		service.Logger.Error("查询打卡记录数据库错误", zap.String("err为", err.Error()))
+	if err4 != nil {
+		service.Logger.Error("查询打卡记录数据库错误", zap.String("err为", err4.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
 			Error:   "查询打卡记录数据库的错误",
 		})
 		return
 	}
+
+	userCheckinJoinMap := make(map[int]*model.UserCheckinJoin, 0)
+	for _, userCheckinJoin := range joinSlice {
+		userCheckinJoinMap[userCheckinJoin.Cid] = &userCheckinJoin
+	}
+
 	userCheckinRecordMap := make(map[int]*model.UserCheckinRecord, 0)
 	for _, userCheckinRecord := range recordSlice {
 		userCheckinRecordMap[userCheckinRecord.Cid] = &userCheckinRecord
