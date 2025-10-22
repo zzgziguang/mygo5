@@ -20,6 +20,7 @@ type ResponseCheckinItem struct {
 	Rank          int    `json:"rank"`
 	Weight        int    `json:weight`
 	JoinTime      string `json:"joinTime"`
+	CidNum        int    `cidNum`
 }
 
 // type ResponseCheckinJoin struct {

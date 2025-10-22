@@ -209,7 +209,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			return
 		}
 		// mu.Lock()
-		for _, v := range joinSlice { //todo并发写会有问题
+		for _, v := range joinSlice { //todo并发写会有问题,应该加锁，这里为什么没有报错
 			cidNumMap[v.Cid]++ //加锁
 		}
 		//mu.Unlock()
@@ -306,7 +306,11 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	sort.Sort(checkinSortList)
 
 	for _, v := range checkinSortList {
-
+		cid := v.Checkin.Id
+		cidNumm, ok := cidNumMap[cid]
+		if ok {
+			cidNum = cidNumm
+		}
 		checkinre := model.ResponseCheckinItem{
 			Id:            v.Checkin.Id,
 			Title:         v.Checkin.Title,
