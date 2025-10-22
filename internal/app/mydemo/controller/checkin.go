@@ -145,16 +145,19 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
 	var rank int
 	var wg sync.WaitGroup
-	var (
-		checkinSlice []model.Checkin
-		joinSlice    []model.UserCheckinJoin
-		recordSlice  []model.UserCheckinRecord
-		zrankm       map[string]int
-		err1         error
-		err2         error
-		err3         error
-		err4         error
-	)
+	//var mu sync.Mutex
+
+	var checkinSlice []model.Checkin
+	var joinSlice []model.UserCheckinJoin
+	var recordSlice []model.UserCheckinRecord
+	var zrankm map[string]int
+	var err1 error
+	var err2 error
+	var err3 error
+	var err4 error
+
+	var cidNumMap map[int]int = make(map[int]int, 0)
+	var cidNum int
 
 	//获取全部
 	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
@@ -167,6 +170,15 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 		checkinSlice, err1 = service.GetCheckinAll()
+		if err1 != nil {
+			service.Logger.Error("err1", zap.Error(err1))
+			return
+		}
+		//mu.Lock()
+		for _, v := range checkinSlice {
+			cidNumMap[v.Id]++ //加锁
+		}
+		//mu.Unlock()
 	}()
 
 	//获取打卡名次zset缓存
@@ -179,6 +191,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 		zrankm, err2 = service.GetZsetCheckinNum()
+
 	}()
 
 	//根据uid查询join表
@@ -191,20 +204,17 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 		joinSlice, err3 = service.GetUserCheckinJoinByuid(uid)
-		i := 0
-		fmt.Print(uid / i)
-	}()
-
-	// 3. 获取用户今日打卡记录
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		defer func() {
-			if err := recover(); err != nil {
-				fmt.Printf("GetUserCheckinRecordByUidDate捕获到错误：%v\n", err)
-			}
-		}()
-		recordSlice, err4 = service.GetUserCheckinRecordByUidDate(uid, date)
+		if err3 != nil {
+			service.Logger.Error("err3", zap.Error(err3))
+			return
+		}
+		// mu.Lock()
+		for _, v := range joinSlice { //todo并发写会有问题
+			cidNumMap[v.Cid]++ //加锁
+		}
+		//mu.Unlock()
+		// i := 0
+		// fmt.Print(uid / i)
 	}()
 
 	wg.Wait()
@@ -236,7 +246,10 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
-
+	// 3. 获取用户今日打卡记录
+	//recordSlice, err4 = service.GetUserCheckinRecordByUidDate(uid, date)
+	recordSlice, err4 = service.GetUserCheckinRecordInCheckinId(uid, date)
+	// 使用in语法 cid in join的cid
 	if err4 != nil {
 		service.Logger.Error("查询打卡记录数据库错误", zap.String("err为", err4.Error()))
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
@@ -306,6 +319,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			Rank:          v.Rank,                   //参与人数名次
 			Weight:        v.Checkin.Weight,         //打卡的权重
 			JoinTime:      v.JoinTime.Format("2006年01月02日 15点04分05秒"),
+			CidNum:        cidNum,
 		}
 		responsecheckin = append(responsecheckin, checkinre)
 	}

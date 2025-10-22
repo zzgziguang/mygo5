@@ -17,6 +17,11 @@ func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []
 	return mysql.GetUserCheckinRecordByUidDate(uid, date)
 }
 
+// in 查询
+func GetUserCheckinRecordInCheckinId(uid int, date int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
+	return mysql.GetUserCheckinRecordInCheckinId(uid, date)
+}
+
 // 添加打卡
 func AddUserCheckinRecord(userCheckinRecord *model.UserCheckinRecord) (err error) {
 	return mysql.AddUserCheckinRecord(userCheckinRecord)

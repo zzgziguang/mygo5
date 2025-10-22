@@ -31,6 +31,18 @@ func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []
 	return userCheckinRecordByuid, nil
 }
 
+// in 查询
+func GetUserCheckinRecordInCheckinId(uid int, date int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
+	err = DB.Where("uid=? and date=? and status=? and cid IN (?)", uid, date, model.JoinStatusNormal, DB.Model(&model.UserCheckinJoin{}).Select("cid").Where("uid", uid)).Find(&userCheckinRecordByuid).Error
+	if err != nil { //todo将id穿进来
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+		return nil, err
+	}
+	return
+}
+
 // 添加打卡
 func AddUserCheckinRecord(userCheckinRecord *model.UserCheckinRecord) (err error) {
 	err = DB.Create(&userCheckinRecord).Error
