@@ -32,9 +32,9 @@ func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []
 }
 
 // in 查询
-func GetUserCheckinRecordInCheckinId(uid int, date int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
-	err = DB.Where("uid=? and date=? and status=? and cid IN (?)", uid, date, model.JoinStatusNormal, DB.Model(&model.UserCheckinJoin{}).Select("cid").Where("uid", uid)).Find(&userCheckinRecordByuid).Error
-	if err != nil { //todo将id穿进来
+func GetUserCheckinRecordInCheckinId(uid int, date int, cidSlice []int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
+	err = DB.Where("uid=? and date=? and status=? and cid IN (?)", uid, date, model.JoinStatusNormal, cidSlice).Find(&userCheckinRecordByuid).Error
+	if err != nil {
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
