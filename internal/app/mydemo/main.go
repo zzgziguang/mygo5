@@ -7,6 +7,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 // 全局变量：保存 config 配置
@@ -35,13 +36,18 @@ func main() {
 	err = service.ServiceInitDB(service.Cfg.Database.Dsn)
 	if err != nil {
 		err2 := fmt.Errorf("初始化数据库错误%w", err)
-		strerror2 := fmt.Sprintf("详细错误%s", err2.Error())
-		fmt.Println(strerror2)
 		log.Fatal(err2)
 	}
 
 	//初始化 Redis
 	service.ServiceInitRedis(service.Cfg.Redis.Addr, service.Cfg.Redis.Password, service.Cfg.Redis.DB)
+
+	//初始化 kafka
+	err = service.ServiceInitKafka()
+	if err != nil {
+		service.Logger.Error("InitKafka err", zap.Error(err))
+	}
+	defer service.Closekafka()
 
 	//创建 Gin 路由引擎
 	r := gin.Default()
@@ -61,6 +67,6 @@ func main() {
 	r.GET("/api/userCheckin/get", controller.GetUserCheckinRecordHandler)
 
 	// 启动服务器
-	log.Println("服务器启动在 :8080 端口")
-	log.Fatal(r.Run(":8080"))
+	log.Println("服务器启动在 :8081 端口")
+	log.Fatal(r.Run(":8081"))
 }
