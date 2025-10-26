@@ -1,12 +1,9 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"sync"
 	"time"
-
-	"github.com/segmentio/kafka-go"
 )
 
 func main() {
@@ -116,58 +113,6 @@ func main() {
 		fmt.Println("超时")
 	}
 
-	const broker = "localhost:9092"
-	const topic = "simplified-topic"
-	const group = "simplified-group"
-
-	// 启动消费者（goroutine）
-	go func() {
-		reader := kafka.NewReader(kafka.ReaderConfig{
-			Brokers: []string{broker},
-			Topic:   topic,
-			GroupID: group, // 启用消费者组
-		})
-		defer reader.Close()
-
-		fmt.Println("消费者已启动，等待消息...")
-
-		for {
-			msg, err := reader.ReadMessage(context.Background())
-			if err != nil {
-				fmt.Println("消费错误:", err)
-				continue
-			}
-			fmt.Printf("收到: %s (分区=%d, offset=%d)\n",
-				string(msg.Value), msg.Partition, msg.Offset)
-
-			// 提交 offset
-			reader.CommitMessages(context.Background(), msg)
-		}
-	}()
-
-	// 给消费者一点时间启动
-	time.Sleep(500 * time.Millisecond)
-
-	//生产者发送消息
-	writer := &kafka.Writer{
-		Addr:  kafka.TCP(broker),
-		Topic: topic,
-	}
-	defer writer.Close()
-
-	fmt.Println("生产者发送 3 条消息...")
-	for i := 1; i <= 3; i++ {
-		msg := kafka.Message{
-			Value: []byte(fmt.Sprintf("消息 %d", i)),
-		}
-		writer.WriteMessages(context.Background(), msg)
-		fmt.Printf("发送: 消息 %d\n", i)
-		time.Sleep(300 * time.Millisecond)
-	}
-
-	// 等待消费完成
-	time.Sleep(2 * time.Second)
-	fmt.Println("演示结束")
 }
 
 type Person struct {
