@@ -42,6 +42,11 @@ func AddUserCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+
+	partition, offset, err := service.ProducerSend(uid)
+	fmt.Println(partition, offset, err)
+	return
+
 	cid, err := strconv.Atoi(strcid)
 	if err != nil {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -107,6 +112,19 @@ func AddUserCheckinHandler(c *gin.Context) {
 				return
 			}
 			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+			//todo 添加kafka生产者
+			partition, offset, err := service.ProducerSend(uid)
+			if err != nil {
+				service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+				c.JSON(http.StatusNotFound, model.APIResponse{
+					Success: false,
+					Error:   "错误err为" + err.Error(),
+				})
+				return
+			}
+			service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+			//消费者
+
 			//获取checkin表的id=cid，看看有没有这个打卡
 			checkin, err := service.GetCheckinBycid(cid)
 			if err != nil {

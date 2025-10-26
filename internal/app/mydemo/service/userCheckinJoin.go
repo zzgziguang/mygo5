@@ -1,6 +1,7 @@
 package service
 
 import (
+	"demo1/internal/app/mydemo/dao/kafka"
 	"demo1/internal/app/mydemo/dao/mysql"
 	"demo1/internal/app/mydemo/dao/redis"
 	"demo1/internal/app/mydemo/model"
@@ -34,4 +35,9 @@ func GetUserCheckinJoinFromCache(uid int, cid int) (userRedisCheckinJoin *model.
 // 保存用户到 Redis 缓存
 func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) error {
 	return redis.SetUserCheckinJoinToCache(userRedisCheckinJoin)
+}
+
+// 添加kafka的数据
+func ProducerSend(uid int) (partition int32, offset int64, err error) {
+	return kafka.ProducerSend(uid)
 }
