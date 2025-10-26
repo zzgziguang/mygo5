@@ -1,9 +1,12 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"sync"
 	"time"
+
+	"github.com/segmentio/kafka-go"
 )
 
 func main() {
@@ -22,8 +25,20 @@ func main() {
 	// n2, ok := <-intChan
 	// fmt.Println(n1, n2, ok)
 	//取了不能再取
-	for v := range intChan {
-		fmt.Println(v)
+	// for v := range intChan {
+	// 	fmt.Println(v)
+	// }
+	for i := 0; i < 5; i++ {
+		select {
+		case v, ok := <-intChan:
+			if ok {
+				fmt.Println("intChan数据:", v)
+			} else {
+				fmt.Println("intChan已关闭")
+			}
+		default:
+			fmt.Println("intChan无数据")
+		}
 	}
 
 	interfaceChan := make(chan interface{}, 3)
@@ -31,6 +46,7 @@ func main() {
 	interfaceChan <- "a"
 	p1 := Person{"aaa", 111}
 	interfaceChan <- p1
+	//interfaceChan <- Person{"bbb", 222}
 	close(interfaceChan)
 	// for v := range interfaceChan {
 	// 	fmt.Println(v)
@@ -38,6 +54,7 @@ func main() {
 	<-interfaceChan
 	<-interfaceChan
 	p2 := <-interfaceChan
+	//p3 := <-interfaceChan
 	fmt.Println(p2)
 	ch1 := make(chan int, 1)
 	ch1 <- 1
@@ -68,12 +85,12 @@ func main() {
 	}()
 	wg.Wait()
 	//close(ch3)
-	//todo关闭之后。读完数据了能不能继续读
+	//关闭之后。读完数据了能不能继续读
 	//怎么确认有没有关闭
 	// for v := range ch3 {
 	// 	fmt.Println(v)
 	// }
-	for {
+	for i := 0; i < 5; i++ {
 		select {
 		case msg1 := <-ch3:
 			fmt.Println("aaa", msg1)
@@ -98,6 +115,59 @@ func main() {
 	case <-time.After(1 * time.Second):
 		fmt.Println("超时")
 	}
+
+	const broker = "localhost:9092"
+	const topic = "simplified-topic"
+	const group = "simplified-group"
+
+	// 启动消费者（goroutine）
+	go func() {
+		reader := kafka.NewReader(kafka.ReaderConfig{
+			Brokers: []string{broker},
+			Topic:   topic,
+			GroupID: group, // 启用消费者组
+		})
+		defer reader.Close()
+
+		fmt.Println("消费者已启动，等待消息...")
+
+		for {
+			msg, err := reader.ReadMessage(context.Background())
+			if err != nil {
+				fmt.Println("消费错误:", err)
+				continue
+			}
+			fmt.Printf("收到: %s (分区=%d, offset=%d)\n",
+				string(msg.Value), msg.Partition, msg.Offset)
+
+			// 提交 offset
+			reader.CommitMessages(context.Background(), msg)
+		}
+	}()
+
+	// 给消费者一点时间启动
+	time.Sleep(500 * time.Millisecond)
+
+	//生产者发送消息
+	writer := &kafka.Writer{
+		Addr:  kafka.TCP(broker),
+		Topic: topic,
+	}
+	defer writer.Close()
+
+	fmt.Println("生产者发送 3 条消息...")
+	for i := 1; i <= 3; i++ {
+		msg := kafka.Message{
+			Value: []byte(fmt.Sprintf("消息 %d", i)),
+		}
+		writer.WriteMessages(context.Background(), msg)
+		fmt.Printf("发送: 消息 %d\n", i)
+		time.Sleep(300 * time.Millisecond)
+	}
+
+	// 等待消费完成
+	time.Sleep(2 * time.Second)
+	fmt.Println("演示结束")
 }
 
 type Person struct {
