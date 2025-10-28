@@ -2,11 +2,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch with Args",
+            "name": "Web",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/internal/app/mydemo/main.go",
+            "args": [
+                
+            ]
+        },
+        {
+            "name": "Comsumer",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/internal/app/comsumer/main.go",
             "args": [
                 
             ]
