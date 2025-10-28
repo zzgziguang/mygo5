@@ -1,0 +1,9 @@
+{"L":"INFO","T":"2025-10-28T22:08:45.681+0800","C":"comsumer/main.go:64","M":"v2","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:08:45.681+0800","C":"comsumer/main.go:55","M":"v1","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:08:45.681+0800","C":"comsumer/main.go:73","M":"v3","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.299+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":22,"value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":23,"value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":24,"value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:51","M":"v1","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:59","M":"v2","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:67","M":"v3","v value":"恭喜16打卡成功"}
