@@ -7,3 +7,246 @@
 {"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:51","M":"v1","v value":"恭喜16打卡成功"}
 {"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:59","M":"v2","v value":"恭喜16打卡成功"}
 {"L":"INFO","T":"2025-10-28T22:24:23.360+0800","C":"comsumer/main.go:67","M":"v3","v value":"恭喜16打卡成功"}
+{"L":"INFO","T":"2025-10-29T20:10:08.613+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":0,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":1,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:59","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":2,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":3,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":4,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":5,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:67","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:67","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":6,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:59","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":7,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.670+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":8,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.670+0800","C":"comsumer/main.go:98","M":"message","topic":"topic_user_checkin","partition":0,"offset":9,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.670+0800","C":"comsumer/main.go:59","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.670+0800","C":"comsumer/main.go:59","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.669+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:10:08.670+0800","C":"comsumer/main.go:67","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761739770,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.210+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":10,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":11,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":12,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":13,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":14,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":15,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":16,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":17,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":18,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:101","M":"message","topic":"topic_user_checkin","partition":0,"offset":19,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:68","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T20:34:25.263+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761741250,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.330+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":20,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":21,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":22,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":23,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":24,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":25,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":26,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":27,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":28,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.395+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":29,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:27:37.396+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761744440,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.638+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":30,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.697+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":31,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.697+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":32,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":33,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":34,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":35,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.697+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":36,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":37,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":38,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":39,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:43:00.698+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745367,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.368+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":40,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":41,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":42,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":43,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":44,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":45,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.381+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":46,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.382+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":47,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":48,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":49,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:45:00.383+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745463,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.397+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":50,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":51,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":52,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":53,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":54,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":55,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":56,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":57,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":58,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:110","M":"message","topic":"topic_user_checkin","partition":0,"offset":59,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:48:30.450+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745630,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.941+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":60,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":61,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":62,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":63,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":64,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":65,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":66,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":67,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":68,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:108","M":"message","topic":"topic_user_checkin","partition":0,"offset":69,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:49:40.994+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745762,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.762+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":70,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":71,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":72,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":73,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":74,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:68","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.782+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":75,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":76,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":77,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":78,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:102","M":"message","topic":"topic_user_checkin","partition":0,"offset":79,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.784+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.784+0800","C":"comsumer/main.go:51","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:68","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T21:51:55.783+0800","C":"comsumer/main.go:60","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761745819,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:06:47.284+0800","C":"comsumer/main.go:31","M":"sigChan:","sigChan":"获得信号interrupt"}
+{"L":"INFO","T":"2025-10-29T22:10:57.036+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":80,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":81,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":82,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":83,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.057+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.056+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.057+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":84,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":85,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":86,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":87,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":88,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:111","M":"message","topic":"topic_user_checkin","partition":0,"offset":89,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.059+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.058+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:10:57.059+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747037,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.908+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":90,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":91,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":92,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":93,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":94,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":95,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":96,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":97,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":98,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":99,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:17:30.964+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747436,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.528+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":100,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.546+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":101,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.546+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.546+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":102,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":103,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":104,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.546+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":105,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":106,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":107,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":108,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.547+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.548+0800","C":"comsumer/main.go:114","M":"message","topic":"topic_user_checkin","partition":0,"offset":109,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:21.549+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761747484,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:18:24.232+0800","C":"comsumer/main.go:81","M":"sigChan:","sigChan":"获得信号interrupt"}
+{"L":"INFO","T":"2025-10-29T22:24:24.456+0800","C":"comsumer/main.go:81","M":"sigChan:","sigChan":"获得信号interrupt"}
+{"L":"INFO","T":"2025-10-29T22:28:51.437+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":110,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":111,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":112,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":113,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":114,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":115,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":116,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":117,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":118,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:112","M":"message","topic":"topic_user_checkin","partition":0,"offset":119,"value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:72","M":"v3","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:55","M":"v1","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
+{"L":"INFO","T":"2025-10-29T22:28:51.489+0800","C":"comsumer/main.go:64","M":"v2","v value":"{\"uid\":16,\"cid\":19,\"timestamp\":1761748121,\"msg\":\"恭喜16打卡19成功\"}"}
