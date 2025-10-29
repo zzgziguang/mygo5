@@ -38,6 +38,6 @@ func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) erro
 }
 
 // 添加kafka的数据
-func ProducerSend(uid int) (partition int32, offset int64, err error) {
-	return kafka.ProducerSend(uid)
+func ProducerSend(value []byte) (partition int32, offset int64, err error) {
+	return kafka.ProducerSend(value)
 }

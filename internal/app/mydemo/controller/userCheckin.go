@@ -3,6 +3,7 @@ package controller
 import (
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -52,16 +53,36 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
-	partition, offset, err := service.ProducerSend(uid)
+	msg := model.CheckInMsg{
+		Uid:       uid,
+		Cid:       cid,
+		Timestamp: time.Now().Unix(),
+		Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
+	}
+
+	// 序列化为 JSON
+	value, err := json.Marshal(msg)
 	if err != nil {
-		service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+		service.Logger.Error("Marshal Error", zap.Error(err))
 		c.JSON(http.StatusNotFound, model.APIResponse{
 			Success: false,
-			Error:   "错误err为" + err.Error(),
+			Error:   "json 转换错误err为" + err.Error(),
 		})
 		return
 	}
-	service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+
+	for i := 1; i <= 10; i++ {
+		partition, offset, err := service.ProducerSend(value)
+		if err != nil {
+			service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+			c.JSON(http.StatusNotFound, model.APIResponse{
+				Success: false,
+				Error:   "错误err为" + err.Error(),
+			})
+			return
+		}
+		service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+	}
 
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
@@ -119,19 +140,38 @@ func AddUserCheckinHandler(c *gin.Context) {
 				return
 			}
 			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
-			//todo 添加kafka生产者
-			// partition, offset, err := service.ProducerSend(uid)
+			// 添加kafka生产者
+			// msg := model.CheckInMsg{
+			// 	Uid:       uid,
+			// 	Cid:       cid,
+			// 	Timestamp: time.Now().Unix(),
+			// 	Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
+			// }
+
+			// // 序列化为 json
+			// value, err := json.Marshal(msg)
 			// if err != nil {
-			// 	service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+			// 	service.Logger.Error("Marshal Error", zap.Error(err))
 			// 	c.JSON(http.StatusNotFound, model.APIResponse{
 			// 		Success: false,
-			// 		Error:   "错误err为" + err.Error(),
+			// 		Error:   "json 转换错误err为" + err.Error(),
 			// 	})
 			// 	return
 			// }
-			// service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
-			//消费者
+			// strValue := string(value)
 
+			// for i := 1; i <= 10; i++ {
+			// 	partition, offset, err := service.ProducerSend(strValue)
+			// 	if err != nil {
+			// 		service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+			// 		c.JSON(http.StatusNotFound, model.APIResponse{
+			// 			Success: false,
+			// 			Error:   "错误err为" + err.Error(),
+			// 		})
+			// 		return
+			// 	}
+			// 	service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+			// }
 			//获取checkin表的id=cid，看看有没有这个打卡
 			checkin, err := service.GetCheckinBycid(cid)
 			if err != nil {
