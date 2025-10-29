@@ -3,7 +3,11 @@ package main
 import (
 	"context"
 	"demo1/internal/app/mydemo/service"
+	"fmt"
+	"os"
+	"os/signal"
 	"sync"
+	"syscall"
 
 	"github.com/IBM/sarama"
 	"go.uber.org/zap"
@@ -43,15 +47,13 @@ func main() {
 	var wg sync.WaitGroup
 	// for i := 1; i <= 3; i++ {
 	// }
-	//TODO 写个每秒一条数据的生产者
-	//TODO 整理chan close的情况
-	//TODO 生产者uid，cid，时间戳 json
-	//TODO go signal 使用用法
+
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
 		for msg := range valueChan {
 			service.Logger.Info("v1", zap.String("v value", msg))
+
 		}
 	}()
 
@@ -70,13 +72,22 @@ func main() {
 			service.Logger.Info("v3", zap.String("v value", msg))
 		}
 	}()
-	ctx := context.Background()
 
-	// 启动消费循环
-	err = consumerGroup.Consume(ctx, []string{topic}, &consumerGroupHandler{})
-	if err != nil {
-		service.Logger.Error("Consume err", zap.Error(err))
+	ctx := context.Background()
+	for {
+		// 启动消费循环
+		err = consumerGroup.Consume(ctx, []string{topic}, &consumerGroupHandler{})
+		if err != nil {
+			service.Logger.Error("Consume err", zap.Error(err))
+			break
+		}
 	}
+
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+	sig := <-sigChan
+	service.Logger.Info("sigChan:", zap.String("sigChan", fmt.Sprintf("获得信号%v", sig)))
+
 	close(valueChan)
 
 	wg.Wait()
