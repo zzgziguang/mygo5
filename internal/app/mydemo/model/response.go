@@ -18,28 +18,7 @@ type ResponseCheckinItem struct {
 	RecordBool    bool   `json:"recordBool"`
 	JoinNumber    int64  `json:"joinNumber"`
 	Rank          int    `json:"rank"`
-	Weight        int    `json:weight`
+	Weight        int    `json:"weight"`
 	JoinTime      string `json:"joinTime"`
-	CidNum        int    `cidNum`
+	CidNum        int    `json:"cidNum"`
 }
-
-// type ResponseCheckinJoin struct {
-// 	Id       int    `json:"id"`
-// 	Uid      int    `json:"uid"`
-// 	Cid      int    `json:"cid"`
-// 	JoinTime string `json:"joinTime"`
-// 	CreateAt string `json:"createAt"`
-// 	UpdateAt string `json:"updateAt"`
-// 	Status   int    `json:"status"`
-// 	JoinBool bool   `json:joinBool`
-// }
-// type ResponseCheckinRecord struct {
-// 	Id         int    `json:"id"`
-// 	Uid        int    `json:"uid"`
-// 	Cid        int    `json:"cid"`
-// 	Date       int    `json:"date"`
-// 	CreateAt   string `json:"createAt"`
-// 	UpdateAt   string `json:"updateAt"`
-// 	Status     int    `json:"status"`
-// 	RecordBool bool   `json:recordBool`
-// }
