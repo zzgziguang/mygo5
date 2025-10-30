@@ -268,6 +268,11 @@ func AddUserCheckinHandler(c *gin.Context) {
 			})
 			return
 		}
+		a, err := json.Marshal(userCheckinJoin)
+		if err != nil {
+			return
+		}
+		fmt.Println(string(a))
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
 			Message: "用户打卡成功",

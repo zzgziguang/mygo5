@@ -331,7 +331,6 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		}
 		responsecheckin = append(responsecheckin, checkinre)
 	}
-
 	c.JSON(http.StatusOK, model.APIResponse{
 		Success: true,
 		Message: "数据库查询排序成功",
