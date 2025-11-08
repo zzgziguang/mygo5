@@ -1,10 +1,14 @@
 package controller
 
 import (
+	"context"
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
+	"net/url"
 	"sort"
 	"strconv"
 	"sync"
@@ -14,6 +18,45 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
+
+type weatherstruct struct {
+	Reason     string
+	Error_code int
+	Result     weatherresult
+}
+type weatherresult struct {
+	City     string
+	Realtime realtimeweather
+	Future   []futureweather
+}
+type realtimeweather struct {
+	Temperature string
+	Humidity    string
+	Info        string
+	Wid         string
+	Direct      string
+	Power       string
+	Aqi         string
+}
+type futureweather struct {
+	Date        string
+	Temperature string
+	Weather     string
+	Wid         widweather
+	Direct      string
+}
+type widweather struct {
+	Day   string
+	Night string
+}
+type datastruct struct {
+	Weather model.WeatherItem
+	Slices  []model.ResponseCheckinItem
+}
+type WeatherResult struct {
+	Temperature string
+	Weather     string
+}
 
 func AddCheckinHandler(c *gin.Context) {
 	title := c.PostForm("title")
@@ -141,6 +184,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	// 	isasc = false
 	// }
 	//pagesize := 3
+
 	timeday := time.Now()
 	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
 	var rank int
@@ -158,6 +202,12 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 	var cidNumMap map[int]int = make(map[int]int, 0)
 	var cidNum int
+
+	weatherCh := make(chan WeatherResult, 1)
+	weatherErr := make(chan error, 1)
+
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
 
 	//获取全部
 	//checkinData，checkinList,checkinSlice,checkinResult,checkinRes
@@ -186,12 +236,17 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	go func() {
 		defer wg.Done()
 		defer func() {
-			if err := recover(); err != nil {
-				fmt.Printf("GetZsetCheckinNum捕获到错误：%v\n", err)
+			err := recover()
+			if err != nil {
+				service.Logger.Error("GetZsetCheckinNum panic", zap.Any("panic", err))
+				cancel()
 			}
 		}()
 		zrankm, err2 = service.GetZsetCheckinNum()
-
+		if err2 != nil {
+			service.Logger.Error("获取打卡参与人数失败", zap.Error(err2))
+			cancel()
+		}
 	}()
 
 	//根据uid查询join表
@@ -215,6 +270,69 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		mu.Unlock()
 		// i := 0
 		// fmt.Print(uid / i)
+	}()
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		//time.Sleep(1 * time.Second)
+		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
+		defer weatherCancel()
+
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
+				// weatherCh <- WeatherResult{
+				// 	Weather:     "",
+				// 	Temperature: "",
+				// }
+			}
+		}()
+		apiUrl := "http://apis.juhe.cn/simpleWeather/query"
+		apiKey := "" //TODO
+		data := url.Values{}
+		data.Set("key", apiKey)
+		data.Set("city", "北京")
+
+		//resp, err := http.Get(apiUrl + "?" + data.Encode())
+		req, err := http.NewRequestWithContext(weatherCtx, "GET", apiUrl+"?"+data.Encode(), nil)
+		if err != nil {
+			service.Logger.Error("NewRequestWithContext err", zap.Error(err))
+			return
+		}
+
+		client := &http.Client{}
+		resp, err5 := client.Do(req)
+		if err5 != nil {
+			weatherErr <- err5
+			return
+		}
+		defer resp.Body.Close()
+		//var weatherResp map[string]interface{}
+		var weather weatherstruct
+
+		//json.NewDecoder(r).Decode(&v)     json.Unmarshal([]byte/*io.ReadAll(resp.Body)*/, &v)两个是一个作用
+		//err = json.NewDecoder(resp.Body).Decode(&weatherResp)
+		weatherdate, err := io.ReadAll(resp.Body)
+		if err != nil {
+			service.Logger.Error("ReadAll err", zap.Error(err))
+			weatherErr <- err
+			return
+		}
+		err = json.Unmarshal(weatherdate, &weather)
+		if err != nil {
+			service.Logger.Error("Unmarshal err", zap.Error(err))
+			weatherErr <- err
+			return
+		}
+		todayWeather := weather.Result.Realtime.Info
+		todayTemperature := weather.Result.Realtime.Temperature
+
+		weatherCh <- WeatherResult{
+			Weather:     todayWeather,
+			Temperature: todayTemperature,
+		}
+
+		service.Logger.Info("today weather", zap.String("todayWeather", todayWeather), zap.String("todaytemperature", todayTemperature))
 	}()
 
 	wg.Wait()
@@ -246,6 +364,36 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+	// if err5 != nil {
+	// 	select {
+	// 	case <-ctx.Done():
+	// 		service.Logger.Error("err", zap.Error(err)) //取消
+	// 	case <-weatherCtx.Done():
+	// 		c.JSON(http.StatusInternalServerError, model.APIResponse{
+	// 			Success: false,
+	// 			Error:   "超时",
+	// 		})
+	// 		service.Logger.Error("err", zap.Error(err))
+	// 	default:
+	// 		service.Logger.Error("weatherCtx err", zap.Error(err)) //失败
+	// 	}
+	// 	return
+	// }
+	var todayWeather WeatherResult
+	select {
+	case err := <-weatherErr:
+		c.JSON(http.StatusInternalServerError, model.APIResponse{
+			Success: false,
+			Error:   "超时",
+		})
+		service.Logger.Error("err", zap.Error(err))
+		return
+	case todayWeather = <-weatherCh:
+	default:
+		service.Logger.Info("info", zap.String("info", "default"))
+
+	}
+
 	// 3. 获取用户今日打卡记录
 	//recordSlice, err4 = service.GetUserCheckinRecordByUidDate(uid, date)
 	var cidSlice []int
@@ -308,13 +456,16 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	}
 	// 排序
 	sort.Sort(checkinSortList)
-
 	for _, v := range checkinSortList {
+		//var weather map[string]interface{}
 		cid := v.Checkin.Id
 		cidNumm, ok := cidNumMap[cid]
 		if ok {
 			cidNum = cidNumm
 		}
+		// if v.RecordBool == true {
+
+		// }
 		checkinre := model.ResponseCheckinItem{
 			Id:            v.Checkin.Id,
 			Title:         v.Checkin.Title,
@@ -322,18 +473,28 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			UpdateAt:      v.Checkin.UpdateAt.Format("2006年01月02日 15点04分05秒"),
 			CheckinStatus: v.Checkin.CheckinStatus,
 			JoinBool:      v.JoinBool,               //是否参与
-			RecordBool:    v.RecordBool,             //是否打卡
+			RecordBool:    v.RecordBool,             //今日是否打卡
 			JoinNumber:    int64(v.Checkin.JoinNum), //参与人数
 			Rank:          v.Rank,                   //参与人数名次
 			Weight:        v.Checkin.Weight,         //打卡的权重
 			JoinTime:      v.JoinTime.Format("2006年01月02日 15点04分05秒"),
 			CidNum:        cidNum,
 		}
+
 		responsecheckin = append(responsecheckin, checkinre)
+	}
+
+	datastruct := datastruct{
+		Weather: model.WeatherItem{
+			Temperature: todayWeather.Temperature,
+			Weather:     todayWeather.Weather,
+		},
+		Slices: responsecheckin,
 	}
 	c.JSON(http.StatusOK, model.APIResponse{
 		Success: true,
 		Message: "数据库查询排序成功",
-		Data:    responsecheckin,
+		Data:    datastruct,
+		//responsecheckin
 	})
 }
