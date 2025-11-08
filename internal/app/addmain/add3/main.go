@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	int1 := make(chan int, 1)
 	int1 <- 10
 	for i := 1; i <= 10; i++ {
