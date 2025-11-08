@@ -13,6 +13,9 @@ import (
 	"go.uber.org/zap"
 )
 
+var UidChan = make(chan int, 10)
+var CidChan = make(chan int, 10)
+
 func AddUserCheckinHandler(c *gin.Context) {
 	// AddUserCheckinHandler2(c)
 	// return
@@ -83,6 +86,8 @@ func AddUserCheckinHandler(c *gin.Context) {
 		}
 		service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
 	}
+	UidChan <- uid
+	CidChan <- cid
 
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
@@ -139,7 +144,9 @@ func AddUserCheckinHandler(c *gin.Context) {
 				})
 				return
 			}
+
 			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+
 			// 添加kafka生产者
 			// msg := model.CheckInMsg{
 			// 	Uid:       uid,
