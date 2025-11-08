@@ -203,9 +203,6 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	var cidNumMap map[int]int = make(map[int]int, 0)
 	var cidNum int
 
-	weatherCh := make(chan WeatherResult, 1)
-	weatherErr := make(chan error, 1)
-
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -271,13 +268,11 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		// i := 0
 		// fmt.Print(uid / i)
 	}()
+	var weatherErr error
+	var todayWeather WeatherResult
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		//time.Sleep(1 * time.Second)
-		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
-		defer weatherCancel()
-
 		defer func() {
 			if err := recover(); err != nil {
 				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
@@ -287,6 +282,9 @@ func GetCheckinHandlerAll(c *gin.Context) {
 				// }
 			}
 		}()
+		//time.Sleep(1 * time.Second)
+		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
+		defer weatherCancel()
 		apiUrl := "http://apis.juhe.cn/simpleWeather/query"
 		apiKey := "" //TODO
 		data := url.Values{}
@@ -297,13 +295,14 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		req, err := http.NewRequestWithContext(weatherCtx, "GET", apiUrl+"?"+data.Encode(), nil)
 		if err != nil {
 			service.Logger.Error("NewRequestWithContext err", zap.Error(err))
+			weatherErr = err
 			return
 		}
 
 		client := &http.Client{}
-		resp, err5 := client.Do(req)
-		if err5 != nil {
-			weatherErr <- err5
+		resp, err := client.Do(req)
+		if err != nil {
+			weatherErr = err
 			return
 		}
 		defer resp.Body.Close()
@@ -315,24 +314,24 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		weatherdate, err := io.ReadAll(resp.Body)
 		if err != nil {
 			service.Logger.Error("ReadAll err", zap.Error(err))
-			weatherErr <- err
+			weatherErr = err
 			return
 		}
 		err = json.Unmarshal(weatherdate, &weather)
 		if err != nil {
 			service.Logger.Error("Unmarshal err", zap.Error(err))
-			weatherErr <- err
+			weatherErr = err
 			return
 		}
-		todayWeather := weather.Result.Realtime.Info
+		todayWeatherInfo := weather.Result.Realtime.Info
 		todayTemperature := weather.Result.Realtime.Temperature
 
-		weatherCh <- WeatherResult{
-			Weather:     todayWeather,
+		todayWeather = WeatherResult{
+			Weather:     todayWeatherInfo,
 			Temperature: todayTemperature,
 		}
 
-		service.Logger.Info("today weather", zap.String("todayWeather", todayWeather), zap.String("todaytemperature", todayTemperature))
+		service.Logger.Info("today weather", zap.String("todayWeather", todayWeatherInfo), zap.String("todaytemperature", todayTemperature))
 	}()
 
 	wg.Wait()
@@ -379,19 +378,13 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	// 	}
 	// 	return
 	// }
-	var todayWeather WeatherResult
-	select {
-	case err := <-weatherErr:
+	if weatherErr != nil {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
 			Error:   "超时",
 		})
 		service.Logger.Error("err", zap.Error(err))
 		return
-	case todayWeather = <-weatherCh:
-	default:
-		service.Logger.Info("info", zap.String("info", "default"))
-
 	}
 
 	// 3. 获取用户今日打卡记录
