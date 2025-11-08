@@ -2,11 +2,24 @@ package main
 
 import (
 	"fmt"
+	"net/url"
 	"sync"
 	"time"
 )
 
 func main() {
+	str := "nihao+wohao 赵12345"
+	encoded := url.QueryEscape(str)
+	fmt.Printf("原始字符串: %s\n", str)
+	fmt.Printf("URL 编码后: %s\n", encoded)
+
+	decoded, err := url.QueryUnescape(encoded)
+	if err != nil {
+		fmt.Printf("解码失败: %v\n", err)
+		return
+	}
+	fmt.Printf("URL 解码后: %s\n", decoded)
+
 	var intChan chan int
 	intChan = make(chan int, 2)
 	fmt.Printf("%v,%p\n", intChan, &intChan)
