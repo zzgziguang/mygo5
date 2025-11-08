@@ -3,8 +3,6 @@ package main
 import (
 	"demo1/internal/app/mydemo/controller"
 	"demo1/internal/app/mydemo/service"
-	"fmt"
-	"log"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -24,19 +22,15 @@ func main() {
 
 	err = service.LoadConfig()
 	if err != nil {
-		//fmt.Errorf: 包装错误，添加上下文
-		err1 := fmt.Errorf("加载配置失败: %w", err)
-		//fmt.Sprintf: 构造更详细的错误消息
-		strerror := fmt.Sprintf("详细错误%s", err1.Error())
-		fmt.Println(strerror)
-		log.Fatal(err1)
+		service.Logger.Error("LoadConfig err", zap.Error(err))
+		panic(err)
 	}
 
 	// 初始化数据库
 	err = service.ServiceInitDB(service.Cfg.Database.Dsn)
 	if err != nil {
-		err2 := fmt.Errorf("初始化数据库错误%w", err)
-		log.Fatal(err2)
+		service.Logger.Error("InitDB err", zap.Error(err))
+		panic(err)
 	}
 
 	//初始化 Redis
@@ -46,6 +40,7 @@ func main() {
 	err = service.ServiceInitKafka()
 	if err != nil {
 		service.Logger.Error("InitKafka err", zap.Error(err))
+		panic(err)
 	}
 	defer service.Closekafka()
 
@@ -67,6 +62,6 @@ func main() {
 	r.GET("/api/userCheckin/get", controller.GetUserCheckinRecordHandler)
 
 	// 启动服务器
-	log.Println("服务器启动在 :8081 端口")
-	log.Fatal(r.Run(":8081"))
+	service.Logger.Info("The server started at port", zap.String("port", "8081"))
+	service.Logger.Error("Default error", zap.Error(r.Run(":8081")))
 }
