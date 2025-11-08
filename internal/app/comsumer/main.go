@@ -16,7 +16,7 @@ import (
 	"go.uber.org/zap"
 )
 
-var valueChan = make(chan string, 10)
+var valueChan = make(chan []byte, 10)
 
 func main() {
 	var err error
@@ -36,10 +36,14 @@ func main() {
 			service.Logger.Error("InitKafka err", zap.Error(err))
 		}
 		defer service.Closekafka()
-
+		uid := 18
+		cid := 16
 		msg := model.CheckInMsg{
+			// 传uid，cid
+			Uid:       uid,
+			Cid:       cid,
 			Timestamp: time.Now().Unix(),
-			Msg:       fmt.Sprintf("恭喜用户1参与打卡1成功"),
+			Msg:       fmt.Sprintf("恭喜%d参与打卡%d成功", uid, cid),
 		}
 
 		// 序列化为 JSON
@@ -48,7 +52,7 @@ func main() {
 			service.Logger.Error("Marshal Error", zap.Error(err))
 		}
 
-		for i := 1; i <= 10; i++ {
+		for {
 			partition, offset, err := service.ProducerSend(value)
 			if err != nil {
 				service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
@@ -85,7 +89,13 @@ func main() {
 	go func() {
 		defer wg.Done()
 		for msg := range valueChan {
-			service.Logger.Info("v1", zap.Any("v value", msg))
+			var datmsg model.CheckInMsg
+			err := json.Unmarshal(msg, &datmsg)
+			if err != nil {
+				service.Logger.Error("JSON 序列化失败", zap.Error(err))
+				continue
+			}
+			service.Logger.Info("v1", zap.Any("v value", datmsg))
 
 		}
 	}()
@@ -94,7 +104,14 @@ func main() {
 	go func() {
 		defer wg.Done()
 		for msg := range valueChan {
-			service.Logger.Info("v2", zap.Any("v value", msg))
+			// 将json反序列化
+			var datmsg model.CheckInMsg
+			err := json.Unmarshal(msg, &datmsg)
+			if err != nil {
+				service.Logger.Error("JSON 序列化失败", zap.Error(err))
+				continue
+			}
+			service.Logger.Info("v2", zap.Any("v value", datmsg))
 		}
 	}()
 
@@ -102,7 +119,13 @@ func main() {
 	go func() {
 		defer wg.Done()
 		for msg := range valueChan {
-			service.Logger.Info("v3", zap.Any("v value", msg))
+			var datmsg model.CheckInMsg
+			err := json.Unmarshal(msg, &datmsg)
+			if err != nil {
+				service.Logger.Error("JSON 序列化失败", zap.Error(err))
+				continue
+			}
+			service.Logger.Info("v3", zap.Any("v value", datmsg))
 		}
 	}()
 
@@ -147,17 +170,7 @@ func (h consumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession, 
 		// service.Logger.Info("message", zap.String("topic", message.Topic), zap.Int32("partition", message.Partition),
 		// 	zap.Int64("offset", message.Offset), zap.String("value", string(message.Value)))
 
-		// json反序列化
-		// var msg model.CheckInMsg
-		// err := json.Unmarshal(message.Value, &msg)
-		// if err != nil {
-		// 	// 失败时用普通日志记录
-		// 	service.Logger.Error("JSON 序列化失败", zap.Error(err))
-		// 	continue
-		// }
-		jsonmsg := string(message.Value)
-		fmt.Println("jsonmsg", jsonmsg)
-		valueChan <- jsonmsg
+		valueChan <- message.Value
 		session.MarkMessage(message, "")
 	}
 	return nil
