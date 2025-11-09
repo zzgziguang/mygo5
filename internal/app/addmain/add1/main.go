@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"crypto/md5"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -11,6 +13,12 @@ import (
 )
 
 func main() {
+	MD5 := md5.New()
+	_, _ = io.WriteString(MD5, "abc")
+	md5Str := hex.EncodeToString(MD5.Sum(nil))
+	fmt.Println(md5Str)
+	return
+
 	//go发送get请求
 	resp, err := http.Get("https://www.baidu.com/")
 	if err != nil {

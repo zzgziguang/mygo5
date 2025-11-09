@@ -4,11 +4,8 @@ import (
 	"context"
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
-	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
-	"net/url"
 	"sort"
 	"strconv"
 	"sync"
@@ -18,51 +15,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
-
-type weatherstruct struct {
-	Reason     string
-	Error_code int
-	Result     weatherresult
-}
-
-type weatherresult struct {
-	City     string
-	Realtime realtimeweather
-	Future   []futureweather
-}
-
-type realtimeweather struct {
-	Temperature string
-	Humidity    string
-	Info        string
-	Wid         string
-	Direct      string
-	Power       string
-	Aqi         string
-}
-
-type futureweather struct {
-	Date        string
-	Temperature string
-	Weather     string
-	Wid         widweather
-	Direct      string
-}
-
-type widweather struct {
-	Day   string
-	Night string
-}
-
-type datastruct struct {
-	Weather model.WeatherItem
-	Slices  []model.ResponseCheckinItem
-}
-
-type WeatherResult struct {
-	Temperature string
-	Weather     string
-}
 
 func AddCheckinHandler(c *gin.Context) {
 	title := c.PostForm("title")
@@ -289,70 +241,28 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		// i := 0
 		// fmt.Print(uid / i)
 	}()
+
 	var weatherErr error
-	var todayWeather WeatherResult
+	var todayWeather service.Weather
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+
 		defer func() {
 			if err := recover(); err != nil {
 				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
 			}
 		}()
 
-		//time.Sleep(1 * time.Second)
 		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
 		defer weatherCancel()
 
-		apiUrl := "http://apis.juhe.cn/simpleWeather/query"
-		apiKey := service.Cfg.WeatherAppKey
-		data := url.Values{}
-		data.Set("key", apiKey)
-		data.Set("city", "北京")
-
-		//resp, err := http.Get(apiUrl + "?" + data.Encode())
-		req, err := http.NewRequestWithContext(weatherCtx, "GET", apiUrl+"?"+data.Encode(), nil)
-		if err != nil {
-			service.Logger.Error("NewRequestWithContext err", zap.Error(err))
-			weatherErr = err
+		todayWeather, weatherErr = service.GetWeather(weatherCtx, "北京")
+		if weatherErr != nil {
 			return
 		}
 
-		client := &http.Client{}
-		resp, err := client.Do(req)
-		if err != nil {
-			weatherErr = err
-			return
-		}
-		defer resp.Body.Close()
-
-		//var weatherResp map[string]interface{}
-		var weather weatherstruct
-
-		//json.NewDecoder(r).Decode(&v)     json.Unmarshal([]byte/*io.ReadAll(resp.Body)*/, &v)两个是一个作用
-		//err = json.NewDecoder(resp.Body).Decode(&weatherResp)
-		weatherdate, err := io.ReadAll(resp.Body)
-		if err != nil {
-			service.Logger.Error("ReadAll err", zap.Error(err))
-			weatherErr = err
-			return
-		}
-
-		err = json.Unmarshal(weatherdate, &weather)
-		if err != nil {
-			service.Logger.Error("Unmarshal err", zap.Error(err))
-			weatherErr = err
-			return
-		}
-
-		todayWeatherInfo := weather.Result.Realtime.Info
-		todayTemperature := weather.Result.Realtime.Temperature
-		todayWeather = WeatherResult{
-			Weather:     todayWeatherInfo,
-			Temperature: todayTemperature,
-		}
-
-		service.Logger.Info("today weather", zap.String("todayWeather", todayWeatherInfo), zap.String("todaytemperature", todayTemperature))
+		service.Logger.Info("today weather", zap.Any("todayWeather", todayWeather))
 	}()
 
 	wg.Wait()
@@ -506,7 +416,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		responsecheckin = append(responsecheckin, checkinre)
 	}
 
-	datastruct := datastruct{
+	datastruct := service.DataStruct{
 		Weather: model.WeatherItem{
 			Temperature: todayWeather.Temperature,
 			Weather:     todayWeather.Weather,

@@ -19,5 +19,6 @@ type Config struct {
 
 	Class []string `yaml:"class"`
 
-	WeatherAppKey string `yaml:"weather_app_key"`
+	WeatherAppKey   string `yaml:"weather_app_key"`
+	WeatherSignSalt string `yaml:"weather_sign_salt"`
 }
