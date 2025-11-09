@@ -4,7 +4,7 @@ internal/app/mydemo/*.log
 internal/app/mydemo/*.log.*
 
 configs/config_local.yaml
-
+.vscode/launch.json
 
 
 
