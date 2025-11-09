@@ -18,4 +18,6 @@ type Config struct {
 	} `yaml:"redis"`
 
 	Class []string `yaml:"class"`
+
+	WeatherAppKey string `yaml:"weather_app_key"`
 }

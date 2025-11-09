@@ -2,6 +2,7 @@ package service
 
 import (
 	"demo1/internal/app/mydemo/conf"
+	"flag"
 	"os"
 
 	"gopkg.in/yaml.v2"
@@ -11,9 +12,12 @@ var Cfg *conf.Config
 
 // 加载配置文件
 func LoadConfig() (err error) {
-	Cfg = &conf.Config{}
+	configFile := flag.String("conf", "", "config文件")
 
-	data, err := os.ReadFile("../../../configs/config.yaml")
+	flag.Parse()
+
+	Cfg = &conf.Config{}
+	data, err := os.ReadFile(*configFile)
 	if err != nil {
 		return
 	}

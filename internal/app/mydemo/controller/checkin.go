@@ -305,7 +305,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		defer weatherCancel()
 
 		apiUrl := "http://apis.juhe.cn/simpleWeather/query"
-		apiKey := "" //TODO
+		apiKey := service.Cfg.WeatherAppKey
 		data := url.Values{}
 		data.Set("key", apiKey)
 		data.Set("city", "北京")
