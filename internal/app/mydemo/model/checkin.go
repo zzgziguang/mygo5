@@ -37,14 +37,15 @@ type CheckinSlice []CheckinSort
 
 //  < 升
 func (c CheckinSlice) Len() int { return len(c) }
-func (c CheckinSlice) Less(i, j int) bool {
 
+func (c CheckinSlice) Less(i, j int) bool {
 	// 参与打卡的
 	if c[i].JoinBool && !c[j].JoinBool {
 		return true
 	} else if !c[i].JoinBool && c[j].JoinBool {
 		return false
 	}
+
 	//全部参与
 	if c[i].JoinBool && c[j].JoinBool {
 		if c[i].RecordBool && !c[j].RecordBool {
@@ -55,11 +56,13 @@ func (c CheckinSlice) Less(i, j int) bool {
 			return c[i].JoinTime.After(c[j].JoinTime)
 		}
 	}
+
 	//都没有参与打卡的
 	if !c[i].JoinBool && !c[j].JoinBool {
 		if c[i].Checkin.Weight != c[j].Checkin.Weight {
 			return c[i].Checkin.Weight > c[j].Checkin.Weight
 		}
+
 		//权重相同的
 		if c[i].Checkin.Weight == c[j].Checkin.Weight && c[i].Checkin.Weight > 0 {
 			return c[i].Checkin.CreateAt.After(*(c[j].Checkin.CreateAt))
@@ -77,4 +80,5 @@ func (c CheckinSlice) Less(i, j int) bool {
 	}
 	return false
 }
+
 func (c CheckinSlice) Swap(i, j int) { c[i], c[j] = c[j], c[i] }

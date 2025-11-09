@@ -16,5 +16,6 @@ type Config struct {
 		DB       int    `yaml:"db"`
 		CacheTTL int    `yaml:"cache_ttl"`
 	} `yaml:"redis"`
+
 	Class []string `yaml:"class"`
 }

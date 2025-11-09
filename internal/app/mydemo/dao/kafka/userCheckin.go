@@ -10,6 +10,7 @@ func ProducerSend(value []byte) (partition int32, offset int64, err error) {
 		Topic: "topic_user_checkin",
 		Value: sarama.StringEncoder(value),
 	}
+
 	partition, offset, err = KafkaClient.SendMessage(msg)
 	return
 }

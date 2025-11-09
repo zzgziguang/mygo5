@@ -14,8 +14,10 @@ func GetUserCheckinRecord(uid int, cid int, date int) (userCheckinRecord *model.
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinRecord, nil
 }
 
@@ -26,8 +28,10 @@ func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinRecordByuid, nil
 }
 
@@ -38,8 +42,10 @@ func GetUserCheckinRecordInCheckinId(uid int, date int, cidSlice []int) (userChe
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return
 }
 
@@ -55,13 +61,16 @@ func GetUserCheckinRecordList(uid int, cid int, isasc bool) (userCheckinRecordLi
 	if isasc {
 		byOrder = "date asc"
 	}
+
 	err = DB.Order(byOrder).Where("uid = ? AND cid = ?", uid, cid).Find(&userCheckinRecordList).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinRecordList, nil
 }
 

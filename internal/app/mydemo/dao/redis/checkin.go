@@ -9,21 +9,22 @@ import (
 	"github.com/mitchellh/mapstructure"
 )
 
-//var Ctx = context.Background()
-
 // 保存checkin到 Redis 缓存
 func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) (err error) {
 	key := "user:" + strconv.Itoa(checkin.Id)
 	var data map[string]interface{}
+
 	err = mapstructure.WeakDecode(checkin, &data)
 	if err != nil {
 		return err
 	}
+
 	// 写入 hash
 	err = RedisClient.HSet(Ctx, key, data).Err()
 	if err != nil {
 		return err
 	}
+
 	RedisClient.Expire(Ctx, key, ttl)
 	return nil
 }
@@ -35,8 +36,8 @@ func ZaddCheckinJoinNum(cid int, checkin *model.Checkin) (err error) {
 		Score:  float64(checkin.JoinNum),
 		Member: cid,
 	}
-	err = RedisClient.ZAdd(Ctx, key, &members).Err()
 
+	err = RedisClient.ZAdd(Ctx, key, &members).Err()
 	return
 }
 
@@ -46,6 +47,7 @@ func GetZsetCheckinNum() (zrankm map[string]int, err error) {
 	var start int64 = 0
 	var stop int64 = -1
 	zrankm = make(map[string]int, 0)
+
 	zranks, err := RedisClient.ZRange(Ctx, key, start, stop).Result()
 	if err != nil {
 		if err == redis.Nil {
@@ -53,6 +55,7 @@ func GetZsetCheckinNum() (zrankm map[string]int, err error) {
 			return
 		}
 	}
+
 	for i, v := range zranks {
 		zrankm[v] = i + 1
 	}
@@ -66,12 +69,9 @@ func ZaddCheckinWeight(cid int, checkin *model.Checkin) (err error) {
 		Score:  float64(checkin.Weight),
 		Member: cid,
 	}
-	err = RedisClient.ZAdd(Ctx, key, &members).Err()
-	if err != nil {
-		return
-	}
 
-	return nil
+	err = RedisClient.ZAdd(Ctx, key, &members).Err()
+	return
 }
 
 // 获取全部zset缓存排名
@@ -80,6 +80,7 @@ func GetZsetCheckinWeight() (zrankm map[string]int, err error) {
 	var start int64 = 0
 	var stop int64 = -1
 	zrankm = make(map[string]int, 0)
+
 	zranks, err := RedisClient.ZRange(Ctx, key, start, stop).Result()
 	if err != nil {
 		if err == redis.Nil {
@@ -87,6 +88,7 @@ func GetZsetCheckinWeight() (zrankm map[string]int, err error) {
 			return
 		}
 	}
+
 	for i, v := range zranks {
 		zrankm[v] = i + 1
 	}

@@ -24,11 +24,13 @@ type weatherstruct struct {
 	Error_code int
 	Result     weatherresult
 }
+
 type weatherresult struct {
 	City     string
 	Realtime realtimeweather
 	Future   []futureweather
 }
+
 type realtimeweather struct {
 	Temperature string
 	Humidity    string
@@ -38,6 +40,7 @@ type realtimeweather struct {
 	Power       string
 	Aqi         string
 }
+
 type futureweather struct {
 	Date        string
 	Temperature string
@@ -45,14 +48,17 @@ type futureweather struct {
 	Wid         widweather
 	Direct      string
 }
+
 type widweather struct {
 	Day   string
 	Night string
 }
+
 type datastruct struct {
 	Weather model.WeatherItem
 	Slices  []model.ResponseCheckinItem
 }
+
 type WeatherResult struct {
 	Temperature string
 	Weather     string
@@ -67,6 +73,7 @@ func AddCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	strweight := c.PostForm("weight")
 	if strweight == "" {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -75,6 +82,7 @@ func AddCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	weight, err := strconv.Atoi(strweight)
 	if err != nil {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -83,6 +91,7 @@ func AddCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	createat := time.Now()
 	checkinstatus := model.CheckinNormal
 
@@ -120,7 +129,6 @@ func AddCheckinHandler(c *gin.Context) {
 		Message: "打卡添加成功",
 		Data:    newCheckin,
 	})
-
 }
 
 // 查询所有ckeckin根据id排序分页
@@ -145,6 +153,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	if struid == "" {
 		c.JSON(http.StatusNotFound, model.APIResponse{
 			Success: false,
@@ -170,6 +179,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	uid, err := strconv.Atoi(struid)
 	if err != nil {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -187,13 +197,15 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 	timeday := time.Now()
 	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
-	var rank int
+
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 
 	var checkinSlice []model.Checkin
 	var joinSlice []model.UserCheckinJoin
 	var recordSlice []model.UserCheckinRecord
+
+	var rank int
 	var zrankm map[string]int
 	var err1 error
 	var err2 error
@@ -211,16 +223,19 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+
 		defer func() {
 			if err := recover(); err != nil {
 				fmt.Printf("GetCheckinAll捕获到错误：%v\n", err)
 			}
 		}()
+
 		checkinSlice, err1 = service.GetCheckinAll()
 		if err1 != nil {
 			service.Logger.Error("err1", zap.Error(err1))
 			return
 		}
+
 		mu.Lock()
 		for _, v := range checkinSlice {
 			cidNumMap[v.Id]++ //加锁
@@ -232,6 +247,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+
 		defer func() {
 			err := recover()
 			if err != nil {
@@ -239,27 +255,32 @@ func GetCheckinHandlerAll(c *gin.Context) {
 				cancel()
 			}
 		}()
+
 		zrankm, err2 = service.GetZsetCheckinNum()
 		if err2 != nil {
 			service.Logger.Error("获取打卡参与人数失败", zap.Error(err2))
 			cancel()
 		}
+
 	}()
 
 	//根据uid查询join表
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+
 		defer func() {
 			if err := recover(); err != nil {
 				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
 			}
 		}()
+
 		joinSlice, err3 = service.GetUserCheckinJoinByuid(uid)
 		if err3 != nil {
 			service.Logger.Error("err3", zap.Error(err3))
 			return
 		}
+
 		mu.Lock()
 		for _, v := range joinSlice { //并发写会有问题,应该加锁，这里为什么没有报错
 			cidNumMap[v.Cid]++ //加锁
@@ -276,15 +297,13 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		defer func() {
 			if err := recover(); err != nil {
 				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
-				// weatherCh <- WeatherResult{
-				// 	Weather:     "",
-				// 	Temperature: "",
-				// }
 			}
 		}()
+
 		//time.Sleep(1 * time.Second)
 		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
 		defer weatherCancel()
+
 		apiUrl := "http://apis.juhe.cn/simpleWeather/query"
 		apiKey := "" //TODO
 		data := url.Values{}
@@ -306,6 +325,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			return
 		}
 		defer resp.Body.Close()
+
 		//var weatherResp map[string]interface{}
 		var weather weatherstruct
 
@@ -317,15 +337,16 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			weatherErr = err
 			return
 		}
+
 		err = json.Unmarshal(weatherdate, &weather)
 		if err != nil {
 			service.Logger.Error("Unmarshal err", zap.Error(err))
 			weatherErr = err
 			return
 		}
+
 		todayWeatherInfo := weather.Result.Realtime.Info
 		todayTemperature := weather.Result.Realtime.Temperature
-
 		todayWeather = WeatherResult{
 			Weather:     todayWeatherInfo,
 			Temperature: todayTemperature,
@@ -378,6 +399,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	// 	}
 	// 	return
 	// }
+
 	if weatherErr != nil {
 		c.JSON(http.StatusInternalServerError, model.APIResponse{
 			Success: false,
@@ -387,12 +409,13 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		return
 	}
 
-	// 3. 获取用户今日打卡记录
+	//获取用户今日打卡记录
 	//recordSlice, err4 = service.GetUserCheckinRecordByUidDate(uid, date)
 	var cidSlice []int
 	for _, v := range checkinSlice {
 		cidSlice = append(cidSlice, v.Id)
 	}
+
 	recordSlice, err4 = service.GetUserCheckinRecordInCheckinId(uid, date, cidSlice)
 	// 使用in语法 cid in join的cid
 	if err4 != nil {
@@ -415,6 +438,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	}
 
 	responsecheckin := make([]model.ResponseCheckinItem, 0)
+
 	//var responsecheckin []model.ResponseCheckinItem=make([]model.ResponseCheckinItem, 3,3)
 	//responsecheckin := make([]model.ResponseCheckinItem,0)
 	var checkinSortList model.CheckinSlice
@@ -423,6 +447,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		joinBool := false
 		recordBool := false
 		joinTime := time.Time{}
+
 		userCheckinJoin, ok := userCheckinJoinMap[cid]
 		if ok {
 			joinBool = true
@@ -430,10 +455,12 @@ func GetCheckinHandlerAll(c *gin.Context) {
 				joinTime = *userCheckinJoin.CreateAt
 			}
 		}
+
 		_, ok = userCheckinRecordMap[cid]
 		if ok {
 			recordBool = true
 		}
+
 		rankm, ok := zrankm[strconv.Itoa(cid)]
 		if ok {
 			rank = rankm
@@ -447,8 +474,10 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			Rank:       rank,
 		})
 	}
+
 	// 排序
 	sort.Sort(checkinSortList)
+
 	for _, v := range checkinSortList {
 		//var weather map[string]interface{}
 		cid := v.Checkin.Id
@@ -484,6 +513,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		},
 		Slices: responsecheckin,
 	}
+
 	c.JSON(http.StatusOK, model.APIResponse{
 		Success: true,
 		Message: "数据库查询排序成功",

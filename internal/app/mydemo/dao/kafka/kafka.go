@@ -18,6 +18,7 @@ func DaoInitKafka() (err error) {
 	if err != nil {
 		return
 	}
+
 	return
 }
 

@@ -12,6 +12,7 @@ import (
 // 从 Redis 缓存获取用户
 func GetUserCheckinRecordFromCache(uid int, cid int, date int) (userRedisCheckinRecord *model.UserCheckinRecord, err error) {
 	key := "checkinRecord:" + strconv.Itoa(uid) + strconv.Itoa(cid) + strconv.Itoa(date)
+
 	data, err := RedisClient.HGetAll(Ctx, key).Result()
 	if err != nil {
 		if err == redis.Nil {
@@ -53,7 +54,6 @@ func SetUserCheckinRecordToCache(userRedisCheckinRecord *model.UserCheckinRecord
 
 // 更新后删除 Redis 缓存，下次查询会重建
 func DelRedisUserCheckinRecord(uid int, cid int, date int) (err error) {
-
 	cacheKey := "checkinRecord" + strconv.Itoa(uid) + strconv.Itoa(cid)
 	err = RedisClient.Del(Ctx, cacheKey).Err()
 	return

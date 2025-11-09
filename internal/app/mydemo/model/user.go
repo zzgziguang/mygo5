@@ -18,13 +18,17 @@ func (User) TableName() string {
 // 按年龄升序排序
 type ByAgeAsc []User
 
-func (a ByAgeAsc) Len() int           { return len(a) }
+func (a ByAgeAsc) Len() int { return len(a) }
+
 func (a ByAgeAsc) Less(i, j int) bool { return a[i].Age < a[j].Age }
-func (a ByAgeAsc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+func (a ByAgeAsc) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 
 // 按年龄降序排序
 type ByAgeDesc []User
 
-func (a ByAgeDesc) Len() int           { return len(a) }
+func (a ByAgeDesc) Len() int { return len(a) }
+
 func (a ByAgeDesc) Less(i, j int) bool { return a[i].Age > a[j].Age }
-func (a ByAgeDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+func (a ByAgeDesc) Swap(i, j int) { a[i], a[j] = a[j], a[i] }

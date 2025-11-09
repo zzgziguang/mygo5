@@ -13,8 +13,10 @@ func GetUserCheckinJoin(uid int, cid int) (userCheckinJoin *model.UserCheckinJoi
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinJoin, nil
 }
 
@@ -25,8 +27,10 @@ func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJ
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinJoinByuid, nil
 }
 
@@ -37,8 +41,10 @@ func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheck
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
 		}
+
 		return nil, err
 	}
+
 	return userCheckinJoin, nil
 }
 

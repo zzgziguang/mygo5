@@ -12,6 +12,7 @@ type WeatherItem struct {
 	Temperature string `json:"temperature"`
 	Weather     string `json:"weather"`
 }
+
 type ResponseCheckinItem struct {
 	Id            int    `json:"id"`
 	Title         string `json:"title"`

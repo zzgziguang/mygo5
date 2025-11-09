@@ -75,10 +75,12 @@ func AddUserHandler(c *gin.Context) { //c
 		})
 		return
 	}
+
 	resp, err := http.Get("http://v.juhe.cn/historyWeather/weather?weather=sunny")
 	if err != nil {
 		return
 	}
+
 	//在函数结束前关闭resp结构体的Body属性
 	defer resp.Body.Close()
 	//读resp的体Body，返回[]byte和错误
@@ -86,6 +88,7 @@ func AddUserHandler(c *gin.Context) { //c
 	if err != nil {
 		return
 	}
+
 	//将[]byte类型转换为string
 	str := string(body)
 	str = `{"code":0,"data":{"tianqi":"晴"}}`
@@ -93,6 +96,7 @@ func AddUserHandler(c *gin.Context) { //c
 	type wdata struct {
 		Tianqi string `json:"tianqi"`
 	}
+
 	type Weather struct {
 		Code int   `json:"code"`
 		Data wdata `json:"data"`
@@ -100,10 +104,12 @@ func AddUserHandler(c *gin.Context) { //c
 
 	bytestr := []byte(str)
 	var w Weather
+
 	err = json.Unmarshal(bytestr, &w)
 	if err != nil {
 		panic(err)
 	}
+
 	tianq := w.Data.Tianqi
 	fmt.Println(tianq)
 
@@ -203,6 +209,7 @@ func GetUserHandler(c *gin.Context) { //
 			})
 			return
 		}
+
 		//响应成功
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
@@ -210,7 +217,6 @@ func GetUserHandler(c *gin.Context) { //
 			Data:    user,
 		})
 	}
-
 }
 
 // 更新用户名
@@ -287,7 +293,16 @@ func GetUsersHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	pagestr := c.Query("page")
+	// if pagestr == "" {
+	// 	c.JSON(http.StatusBadRequest, model.APIResponse{
+	// 		Success: false,
+	// 		Error:   "page不能为空",
+	// 	})
+	// 	return
+	// }
+
 	page, err := strconv.Atoi(pagestr)
 	if err != nil {
 		service.Logger.Error("格式错误", zap.String("pagestr", pagestr), zap.Error(err))
@@ -297,12 +312,13 @@ func GetUsersHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	pagesize := 3
 	isasc := true
 	if order == "desc" {
 		isasc = false
 	}
-	var hasNext bool
+
 	//先在缓存查用户个数
 	total, err := service.GetRedisUserCount()
 	if err != nil {
@@ -312,9 +328,11 @@ func GetUsersHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	if total != 0 {
 		service.Logger.Debug("缓存的用户数量为", zap.String("total", strconv.Itoa(int(total))))
 	}
+
 	//先获取个数
 	total, err = service.GetUserCount()
 	if err != nil {
@@ -324,6 +342,7 @@ func GetUsersHandlerAll(c *gin.Context) {
 		})
 		return
 	}
+
 	//在缓存存count
 	err = service.SetRedisUserCount(total)
 	if err != nil {
@@ -336,6 +355,7 @@ func GetUsersHandlerAll(c *gin.Context) {
 		service.Logger.Debug("缓存的用户数量为", zap.String("total", strconv.Itoa(int(total))))
 	}
 
+	var hasNext bool
 	if int(total)/pagesize > page {
 		hasNext = true
 	} else {
@@ -355,6 +375,7 @@ func GetUsersHandlerAll(c *gin.Context) {
 	} else {
 
 	}
+
 	if users != nil {
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
@@ -397,7 +418,6 @@ func GetUsersHandlerAll(c *gin.Context) {
 		//struser := fmt.Sprintf("user值%+v", users[0])
 		service.Logger.Debug("users值", zap.String("users", strusers))
 		//service.Logger.Debug("user值", zap.String("user", struser))
-
 		// 记录查到的用户数量
 		service.Logger.Info("数据库查询成功", zap.Int("用户数量", len(users)))
 

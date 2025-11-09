@@ -13,9 +13,6 @@ import (
 	"go.uber.org/zap"
 )
 
-var UidChan = make(chan int, 10)
-var CidChan = make(chan int, 10)
-
 func AddUserCheckinHandler(c *gin.Context) {
 	// AddUserCheckinHandler2(c)
 	// return
@@ -56,38 +53,36 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
-	msg := model.CheckInMsg{
-		Uid:       uid,
-		Cid:       cid,
-		Timestamp: time.Now().Unix(),
-		Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
-	}
+	// msg := model.CheckInMsg{
+	// 	Uid:       uid,
+	// 	Cid:       cid,
+	// 	Timestamp: time.Now().Unix(),
+	// 	Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
+	// }
 
-	// 序列化为 JSON
-	value, err := json.Marshal(msg)
-	if err != nil {
-		service.Logger.Error("Marshal Error", zap.Error(err))
-		c.JSON(http.StatusNotFound, model.APIResponse{
-			Success: false,
-			Error:   "json 转换错误err为" + err.Error(),
-		})
-		return
-	}
+	// // 序列化为 JSON
+	// value, err := json.Marshal(msg)
+	// if err != nil {
+	// 	service.Logger.Error("Marshal Error", zap.Error(err))
+	// 	c.JSON(http.StatusNotFound, model.APIResponse{
+	// 		Success: false,
+	// 		Error:   "json 转换错误err为" + err.Error(),
+	// 	})
+	// 	return
+	// }
 
-	for i := 1; i <= 10; i++ {
-		partition, offset, err := service.ProducerSend(value)
-		if err != nil {
-			service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
-			c.JSON(http.StatusNotFound, model.APIResponse{
-				Success: false,
-				Error:   "错误err为" + err.Error(),
-			})
-			return
-		}
-		service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
-	}
-	UidChan <- uid
-	CidChan <- cid
+	// for i := 1; i <= 10; i++ {
+	// 	partition, offset, err := service.ProducerSend(value)
+	// 	if err != nil {
+	// 		service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+	// 		c.JSON(http.StatusNotFound, model.APIResponse{
+	// 			Success: false,
+	// 			Error:   "错误err为" + err.Error(),
+	// 		})
+	// 		return
+	// 	}
+	// 	service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+	// }
 
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
@@ -123,6 +118,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 			})
 			return
 		}
+
 		if userCheckinJoin == nil {
 			//未参与
 			//参与，写db
@@ -135,6 +131,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 				UpdateAt: &joinTime,
 				Status:   model.JoinStatusNormal,
 			}
+
 			err = service.AddUserCheckinJoin(userCheckinJoin)
 			if err != nil {
 				service.Logger.Error("json表添加错误", zap.String("err为", err.Error()))
@@ -147,38 +144,38 @@ func AddUserCheckinHandler(c *gin.Context) {
 
 			service.Logger.Debug("添加参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
 
-			// 添加kafka生产者
-			// msg := model.CheckInMsg{
-			// 	Uid:       uid,
-			// 	Cid:       cid,
-			// 	Timestamp: time.Now().Unix(),
-			// 	Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
-			// }
+			//添加kafka生产者
+			msg := model.CheckInMsg{
+				Uid:       uid,
+				Cid:       cid,
+				Timestamp: time.Now().Unix(),
+				Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
+			}
 
-			// // 序列化为 json
-			// value, err := json.Marshal(msg)
-			// if err != nil {
-			// 	service.Logger.Error("Marshal Error", zap.Error(err))
-			// 	c.JSON(http.StatusNotFound, model.APIResponse{
-			// 		Success: false,
-			// 		Error:   "json 转换错误err为" + err.Error(),
-			// 	})
-			// 	return
-			// }
-			// strValue := string(value)
+			// 序列化为 json
+			value, err := json.Marshal(msg)
+			if err != nil {
+				service.Logger.Error("Marshal Error", zap.Error(err))
+				c.JSON(http.StatusNotFound, model.APIResponse{
+					Success: false,
+					Error:   "json 转换错误err为" + err.Error(),
+				})
+				return
+			}
 
-			// for i := 1; i <= 10; i++ {
-			// 	partition, offset, err := service.ProducerSend(strValue)
-			// 	if err != nil {
-			// 		service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
-			// 		c.JSON(http.StatusNotFound, model.APIResponse{
-			// 			Success: false,
-			// 			Error:   "错误err为" + err.Error(),
-			// 		})
-			// 		return
-			// 	}
-			// 	service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
-			// }
+			for i := 1; i <= 10; i++ {
+				partition, offset, err := service.ProducerSend(value)
+				if err != nil {
+					service.Logger.Error("ProducerSend", zap.String("err", err.Error()))
+					c.JSON(http.StatusNotFound, model.APIResponse{
+						Success: false,
+						Error:   "错误err为" + err.Error(),
+					})
+					return
+				}
+				service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+			}
+
 			//获取checkin表的id=cid，看看有没有这个打卡
 			checkin, err := service.GetCheckinBycid(cid)
 			if err != nil {
@@ -188,6 +185,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 				})
 				return
 			}
+
 			//有打卡，就更新参与打卡人数
 			//更新
 			err = service.UpdateCheckinJoinNum(cid, checkin)
@@ -231,7 +229,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 			// }
 			service.Logger.Debug("查询参与数据库成功", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
 		}
-
 	}
 
 	//get record
@@ -244,6 +241,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	if userCheckinRecord != nil {
 		//今日已打卡
 		//返回已打卡
@@ -275,11 +273,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 			})
 			return
 		}
-		a, err := json.Marshal(userCheckinJoin)
-		if err != nil {
-			return
-		}
-		fmt.Println(string(a))
+
 		c.JSON(http.StatusOK, model.APIResponse{
 			Success: true,
 			Message: "用户打卡成功",
@@ -288,14 +282,11 @@ func AddUserCheckinHandler(c *gin.Context) {
 				"userCheckinRecord": userCheckinRecord, //打卡记录表数据
 			},
 		})
-
 	}
-
 }
 
 // list
 func GetUserCheckinRecordHandler(c *gin.Context) {
-
 	struid := c.PostForm("uid")
 	if struid == "" {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -322,6 +313,7 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	cid, err := strconv.Atoi(strcid)
 	if err != nil {
 		c.JSON(http.StatusNotFound, model.APIResponse{
@@ -347,6 +339,7 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 		})
 		return
 	}
+
 	var strUserCheckinRecord string
 	var userCheckinRecord interface{}
 	if len(userCheckinRecordList) > 0 { //优先使用len判断slice是否有数据，比只判断=nil更健壮
@@ -364,8 +357,8 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 				service.Logger.Debug("添加参与数据库成功", zap.String("v", fmt.Sprintf("%V", v)))
 			}
 		}
-
 	}
+
 	//未参与
 	//查询join表
 	userCheckinJoin, err := service.GetUserCheckinJoin(uid, cid)
@@ -397,5 +390,4 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 			},
 		})
 	}
-
 }
