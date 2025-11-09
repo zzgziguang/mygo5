@@ -1,1 +1,4 @@
-internal/app/mydemo/mygo5.log
+# 忽略 mydemo 模块下所有的 .log 文件
+internal/app/mydemo/*.log
+# 忽略 mydemo 模块下所有以 .log. 开头的文件（用于日志轮转）
+internal/app/mydemo/*.log.*
