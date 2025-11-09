@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"crypto/md5"
+	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
@@ -13,10 +14,48 @@ import (
 )
 
 func main() {
+	//md5
 	MD5 := md5.New()
 	_, _ = io.WriteString(MD5, "abc")
 	md5Str := hex.EncodeToString(MD5.Sum(nil))
 	fmt.Println(md5Str)
+
+	//base64编码
+	str := "abc1 2%=3你好"
+	res := base64.StdEncoding.EncodeToString([]byte(str))
+	fmt.Println(res)
+
+	//base64解码
+	s, err := base64.StdEncoding.DecodeString(res)
+	if err != nil {
+		return
+	}
+	fmt.Println(string(s))
+
+	//base64编码
+	res = base64.URLEncoding.EncodeToString([]byte(str))
+	fmt.Println(res)
+
+	//base64解码
+	s, err = base64.URLEncoding.DecodeString(res)
+	if err != nil {
+		return
+	}
+	fmt.Println(string(s))
+
+	//hexs := "3156EF"
+
+	//解码
+	res = hex.EncodeToString([]byte(str))
+	fmt.Println(res)
+
+	//编码
+	s, err = hex.DecodeString(res)
+	if err != nil {
+		return
+	}
+	fmt.Println(string(s))
+
 	return
 
 	//go发送get请求
