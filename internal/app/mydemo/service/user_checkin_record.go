@@ -43,7 +43,7 @@ func GetUserCheckinRecordFromCache(uid int, cid int, date int) (userRedisCheckin
 }
 
 // 保存用户到 Redis 缓存
-func SetUserCheckinRecordToCache(userRedisCheckinRecord *model.UserCheckinRecord, ttl time.Duration) error {
+func SetUserCheckinRecordToCache(userRedisCheckinRecord *model.UserCheckinRecord, ttl time.Duration) (err error) {
 	return redis.SetUserCheckinRecordToCache(userRedisCheckinRecord, ttl)
 }
 

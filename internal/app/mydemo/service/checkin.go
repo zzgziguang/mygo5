@@ -45,7 +45,6 @@ func GetCheckinOrderJoinnumber(page int, pagesize int, isasc bool) (checkins []m
 
 // 查询id=cid
 func GetCheckinBycid(cid int) (checkin *model.Checkin, err error) {
-
 	return mysql.GetCheckinBycid(cid)
 }
 

@@ -37,10 +37,25 @@ func GetMsgByCode(code int) (msg string) {
 
 func MakeApiResponse(c *gin.Context, code int, data interface{}) {
 	msg := GetMsgByCode(code)
+	if data == nil {
+		data = make(map[int]string)
+	}
+
 	c.JSON(http.StatusOK, model.APIResponse{
 		Code:    code,
 		Data:    data,
 		Message: msg,
 	})
-	return
+}
+
+func MakeApiResponseSuccess(c *gin.Context, data interface{}) {
+	MakeApiResponse(c, CODE_SUCCESS, data)
+}
+
+func MakeApiResponseError(c *gin.Context, code int) {
+	MakeApiResponse(c, code, nil)
+}
+
+func MakeApiResponseErrorDefault(c *gin.Context) {
+	MakeApiResponse(c, CODE_SYS_ERROR, nil)
 }

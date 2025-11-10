@@ -33,7 +33,7 @@ func GetUserCheckinJoinFromCache(uid int, cid int) (userRedisCheckinJoin *model.
 }
 
 // 保存用户到 Redis 缓存
-func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) error {
+func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) (err error) {
 	return redis.SetUserCheckinJoinToCache(userRedisCheckinJoin)
 }
 

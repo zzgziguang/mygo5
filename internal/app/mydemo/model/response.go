@@ -5,9 +5,6 @@ type APIResponse struct {
 	Code    int         `json:"code"`
 	Data    interface{} `json:"data"`
 	Message string      `json:"message"`
-
-	Success bool   `json:"success"`
-	Error   string `json:"error"`
 }
 
 type WeatherItem struct {

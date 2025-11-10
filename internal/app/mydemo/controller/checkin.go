@@ -4,8 +4,6 @@ import (
 	"context"
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
-	"fmt"
-	"net/http"
 	"sort"
 	"strconv"
 	"sync"
@@ -19,28 +17,20 @@ import (
 func AddCheckinHandler(c *gin.Context) {
 	title := c.PostForm("title")
 	if title == "" {
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "标题不能为空",
-		})
+		MakeApiResponse(c, 1001, "标题不能为空")
 		return
 	}
 
 	strweight := c.PostForm("weight")
 	if strweight == "" {
-		c.JSON(http.StatusNotFound, model.APIResponse{
-			Success: false,
-			Error:   "weight不能为空",
-		})
+		MakeApiResponse(c, 1001, "weight不能为空")
 		return
 	}
 
 	weight, err := strconv.Atoi(strweight)
 	if err != nil {
-		c.JSON(http.StatusNotFound, model.APIResponse{
-			Success: false,
-			Error:   "weight类型转换错误",
-		})
+		service.Logger.Error("Atoistrweight err", zap.Error(err))
+		MakeApiResponse(c, 1001, "weight类型转换错误"+err.Error())
 		return
 	}
 
@@ -57,30 +47,21 @@ func AddCheckinHandler(c *gin.Context) {
 	//插入数据库
 	result := service.CreateCheckin(newCheckin)
 	if result.Error != nil {
-		service.Logger.Error("CreateCheckin错误", zap.Any("newCheckin", newCheckin), zap.String("err1", result.Error.Error()))
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "插入数据库错误",
-		})
+		service.Logger.Error("CreateCheckin err", zap.Error(result.Error))
+		MakeApiResponse(c, 1, "插入数据库错误"+result.Error.Error())
 		return
 	}
 
 	//更新参与打卡的权重
 	err = service.UpdateCheckinWeight(newCheckin, weight)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "更新参与人数失败",
-		})
+		service.Logger.Error("UpdateCheckinWeight err", zap.Error(err))
+		MakeApiResponse(c, 1, "更新参与人数失败"+err.Error())
 		return
 	}
 
 	// 返回成功响应
-	c.JSON(http.StatusOK, model.APIResponse{
-		Success: true,
-		Message: "打卡添加成功",
-		Data:    newCheckin,
-	})
+	MakeApiResponse(c, 0, newCheckin)
 }
 
 // 查询所有ckeckin根据id排序分页
@@ -91,61 +72,38 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	struid := c.Query("uid")
 
 	if strpage == "" {
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "page不能为空",
-		})
+		MakeApiResponse(c, 1001, "page不能为空")
 		return
 	}
 
 	if order != "desc" && order != "asc" {
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "order只能是desc或asc",
-		})
+		MakeApiResponse(c, 1001, "order只能是desc或asc")
 		return
 	}
 
 	if struid == "" {
-		c.JSON(http.StatusNotFound, model.APIResponse{
-			Success: false,
-			Error:   "uid不能为空",
-		})
+		MakeApiResponse(c, 1001, "uid不能为空")
 		return
 	}
 
 	page, err := strconv.Atoi(strpage)
 	if err != nil {
-		service.Logger.Error("page格式错误", zap.String("err:", err.Error()))
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "page必须为数字" + err.Error(),
-		})
+		service.Logger.Error("pageAtoi err", zap.Error(err))
+		MakeApiResponse(c, 1001, "page必须为数字"+err.Error())
 		return
 	}
 	if page <= 0 {
-		service.Logger.Error("page错误", zap.String("err:", "page值错误"))
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "page必须为正整数",
-		})
+		service.Logger.Error("page err", zap.Error(err))
+		MakeApiResponse(c, 1001, "page必须为正整数")
 		return
 	}
 
 	uid, err := strconv.Atoi(struid)
 	if err != nil {
-		c.JSON(http.StatusNotFound, model.APIResponse{
-			Success: false,
-			Error:   "uid类型转换错误",
-		})
+		service.Logger.Error("uidAtoi err", zap.Error(err))
+		MakeApiResponse(c, 1001, "uid类型转换错误"+err.Error())
 		return
 	}
-
-	//isasc := true
-	// if order == "desc" {
-	// 	isasc = false
-	// }
-	//pagesize := 3
 
 	timeday := time.Now()
 	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
@@ -177,8 +135,9 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		defer wg.Done()
 
 		defer func() {
-			if err := recover(); err != nil {
-				fmt.Printf("GetCheckinAll捕获到错误：%v\n", err)
+			err := recover()
+			if err != nil {
+				service.Logger.Error("GetCheckinAll panic", zap.Any("panic", err))
 			}
 		}()
 
@@ -210,7 +169,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 		zrankm, err2 = service.GetZsetCheckinNum()
 		if err2 != nil {
-			service.Logger.Error("获取打卡参与人数失败", zap.Error(err2))
+			service.Logger.Error("err2", zap.Error(err2))
 			cancel()
 		}
 
@@ -222,8 +181,9 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		defer wg.Done()
 
 		defer func() {
-			if err := recover(); err != nil {
-				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
+			err := recover()
+			if err != nil {
+				service.Logger.Error("GetUserCheckinJoinByuid panic", zap.Any("panic", err))
 			}
 		}()
 
@@ -249,8 +209,9 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		defer wg.Done()
 
 		defer func() {
-			if err := recover(); err != nil {
-				fmt.Printf("GetUserCheckinJoinByuid捕获到错误：%v\n", err)
+			err := recover()
+			if err != nil {
+				service.Logger.Error("GetWeather panic", zap.Any("panic", err))
 			}
 		}()
 
@@ -259,6 +220,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 		todayWeather, weatherErr = service.GetWeather(weatherCtx, "北京")
 		if weatherErr != nil {
+			service.Logger.Error("weatherErr", zap.Error(weatherErr))
 			return
 		}
 
@@ -268,54 +230,28 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	wg.Wait()
 
 	if err1 != nil {
-		service.Logger.Error("redis查询失败", zap.String("err:", err1.Error()))
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "redis查询失败" + err1.Error(),
-		})
+		service.Logger.Error("err2", zap.Error(err2))
+		MakeApiResponse(c, 1, "redis查询失败"+err1.Error())
 		return
 	}
 
 	if err2 != nil {
-		c.JSON(http.StatusBadRequest, model.APIResponse{
-			Success: false,
-			Error:   "redis查询失败" + err2.Error(),
-		})
+		service.Logger.Error("err2", zap.Error(err2))
+		MakeApiResponse(c, 1, "redis查询失败"+err2.Error())
 		return
 	}
 
 	//根据uid获取用户所有的已参与打卡，转换为map[cid]Join，和今日所有的打卡记录转换为map[cid]Record
 
 	if err3 != nil {
-		service.Logger.Error("查询参与数据库错误", zap.String("err为", err3.Error()))
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "查询参与数据库的错误",
-		})
+		service.Logger.Error("err3", zap.Error(err3))
+		MakeApiResponse(c, 1, "查询参与数据库的错误"+err3.Error())
 		return
 	}
-	// if err5 != nil {
-	// 	select {
-	// 	case <-ctx.Done():
-	// 		service.Logger.Error("err", zap.Error(err)) //取消
-	// 	case <-weatherCtx.Done():
-	// 		c.JSON(http.StatusInternalServerError, model.APIResponse{
-	// 			Success: false,
-	// 			Error:   "超时",
-	// 		})
-	// 		service.Logger.Error("err", zap.Error(err))
-	// 	default:
-	// 		service.Logger.Error("weatherCtx err", zap.Error(err)) //失败
-	// 	}
-	// 	return
-	// }
 
 	if weatherErr != nil {
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "超时",
-		})
-		service.Logger.Error("err", zap.Error(err))
+		MakeApiResponse(c, 2002, "超时"+weatherErr.Error())
+		service.Logger.Error("weatherErr", zap.Error(weatherErr))
 		return
 	}
 
@@ -329,11 +265,8 @@ func GetCheckinHandlerAll(c *gin.Context) {
 	recordSlice, err4 = service.GetUserCheckinRecordInCheckinId(uid, date, cidSlice)
 	// 使用in语法 cid in join的cid
 	if err4 != nil {
-		service.Logger.Error("查询打卡记录数据库错误", zap.String("err为", err4.Error()))
-		c.JSON(http.StatusInternalServerError, model.APIResponse{
-			Success: false,
-			Error:   "查询打卡记录数据库的错误",
-		})
+		service.Logger.Error("err4", zap.Error(err4))
+		MakeApiResponse(c, 1, "查询打卡记录数据库的错误"+err4.Error())
 		return
 	}
 
@@ -424,10 +357,5 @@ func GetCheckinHandlerAll(c *gin.Context) {
 		Slices: responsecheckin,
 	}
 
-	c.JSON(http.StatusOK, model.APIResponse{
-		Success: true,
-		Message: "数据库查询排序成功",
-		Data:    datastruct,
-		//responsecheckin
-	})
+	MakeApiResponse(c, 0, datastruct)
 }

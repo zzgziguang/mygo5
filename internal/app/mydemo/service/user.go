@@ -9,12 +9,12 @@ import (
 )
 
 // 从 Redis 缓存获取用户
-func GetUserFromCache(id int) (*model.User, error) {
+func GetUserFromCache(id int) (user *model.User, err error) {
 	return redis.GetUserFromCache(id)
 }
 
 // 保存用户到 Redis 缓存
-func SetUserToCache(user *model.User) error {
+func SetUserToCache(user *model.User) (err error) {
 	return redis.SetUserToCache(user)
 }
 
