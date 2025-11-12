@@ -176,9 +176,17 @@ func AddUserCheckinHandler(c *gin.Context) {
 			return
 		}
 
+		rank, err := service.GetUserCheckinRecordByCount(cid, date, recordTime)
+		if err != nil {
+			service.Logger.Error("GetUserCheckinRecordByCount err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
 		MakeApiResponseSuccess(c, map[string]interface{}{
 			"userCheckinJoin":   userCheckinJoin,   //参与表中数据
 			"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+			"rank":              rank,              //今日打卡名次
 		})
 	}
 }

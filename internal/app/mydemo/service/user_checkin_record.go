@@ -27,6 +27,16 @@ func AddUserCheckinRecord(userCheckinRecord *model.UserCheckinRecord) (err error
 	return mysql.AddUserCheckinRecord(userCheckinRecord)
 }
 
+// 获取今天的用户打卡的时间
+func GetCreateTimeFromUserCheckinRecord(uid int, cid int, date int) (createTime time.Time, err error) {
+	return mysql.GetCreateTimeFromUserCheckinRecord(uid, cid, date)
+}
+
+// 获取用户该打卡在今天打卡的名次
+func GetUserCheckinRecordByCount(cid int, date int, createTime time.Time) (rank int, err error) {
+	return mysql.GetUserCheckinRecordByCount(cid, date, createTime)
+}
+
 // 打卡列表
 func GetUserCheckinRecordList(uid int, cid int, isasc bool) (userCheckinRecordList []model.UserCheckinRecord, err error) {
 	return mysql.GetUserCheckinRecordList(uid, cid, isasc)
