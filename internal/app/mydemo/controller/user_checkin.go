@@ -42,6 +42,18 @@ func AddUserCheckinHandler(c *gin.Context) {
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
 
+	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
+	if err != nil {
+		service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+		MakeApiResponseError(c, CODE_SYS_ERROR)
+		return
+	}
+
+	MakeApiResponseSuccess(c, map[string]interface{}{
+		"rank": rank, //今日打卡名次
+	})
+	return
+
 	//get join from cache
 	userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
 	if err != nil {
@@ -176,9 +188,30 @@ func AddUserCheckinHandler(c *gin.Context) {
 			return
 		}
 
-		rank, err := service.GetUserCheckinRecordByCount(cid, date, recordTime)
+		// rank, err := service.GetUserCheckinRecordByCount(cid, date, recordTime)
+		// if err != nil {
+		// 	service.Logger.Error("GetUserCheckinRecordByCount err", zap.String("err为", err.Error()))
+		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+		// 	return
+		// }
+
+		// err = service.ZaddUserCheckinRecordCountToCache(cid, uid, recordTime, date)
+		// if err != nil {
+		// 	service.Logger.Error("ZaddUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+		// 	return
+		// }
+
+		// rank, err := service.ZrankUserCheckinRecordCountToCache(cid, uid, date)
+		// if err != nil {
+		// 	service.Logger.Error("ZrankUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+		// 	return
+		// }
+
+		rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
 		if err != nil {
-			service.Logger.Error("GetUserCheckinRecordByCount err", zap.String("err为", err.Error()))
+			service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
 			MakeApiResponseError(c, CODE_SYS_ERROR)
 			return
 		}
