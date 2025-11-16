@@ -61,3 +61,18 @@ func SetUserCheckinRecordToCache(userRedisCheckinRecord *model.UserCheckinRecord
 func DelRedisUserCheckinRecord(uid int, cid int, date int) (err error) {
 	return redis.DelRedisUserCheckinRecord(uid, cid, date)
 }
+
+// 添加名次到zset缓存
+func ZaddUserCheckinRecordCountToCache(cid int, uid int, recordTime time.Time, date int) (err error) {
+	return redis.ZaddUserCheckinRecordCountToCache(cid, uid, recordTime, date)
+}
+
+// 获取打卡zset缓存名次
+func ZrankUserCheckinRecordCountToCache(cid int, uid int, date int) (rank int, err error) {
+	return redis.ZrankUserCheckinRecordCountToCache(cid, uid, date)
+}
+
+// 添加名次到缓存string
+func IncrUserCheckinRecordCountToCache(cid int, date int) (rank int64, err error) {
+	return redis.IncrUserCheckinRecordCountToCache(cid, date)
+}
