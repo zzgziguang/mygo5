@@ -15,6 +15,11 @@ type UserCheckinJoin struct {
 	Status      int        `json:"status" gorm:"column:status" mapstructure:"status"`
 }
 
+type UserCheckinJoinUidCid struct {
+	Uid int `gorm:"column:uid"`
+	Cid int `gorm:"column:cid"`
+}
+
 const (
 	JoinStatusDelete int = 0 //删除
 	JoinStatusNormal int = 1 //正常

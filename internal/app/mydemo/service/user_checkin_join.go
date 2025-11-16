@@ -17,6 +17,16 @@ func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJ
 	return mysql.GetUserCheckinJoinByuid(uid)
 }
 
+// 获取参与打卡用户uid
+func GetCreateUidFromUserCheckinJoin() (uids []int, err error) {
+	return mysql.GetCreateUidFromUserCheckinJoin()
+}
+
+// 获取参与打卡用户uid,cid
+func GetCreateUidCidFromUserCheckinJoin() (userCheckinJoins []model.UserCheckinJoinUidCid, err error) {
+	return mysql.GetCreateUidCidFromUserCheckinRecord()
+}
+
 // 查询表
 func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
 	return mysql.GetUserCheckinJoinCount(uid, cid)

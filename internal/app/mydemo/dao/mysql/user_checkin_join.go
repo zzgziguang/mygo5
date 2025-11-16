@@ -34,6 +34,34 @@ func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJ
 	return userCheckinJoinByuid, nil
 }
 
+// 获取参与打卡用户uid
+func GetCreateUidFromUserCheckinJoin() (uids []int, err error) {
+	err = DB.Model(&model.UserCheckinRecord{}).Select("uid").Find(&uids).Error //.Scan(&uids)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return uids, nil
+}
+
+// 获取打卡用户uidcid
+func GetCreateUidCidFromUserCheckinRecord() (userCheckinJoins []model.UserCheckinJoinUidCid, err error) {
+	err = DB.Model(&model.UserCheckinRecord{}).Select("uid", "cid").Find(&userCheckinJoins).Error //.Scan(&uids)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoins, nil
+}
+
 // 根据uid，cid查询表
 func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
 	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
