@@ -48,20 +48,6 @@ func GetCreateUidFromUserCheckinJoin() (uids []int, err error) {
 	return uids, nil
 }
 
-// 获取打卡用户uidcid
-func GetCreateUidCidFromUserCheckinRecord() (userCheckinJoins []model.UserCheckinJoinUidCid, err error) {
-	err = DB.Model(&model.UserCheckinRecord{}).Select("uid", "cid").Find(&userCheckinJoins).Error //.Scan(&uids)
-	if err != nil {
-		if err == gorm.ErrRecordNotFound { //没查到数据返回空
-			return nil, nil
-		}
-
-		return nil, err
-	}
-
-	return userCheckinJoins, nil
-}
-
 // 根据uid，cid查询表
 func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
 	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
@@ -74,6 +60,29 @@ func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheck
 	}
 
 	return userCheckinJoin, nil
+}
+
+// 获取打卡用户uidcid
+func GetCreateUidCidFromUserCheckinJoin(page int, pagesize int, isasc bool) (userCheckinJoins []model.UserCheckinJoinUidCid, err error) {
+	offset := (page - 1) * pagesize
+	var order string
+
+	if isasc {
+		order = "create_at asc"
+	} else {
+		order = "create_at desc"
+	}
+
+	err = DB.Model(&model.UserCheckinJoin{}).Order(order).Offset(offset).Limit(pagesize).Select("uid", "cid").Find(&userCheckinJoins).Error //.Scan(&uids)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoins, nil
 }
 
 // 添加表

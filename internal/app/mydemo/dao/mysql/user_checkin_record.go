@@ -9,7 +9,7 @@ import (
 
 // 查询有没有打卡
 func GetUserCheckinRecord(uid int, cid int, date int) (userCheckinRecord *model.UserCheckinRecord, err error) {
-	err = DB.Where("uid = ? AND cid = ? AND date >= ?", uid, cid, date).First(&userCheckinRecord).Error
+	err = DB.Where("uid = ? AND cid = ? AND date = ?", uid, cid, date).First(&userCheckinRecord).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound { //没查到数据返回空
 			return nil, nil
@@ -19,6 +19,12 @@ func GetUserCheckinRecord(uid int, cid int, date int) (userCheckinRecord *model.
 	}
 
 	return userCheckinRecord, nil
+}
+
+// 查询最近两天打卡条数
+func GetUserCheckinRecordTwoDayCount(uid int, cid int, yestoday int) (count int64, err error) {
+	err = DB.Model(&model.UserCheckinRecord{}).Where("uid = ? AND cid = ? AND date >= ?", uid, cid, yestoday).Count(&count).Error
+	return
 }
 
 // 根据uid查询

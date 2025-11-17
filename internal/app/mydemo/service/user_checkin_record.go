@@ -12,6 +12,11 @@ func GetUserCheckinRecord(uid int, cid int, date int) (userCheckinRecord *model.
 	return mysql.GetUserCheckinRecord(uid, cid, date)
 }
 
+// 查询最近两天打卡条数
+func GetUserCheckinRecordTwoDayCount(uid int, cid int, yestoday int) (count int64, err error) {
+	return mysql.GetUserCheckinRecordTwoDayCount(uid, cid, yestoday)
+}
+
 // 根据uid查询
 func GetUserCheckinRecordByUidDate(uid int, date int) (userCheckinRecordByuid []model.UserCheckinRecord, err error) {
 	return mysql.GetUserCheckinRecordByUidDate(uid, date)
