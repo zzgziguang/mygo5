@@ -48,7 +48,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 		MakeApiResponseError(c, CODE_SYS_ERROR)
 		return
 	}
-
+	service.Logger.Info("rank uid", zap.Int("rank", int(rank)), zap.Int("uid", uid))
 	MakeApiResponseSuccess(c, map[string]interface{}{
 		"rank": rank, //今日打卡名次
 	})
@@ -297,7 +297,7 @@ func GetUserCheckinRecordHandler(c *gin.Context) {
 
 	//一个数据只可以使用=nil判断是否有数据
 	if userCheckinJoin == nil {
-		service.Logger.Error("") //todo 只要json返回的是错误，就记录日志
+		service.Logger.Error("userCheckinJoin err", zap.String("userCheckinJoin", "userCheckinJoin为空")) // 只要json返回的是错误，就记录日志
 		MakeApiResponseError(c, CODE_SYS_ERROR)
 		return
 	} else {
