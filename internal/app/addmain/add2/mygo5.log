@@ -1,0 +1,1036 @@
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:28:34.071+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.436+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.436+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:37:46.437+0800","C":"add2/main.go:76","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:76"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T20:56:34.400+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"INFO","T":"2025-11-14T20:56:34.431+0800","C":"add2/main.go:104","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-14T20:58:38.754+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.753+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.753+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.758+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.754+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.754+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.754+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.755+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.755+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"ERROR","T":"2025-11-14T20:58:38.757+0800","C":"add2/main.go:92","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:92"}
+{"L":"INFO","T":"2025-11-14T20:58:38.777+0800","C":"add2/main.go:104","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-14T21:00:56.571+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.573+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.573+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.575+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.577+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.579+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.577+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.579+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.580+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"ERROR","T":"2025-11-14T21:00:56.581+0800","C":"add2/main.go:93","M":"Unmarshal err","error":"invalid character '<' looking for beginning of value","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:93"}
+{"L":"INFO","T":"2025-11-14T21:00:56.600+0800","C":"add2/main.go:105","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"ERROR","T":"2025-11-14T21:09:48.036+0800","C":"add2/main.go:80","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:80"}
+{"L":"INFO","T":"2025-11-14T21:09:48.054+0800","C":"add2/main.go:106","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-14T21:10:45.289+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.289+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.289+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"ERROR","T":"2025-11-14T21:10:45.288+0800","C":"add2/main.go:78","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:78"}
+{"L":"INFO","T":"2025-11-14T21:10:45.319+0800","C":"add2/main.go:105","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:36:20.379+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.379+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.380+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.380+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.380+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.380+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.381+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.381+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.381+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"ERROR","T":"2025-11-16T15:36:20.382+0800","C":"add2/main.go:101","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:101"}
+{"L":"INFO","T":"2025-11-16T15:36:20.382+0800","C":"add2/main.go:114","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:45:45.819+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.820+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.820+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.820+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"INFO","T":"2025-11-16T15:45:45.821+0800","C":"add2/main.go:116","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:47:20.564+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:47:20.563+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:47:32.894+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:01.300+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.459+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"INFO","T":"2025-11-16T15:48:15.461+0800","C":"add2/main.go:116","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:48:37.947+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.947+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.947+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.948+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.948+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.949+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.949+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.949+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.949+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:48:37.950+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"INFO","T":"2025-11-16T15:48:37.950+0800","C":"add2/main.go:116","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:49:28.234+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.235+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.236+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.236+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.236+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.238+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.238+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.238+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.238+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"ERROR","T":"2025-11-16T15:49:28.239+0800","C":"add2/main.go:103","M":"Unmarshal err","error":"unexpected end of JSON input","S":"main.main.func2\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:103"}
+{"L":"INFO","T":"2025-11-16T15:49:28.239+0800","C":"add2/main.go:116","M":"uidCheckinRank","rankmap":null}
+{"L":"ERROR","T":"2025-11-16T15:55:34.668+0800","C":"add2/main.go:68","M":"LoadConfig err","error":"open : The system cannot find the file specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:68\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T15:56:42.761+0800","C":"add2/main.go:68","M":"LoadConfig err","error":"open : The system cannot find the file specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:68\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:05:10.861+0800","C":"add2/main.go:68","M":"LoadConfig err","error":"open ../../../configs/config_local.yaml: The system cannot find the path specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:68\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:06:05.094+0800","C":"add2/main.go:68","M":"LoadConfig err","error":"open ../../../configs/config_local.yaml: The system cannot find the path specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:68\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:06:05.118+0800","C":"add2/main.go:75","M":"InitDB err","error":"dial tcp 127.0.0.1:3306: connectex: No connection could be made because the target machine actively refused it.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:75\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:06:20.502+0800","C":"add2/main.go:68","M":"LoadConfig err","error":"open ../../../configs/config_local.yaml: The system cannot find the path specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:68\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:06:20.527+0800","C":"add2/main.go:75","M":"InitDB err","error":"dial tcp 127.0.0.1:3306: connectex: No connection could be made because the target machine actively refused it.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:75\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"INFO","T":"2025-11-16T16:06:20.898+0800","C":"add2/main.go:139","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"25"}}
+{"L":"ERROR","T":"2025-11-16T16:58:26.972+0800","C":"add2/main.go:66","M":"LoadConfig err","error":"open ../../../configs/config_local.yaml: The system cannot find the path specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:66\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:58:26.990+0800","C":"add2/main.go:73","M":"InitDB err","error":"dial tcp 127.0.0.1:3306: connectex: No connection could be made because the target machine actively refused it.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:73\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:59:08.267+0800","C":"add2/main.go:66","M":"LoadConfig err","error":"open ../../../configs/config_local.yaml: The system cannot find the path specified.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:66\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"ERROR","T":"2025-11-16T16:59:08.285+0800","C":"add2/main.go:73","M":"InitDB err","error":"dial tcp 127.0.0.1:3306: connectex: No connection could be made because the target machine actively refused it.","S":"main.main\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:73\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:283"}
+{"L":"INFO","T":"2025-11-17T23:56:38.584+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":2,"uid":"16"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.598+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":3,"uid":"18"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.598+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":4,"uid":"19"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.598+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":5,"uid":"23"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.598+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"20"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.599+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":7,"uid":"17"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.599+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":8,"uid":"24"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.599+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":9,"uid":"21"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.599+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"22"}}
+{"L":"INFO","T":"2025-11-17T23:56:38.599+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":11,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.486+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":1,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":2,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":3,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":4,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":5,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":7,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":8,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.500+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":9,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:02:19.501+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.796+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":14,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":14,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":11,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":15,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":17,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":16,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":13,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":20,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":18,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:02:38.813+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":19,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.421+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":29,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.435+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":29,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.435+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":23,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.435+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":27,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":26,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":22,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":25,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":21,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":24,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:06:29.436+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":30,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.938+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":31,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":32,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":33,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":34,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":35,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":36,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":37,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":38,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.955+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":39,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:12:37.956+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":40,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.056+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":41,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":43,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":48,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":47,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":49,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":46,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":42,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":45,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":45,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:12:58.072+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":50,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.016+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":51,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.031+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":52,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.031+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":53,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":54,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":55,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":56,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":57,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":58,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":59,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:18:27.032+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":60,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.883+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":64,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":64,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":65,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":67,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":69,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":63,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":61,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":70,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":70,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:20:05.897+0800","C":"add2/main.go:112","M":"uidCheckinRank","rankmap":{"rank":68,"uid":"24"}}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:30:32.347+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"ERROR","T":"2025-11-18T00:32:30.045+0800","C":"add2/main.go:77","M":"Post err","error":"Post \"http://localhost:8081/api/userCheckin/add\": dial tcp [::1]:8081: connectex: No connection could be made because the target machine actively refused it.","S":"main.main.func1\n\tC:/goproject/src/mygo5/internal/app/addmain/add2/main.go:77"}
+{"L":"INFO","T":"2025-11-18T00:32:57.574+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.579+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.581+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.577+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.585+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.576+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.580+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.580+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.583+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.587+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:32:57.596+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjF9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.596+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjR9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.596+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjd9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjN9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjl9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjJ9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjV9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjZ9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjh9LCJtZXNzYWdlIjoi5oiQ5YqfIn0="}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjEwfSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":1},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.597+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":4},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.598+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":7},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.598+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":3},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.598+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":9},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.598+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":2},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.598+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":5},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.599+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":6},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.599+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":8},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.599+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":10},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":1,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":4,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":7,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":3,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":9,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":2,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":5,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":8,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:32:57.600+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.221+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjIwfSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.220+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:33:24.237+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjEyfSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.237+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE2fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.237+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE0fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.237+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE4fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE5fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjExfSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":20},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjEzfSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":13},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE1fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.238+0800","C":"add2/main.go:88","M":"checkin","checkin":"eyJjb2RlIjowLCJkYXRhIjp7InJhbmsiOjE3fSwibWVzc2FnZSI6IuaIkOWKnyJ9"}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":12},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":16},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":14},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":18},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":19},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":11},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.239+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":15},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":17},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":20,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":13,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":12,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":16,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":14,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":18,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.240+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":19,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.241+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":11,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.241+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":15,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:33:24.241+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":17,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.739+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.739+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.739+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.738+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":22},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":27},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":24},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":23},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":25},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":29},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":30},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":28},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":26},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.758+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":21},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.759+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":22,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.759+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":27,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":24,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":23,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":25,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":29,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":30,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":28,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":26,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:35:12.760+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":21,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":37},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":34},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":36},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":38},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":32},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":33},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":35},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":39},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.932+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":31},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.933+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":40},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":37,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":34,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":36,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":38,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":32,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":33,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":35,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.934+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":39,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.935+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":31,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:35:59.935+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":40,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.954+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":44},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.917+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.919+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.919+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.885+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.919+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:21.954+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":42},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.954+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":47},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.954+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":43},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.954+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":41},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.955+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":46},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.955+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":50},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.955+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":49},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.955+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":45},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.955+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":48},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.956+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":44,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.956+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":42,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.956+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":47,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.957+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":43,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.957+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":41,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.957+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":46,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.957+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":50,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.957+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":49,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.958+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":45,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:36:21.958+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":48,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.579+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":58},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.579+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":51},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.565+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":56},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":53},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":60},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":59},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":57},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":52},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":54},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.580+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":55},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.581+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":58,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.581+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":51,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":56,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":53,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":60,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":59,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":57,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":52,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":54,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:36:36.582+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":55,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.138+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":69},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":68},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":64},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":66},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":61},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":67},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":63},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":70},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.157+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":62},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.158+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":65},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.158+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":69,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.158+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":68,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":64,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":66,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":61,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":67,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":63,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":70,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":62,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:36:48.159+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":65,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.292+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":71},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.292+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":72},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.294+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":74},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.294+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":75},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.274+0800","C":"add2/main.go:80","M":"resp","resp":{}}
+{"L":"INFO","T":"2025-11-18T00:37:13.293+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":73},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.294+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":76},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.294+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":80},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.294+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":79},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.295+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":77},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.295+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":78},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":71,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":72,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":74,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":75,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":73,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":76,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":80,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":79,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":77,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:37:13.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":78,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":83},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":88},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":87},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":81},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":89},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":84},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":85},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":82},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":90},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.280+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":86},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":83,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.296+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":88,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":87,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":81,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":89,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":84,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":85,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":82,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":90,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:38:08.297+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":86,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.669+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":94},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":93},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":97},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.669+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":92},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":95},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":99},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":96},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":91},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":100},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.670+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":98},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":94,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":93,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":97,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":92,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":95,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":99,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":96,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":91,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":100,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:38:23.687+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":98,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":102},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":103},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":101},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":108},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":104},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":107},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.511+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":106},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.511+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":110},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.511+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":109},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.510+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":105},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":102,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":103,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":101,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":108,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":104,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":107,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":106,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":110,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":109,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:38:26.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":105,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.513+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":116,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":118,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":113,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":120,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":120,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":111,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":119,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.530+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":117,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.531+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":115,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:39:21.531+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":114,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.846+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":121,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":122,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":123,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":124,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":125,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":126,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":127,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":128,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":129,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:44:52.863+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":130,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.340+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":132,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.357+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":138,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.357+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":131,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.357+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":136,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.357+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":134,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.357+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":135,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.358+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":140,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.358+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":140,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.358+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":137,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:45:02.358+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":139,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.900+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":145,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":145,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":147,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":141,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":143,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":150,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":144,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":142,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":146,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:08.915+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":149,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:14.988+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":154,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":154,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":151,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":155,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":152,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":159,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":158,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":157,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":156,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:15.004+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":160,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.035+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":169,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.051+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":169,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.051+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":164,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.051+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":170,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.051+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":161,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.052+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":166,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.052+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":168,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.052+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":163,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.052+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":165,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:20.052+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":167,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.067+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":173,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":171,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":172,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":172,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":178,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":175,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":177,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":176,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":179,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:48:25.081+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":180,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.547+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":189,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.565+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":184,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":181,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":187,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":188,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":186,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":185,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":182,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":183,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:32.566+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":190,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.704+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":198,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.718+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":198,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.718+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":198,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":199,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":194,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":192,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":191,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":193,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":200,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:48:37.719+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":197,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":202},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":205},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":208},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":203},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":201},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":209},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":207},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":210},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":204},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:29.108+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":206},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":216},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":217},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.998+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":211},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":218},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":219},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.998+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":212},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.998+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":214},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":213},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:42.997+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":215},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:53:43.008+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":220},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.802+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":222},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.802+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":221},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.802+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":223},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":229},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":227},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":225},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":224},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":226},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":228},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:00.803+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":230},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.835+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":231},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":239},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":232},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":240},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":235},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":236},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":237},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.836+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":234},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.835+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":238},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:05.835+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":233},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":243},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":241},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":246},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":250},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":247},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.465+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":244},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.465+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":249},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":242},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":248},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:13.464+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":245},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":258},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":255},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":252},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":251},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":257},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":256},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":254},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.412+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":253},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.411+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":259},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:15.412+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":260},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":264},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":268},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":263},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":267},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":266},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":261},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":265},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":262},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.272+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":269},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:54:21.271+0800","C":"add2/main.go:96","M":"apijson","apijson":{"code":0,"data":{"rank":270},"message":"成功"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.272+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":5,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":4,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":2,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":1,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":9,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":8,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.287+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T00:59:19.288+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":7,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.786+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":15,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.799+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":11,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.799+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":18,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":13,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":20,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":19,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":12,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":16,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":14,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:00:54.800+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":17,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.339+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":26,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":24,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":21,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":23,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":27,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":25,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":28,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":22,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":29,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:01:00.354+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":30,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.556+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":37,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":32,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":36,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":35,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":31,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":33,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":34,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.571+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":39,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.572+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":38,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:01:08.572+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":40,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.307+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":47,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":48,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":50,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":46,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":45,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":41,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":44,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":43,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":42,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:01:10.325+0800","C":"add2/main.go:115","M":"uidCheckinRank","rankmap":{"rank":49,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.118+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":56,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.132+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":52,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.133+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":51,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.133+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":53,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.133+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":55,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.133+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":58,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.134+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":60,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.134+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":57,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.134+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":54,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:05:06.134+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":59,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.674+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":67,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":68,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":63,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":63,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":61,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":65,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":64,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":69,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.691+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":62,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:05:11.692+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":70,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.758+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":73,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":74,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":74,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":72,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":75,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":77,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":76,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":78,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":79,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:05:12.772+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":80,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.618+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":85,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":86,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":84,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":81,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":87,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":82,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":88,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":90,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":83,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:05:13.637+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":89,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.425+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":97,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.439+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":97,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.439+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":97,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.440+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":100,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.440+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":96,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.440+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":98,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.440+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":99,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.441+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":91,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.441+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":95,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:08:22.441+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":92,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.821+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":101,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.835+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":103,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.835+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":106,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.835+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":105,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":104,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":102,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":107,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":108,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":109,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:08:27.836+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":110,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.573+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":111,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":111,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":117,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":112,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":115,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":118,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":116,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.588+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":120,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.589+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":113,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:08:32.589+0800","C":"add2/main.go:119","M":"uidCheckinRank","rankmap":{"rank":119,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.478+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":127,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.492+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":128,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.492+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":125,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":121,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":129,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":123,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":122,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":126,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":124,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:08:52.493+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":130,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.214+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":133,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":134,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":131,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":136,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":137,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":139,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":132,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":138,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.230+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":140,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:00.231+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":135,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.712+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":143,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":144,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":148,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":142,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":146,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":147,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":150,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.727+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":149,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.728+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":141,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:07.728+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":145,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.074+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":153,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.088+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":151,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":152,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":160,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":154,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":159,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":158,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":155,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":156,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:46.089+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":157,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.959+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":162,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.972+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":164,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":163,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":161,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":165,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":167,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":168,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":166,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":169,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:48.973+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":170,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.585+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":173,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":176,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":175,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":172,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":178,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":174,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.600+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":179,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.601+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":171,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.601+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":177,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:52.601+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":180,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.977+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":184,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":183,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":182,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":181,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":188,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":186,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":185,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":187,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":190,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:53.992+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":189,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.380+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":194,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.395+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":193,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.395+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":191,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.395+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":192,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.395+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":197,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.396+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":196,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.396+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":195,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.396+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":200,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.396+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":198,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:55.396+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":199,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.611+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":201,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":202,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":207,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":205,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":206,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":204,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":209,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.625+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":203,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.626+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":208,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:56.626+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":210,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.983+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":212,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":216,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":219,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":211,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":213,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":214,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":218,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":217,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":215,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:57.997+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":220,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.251+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":221,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":226,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":225,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":228,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":222,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":224,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":223,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":227,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":229,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:09:59.268+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":230,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.817+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":235,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":234,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":233,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":231,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":232,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":237,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":238,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":240,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.832+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":239,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:00.833+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":236,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.926+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":247,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":242,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":244,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":245,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":243,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":241,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.940+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":246,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.941+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":250,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.941+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":248,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:01.941+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":249,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.882+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":252,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":255,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":253,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":254,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":251,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":256,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":258,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":257,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":260,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:04.897+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":259,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:06.998+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":263,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":265,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":261,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":266,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":262,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":267,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":270,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.013+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":268,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.014+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":264,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:07.014+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":269,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.391+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":2,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.406+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":1,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.406+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":3,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.406+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":4,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.406+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":5,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.406+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":6,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.407+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":7,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.407+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":8,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.407+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":9,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:34.407+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":10,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.032+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":18,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.046+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":16,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.046+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":12,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.046+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":17,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.046+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":11,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.046+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":14,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.047+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":15,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.047+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":13,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.047+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":20,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:36.047+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":19,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.537+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":25,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":24,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":26,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":28,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":21,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":23,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.555+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":22,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.556+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":29,"uid":"16"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.556+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":27,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:37.556+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":30,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.129+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":31,"uid":"24"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":37,"uid":"17"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":33,"uid":"21"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":36,"uid":"18"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":32,"uid":"20"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":35,"uid":"22"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.144+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":39,"uid":"25"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.145+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":38,"uid":"23"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.145+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":34,"uid":"19"}}
+{"L":"INFO","T":"2025-11-18T01:10:39.145+0800","C":"add2/main.go:118","M":"uidCheckinRank","rankmap":{"rank":40,"uid":"16"}}
