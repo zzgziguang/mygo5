@@ -1,7 +1,6 @@
 package main
 
 import (
-	"demo1/internal/app/mydemo/controller"
 	"demo1/internal/app/mydemo/service"
 	"encoding/json"
 	"io"
@@ -10,9 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"time"
 
-	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
 
@@ -61,44 +58,11 @@ func main() {
 	//Logger, err = zap.NewDevelopment()
 	defer service.SyncLogger()
 
-	err = service.LoadConfig()
-	if err != nil {
-		service.Logger.Error("LoadConfig err", zap.Error(err))
-
-	}
-
-	// 初始化数据库
-	err = service.ServiceInitDB(service.Cfg.Database.Dsn)
-	if err != nil {
-		service.Logger.Error("InitDB err", zap.Error(err))
-
-	}
-
-	//初始化 Redis
-	service.ServiceInitRedis(service.Cfg.Redis.Addr, service.Cfg.Redis.Password, service.Cfg.Redis.DB)
-
-	//初始化 kafka
-	err = service.ServiceInitKafka()
-	if err != nil {
-		service.Logger.Error("InitKafka err", zap.Error(err))
-		panic(err)
-	}
-	defer service.Closekafka()
-
-	// 1. 启动服务到后台
-	go func() {
-		r := gin.Default()
-		r.POST("/api/userCheckin/add", controller.AddUserCheckinHandler)
-		r.Run(":8081")
-	}()
-
-	time.Sleep(300 * time.Millisecond)
-
-	var rankMapChan chan map[string]interface{}
+	rankMapChan := make(chan map[string]interface{}, 10)
 	var rankMap map[string]interface{}
 	var wg sync.WaitGroup
+	var mu sync.Mutex
 	for i := 1; i <= 10; i++ {
-
 		wg.Add(1)
 		go func(i int) {
 			defer wg.Done()
@@ -113,6 +77,7 @@ func main() {
 				service.Logger.Error("Post err", zap.Error(err))
 				return
 			}
+			//service.Logger.Info("resp", zap.Any("resp", resp.Body))
 			defer resp.Body.Close()
 
 			checkin, err := io.ReadAll(resp.Body)
@@ -120,6 +85,7 @@ func main() {
 				service.Logger.Error("ReadAll err", zap.Error(err))
 				return
 			}
+			//service.Logger.Info("checkin", zap.Any("checkin", checkin))
 
 			var apiJson ApiJson
 			err = json.Unmarshal(checkin, &apiJson)
@@ -127,12 +93,22 @@ func main() {
 				service.Logger.Error("Unmarshal err", zap.Error(err))
 				return
 			}
+			//service.Logger.Info("apijson", zap.Any("apijson", apiJson))
 
+			code := apiJson.Code
+			if code != 0 {
+				service.Logger.Error("code err", zap.Int("code", code), zap.String("msg", apiJson.Message))
+				return
+			}
+			mu.Lock()
 			rank = apiJson.Data.Rank
+
 			rankMap = map[string]interface{}{
 				"uid":  strconv.Itoa(15 + i),
 				"rank": rank, //今日打卡名次
 			}
+			mu.Unlock()
+
 			rankMapChan <- rankMap
 		}(i)
 	}
