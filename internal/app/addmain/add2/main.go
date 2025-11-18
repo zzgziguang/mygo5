@@ -49,7 +49,6 @@ type Data struct {
 
 func main() {
 	var err error
-	var rank int64
 
 	err = service.LoggerInit()
 	if err != nil {
@@ -59,9 +58,7 @@ func main() {
 	defer service.SyncLogger()
 
 	rankMapChan := make(chan map[string]interface{}, 10)
-	var rankMap map[string]interface{}
 	var wg sync.WaitGroup
-	var mu sync.Mutex
 	for i := 1; i <= 10; i++ {
 		wg.Add(1)
 		go func(i int) {
@@ -100,14 +97,12 @@ func main() {
 				service.Logger.Error("code err", zap.Int("code", code), zap.String("msg", apiJson.Message))
 				return
 			}
-			mu.Lock()
-			rank = apiJson.Data.Rank
+			rank := apiJson.Data.Rank
 
-			rankMap = map[string]interface{}{
+			rankMap := map[string]interface{}{
 				"uid":  strconv.Itoa(15 + i),
 				"rank": rank, //今日打卡名次
 			}
-			mu.Unlock()
 
 			rankMapChan <- rankMap
 		}(i)
