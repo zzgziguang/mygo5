@@ -3,10 +3,9 @@ package main
 import (
 	"demo1/internal/app/mydemo/controller"
 	"demo1/internal/app/mydemo/service"
-	"fmt"
-	"log"
 
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 // 全局变量：保存 config 配置
@@ -23,25 +22,27 @@ func main() {
 
 	err = service.LoadConfig()
 	if err != nil {
-		//fmt.Errorf: 包装错误，添加上下文
-		err1 := fmt.Errorf("加载配置失败: %w", err)
-		//fmt.Sprintf: 构造更详细的错误消息
-		strerror := fmt.Sprintf("详细错误%s", err1.Error())
-		fmt.Println(strerror)
-		log.Fatal(err1)
+		service.Logger.Error("LoadConfig err", zap.Error(err))
+		panic(err)
 	}
 
 	// 初始化数据库
 	err = service.ServiceInitDB(service.Cfg.Database.Dsn)
 	if err != nil {
-		err2 := fmt.Errorf("初始化数据库错误%w", err)
-		strerror2 := fmt.Sprintf("详细错误%s", err2.Error())
-		fmt.Println(strerror2)
-		log.Fatal(err2)
+		service.Logger.Error("InitDB err", zap.Error(err))
+		panic(err)
 	}
 
 	//初始化 Redis
 	service.ServiceInitRedis(service.Cfg.Redis.Addr, service.Cfg.Redis.Password, service.Cfg.Redis.DB)
+
+	//初始化 kafka
+	err = service.ServiceInitKafka()
+	if err != nil {
+		service.Logger.Error("InitKafka err", zap.Error(err))
+		panic(err)
+	}
+	defer service.Closekafka()
 
 	//创建 Gin 路由引擎
 	r := gin.Default()
@@ -51,7 +52,16 @@ func main() {
 	r.GET("/api/user", controller.GetUserHandler)            //查询id
 	r.POST("/api/user/update", controller.UpdateUserHandler) //修改
 	r.GET("/api/users/all", controller.GetUsersHandlerAll)   //查询age排序
+
+	r.POST("/api/checkin/add", controller.AddCheckinHandler)   //添加checkin
+	r.GET("/api/checkin/all", controller.GetCheckinHandlerAll) //查询Checkin，根据id排序
+
+	//打卡信息
+	r.POST("/api/userCheckin/add", controller.AddUserCheckinHandler)
+	//获取用户每日打卡
+	r.GET("/api/userCheckin/get", controller.GetUserCheckinRecordHandler)
+
 	// 启动服务器
-	log.Println("服务器启动在 :8080 端口")
-	log.Fatal(r.Run(":8080"))
+	service.Logger.Info("The server started at port", zap.String("port", "8081"))
+	service.Logger.Error("Default error", zap.Error(r.Run(":8081")))
 }

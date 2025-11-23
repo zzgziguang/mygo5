@@ -1,0 +1,92 @@
+package mysql
+
+import (
+	"demo1/internal/app/mydemo/model"
+
+	"gorm.io/gorm"
+)
+
+// 根据uid，cid查询表
+func GetUserCheckinJoin(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
+	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoin, nil
+}
+
+// 根据uid查询表
+func GetUserCheckinJoinByuid(uid int) (userCheckinJoinByuid []model.UserCheckinJoin, err error) {
+	err = DB.Where("uid=? and status=?", uid, model.JoinStatusNormal).Find(&userCheckinJoinByuid).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoinByuid, nil
+}
+
+// 获取参与打卡用户uid
+func GetCreateUidFromUserCheckinJoin() (uids []int, err error) {
+	err = DB.Model(&model.UserCheckinRecord{}).Select("uid").Find(&uids).Error //.Scan(&uids)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return uids, nil
+}
+
+// 根据uid，cid查询表
+func GetUserCheckinJoinCount(uid int, cid int) (userCheckinJoin *model.UserCheckinJoin, err error) {
+	err = DB.Where("uid=? and cid =? and status=?", uid, cid, model.JoinStatusNormal).First(&userCheckinJoin).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoin, nil
+}
+
+// 获取打卡用户uidcid
+func GetCreateUidCidFromUserCheckinJoin(page int, pagesize int, isasc bool) (userCheckinJoins []model.UserCheckinJoinUidCid, err error) {
+	offset := (page - 1) * pagesize
+	var order string
+
+	if isasc {
+		order = "create_at asc"
+	} else {
+		order = "create_at desc"
+	}
+
+	err = DB.Model(&model.UserCheckinJoin{}).Order(order).Offset(offset).Limit(pagesize).Select("uid", "cid").Find(&userCheckinJoins).Error //.Scan(&uids)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound { //没查到数据返回空
+			return nil, nil
+		}
+
+		return nil, err
+	}
+
+	return userCheckinJoins, nil
+}
+
+// 添加表
+func AddUserCheckinJoin(newUserCheckinJoin *model.UserCheckinJoin) (err error) {
+	err = DB.Create(&newUserCheckinJoin).Error
+	return
+}

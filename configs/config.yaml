@@ -16,3 +16,8 @@ class:
   - 甲
   - 乙
   - 丙
+
+weather_app_key: "xxx"
+weather_sign_salt: "xxx"
+
+

@@ -17,6 +17,7 @@ func LoggerInit() (err error) {
 	Logger, err = config.Build() // 根据配置构建Logger
 	return
 }
+
 func SyncLogger() {
 	Logger.Sync()
 }
