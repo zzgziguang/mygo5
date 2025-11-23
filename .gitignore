@@ -3,6 +3,12 @@ internal/app/mydemo/*.log
 # 忽略 mydemo 模块下所有以 .log. 开头的文件（用于日志轮转）
 internal/app/mydemo/*.log.*
 
+internal/app/other_practice_file/goroutine_http/*.log
+
+internal/app/other_practice_file/read_txt/*.log
+
+internal/app/other_practice_file/write_txt/*.log
+
 configs/config_local.yaml
 .vscode/launch.json
 
