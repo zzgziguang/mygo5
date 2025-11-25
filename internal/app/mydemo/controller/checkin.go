@@ -21,9 +21,35 @@ func AddCheckinHandler(c *gin.Context) {
 		return
 	}
 
+	strstartTime := c.PostForm("startTime")
+	if strstartTime == "" {
+		MakeApiResponse(c, 1001, "startTime不能为空")
+		return
+	}
+
+	strendTime := c.PostForm("endTime")
+	if strendTime == "" {
+		MakeApiResponse(c, 1001, "endTime不能为空")
+		return
+	}
+
 	strweight := c.PostForm("weight")
 	if strweight == "" {
 		MakeApiResponse(c, 1001, "weight不能为空")
+		return
+	}
+
+	startTime, err := time.Parse("2006-01-02 15:04:05", strstartTime)
+	if err != nil {
+		service.Logger.Error("Atoi strstartTime err", zap.Error(err))
+		MakeApiResponse(c, 1001, err)
+		return
+	}
+
+	endTime, err := time.Parse("2006-01-02 15:04:05", strendTime)
+	if err != nil {
+		service.Logger.Error("Parse endTime err", zap.Error(err))
+		MakeApiResponse(c, 1001, err)
 		return
 	}
 
@@ -41,6 +67,8 @@ func AddCheckinHandler(c *gin.Context) {
 		Title:         title,
 		CreateAt:      &createat,
 		UpdateAt:      &createat,
+		StartTime:     startTime.Unix(),
+		EndTime:       endTime.Unix(),
 		CheckinStatus: checkinstatus,
 	}
 
@@ -62,6 +90,7 @@ func AddCheckinHandler(c *gin.Context) {
 
 	// 返回成功响应
 	MakeApiResponse(c, 0, newCheckin)
+
 }
 
 // 查询所有ckeckin根据id排序分页
@@ -107,11 +136,13 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 	timeday := time.Now()
 	date := timeday.Year()*10000 + int(timeday.Month())*100 + timeday.Day()
+	//checkinstatus := model.CheckinNormal
 
 	var wg sync.WaitGroup
+
 	var mu sync.Mutex
 
-	var checkinSlice []model.Checkin
+	var checkinSlice = make([]model.Checkin, 0)
 	var joinSlice []model.UserCheckinJoin
 	var recordSlice []model.UserCheckinRecord
 
@@ -141,17 +172,62 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 
-		checkinSlice, err1 = service.GetCheckinAll()
-		if err1 != nil {
-			service.Logger.Error("err1", zap.Error(err1))
+		checkinIds, err := service.GetCheckinId()
+		if err != nil {
+			service.Logger.Error("err", zap.Error(err))
 			return
 		}
 
-		mu.Lock()
-		for _, v := range checkinSlice {
-			cidNumMap[v.Id]++ //加锁
+		var wga sync.WaitGroup
+		for _, v := range checkinIds {
+			wga.Add(1)
+			go func(v int) {
+				defer wga.Done()
+
+				defer func() {
+					if err := recover(); err != nil {
+						service.Logger.Error("GetCheckinFromCache panic", zap.Any("panic", err))
+					}
+				}()
+
+				checkin, err := service.GetCheckinFromCache(v)
+				if err != nil {
+					service.Logger.Error("err", zap.Error(err))
+					return
+				}
+				service.Logger.Debug("checkin", zap.Any("checkin", checkin))
+
+				if checkin == nil {
+					checkin, err := service.GetCheckinBycid(v)
+					if err != nil {
+						service.Logger.Error("err", zap.Error(err))
+						return
+					}
+					err = service.SetCheckinToCache(checkin, time.Duration(3*time.Hour))
+					if err != nil {
+						service.Logger.Error("err", zap.Error(err))
+						return
+					}
+				}
+				mu.Lock()
+
+				checkinSlice = append(checkinSlice, *checkin)
+				cidNumMap[v]++ //加锁
+
+				mu.Unlock()
+			}(v)
+
 		}
-		mu.Unlock()
+		wga.Wait()
+		//存到缓存
+		//checkinlist, err1 := service.SetCheckinToCache(checkinSlice)
+
+		// checkinSlice, err1 := service.GetCheckinAll(date)
+		// if err1 != nil {
+		// 	service.Logger.Error("err1", zap.Error(err1))
+		// 	return
+		// }
+
 	}()
 
 	//获取打卡名次zset缓存
@@ -215,7 +291,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 
-		weatherCtx, weatherCancel := context.WithTimeout(ctx, 200*time.Millisecond) //50*time.Millisecond
+		weatherCtx, weatherCancel := context.WithTimeout(ctx, 500*time.Millisecond) //50*time.Millisecond
 		defer weatherCancel()
 
 		todayWeather, weatherErr = service.GetWeather(weatherCtx, "北京")
@@ -229,7 +305,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 
 	wg.Wait()
 
-	if err1 != nil {
+	if err != nil {
 		service.Logger.Error("err2", zap.Error(err2))
 		MakeApiResponse(c, 1, "redis查询失败"+err1.Error())
 		return
@@ -344,6 +420,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			Weight:        v.Checkin.Weight,         //打卡的权重
 			JoinTime:      v.JoinTime.Format("2006年01月02日 15点04分05秒"),
 			CidNum:        cidNum,
+			EndTime:       v.Checkin.EndTime,
 		}
 
 		responsecheckin = append(responsecheckin, checkinre)

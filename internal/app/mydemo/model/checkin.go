@@ -10,6 +10,8 @@ type Checkin struct {
 	CheckinStatus int        `json:"checkinStatus" gorm:"column:checkin_status" mapstructure:"checkinStatus"`
 	JoinNum       int        `json:"join_num" gorm:"column:join_num" mapstructure:"join_num"`
 	Weight        int        `json:"weight" gorm:"column:weight" mapstructure:"weight"`
+	StartTime     int64      `json:"startTime" gorm:"column:start_time" mapstructure:"startTime"`
+	EndTime       int64      `json:"endTime" gorm:"column:end_time" mapstructure:"endTime"`
 }
 
 const (

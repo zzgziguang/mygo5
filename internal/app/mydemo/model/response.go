@@ -25,4 +25,5 @@ type ResponseCheckinItem struct {
 	Weight        int    `json:"weight"`
 	JoinTime      string `json:"joinTime"`
 	CidNum        int    `json:"cidNum"`
+	EndTime       int64  `json:"endTime"`
 }

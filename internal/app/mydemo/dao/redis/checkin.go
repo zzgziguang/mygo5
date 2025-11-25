@@ -9,9 +9,25 @@ import (
 	"github.com/mitchellh/mapstructure"
 )
 
+// 获取打卡
+func GetCheckinFromCache(cid int) (checkin *model.Checkin, err error) {
+	key := "checkin:" + strconv.Itoa(cid)
+	data, err := RedisClient.HGetAll(Ctx, key).Result()
+	if err != nil {
+		return
+	}
+
+	checkin = &model.Checkin{}
+
+	// 使用 mapstructure 将 map 转为结构体
+	err = mapstructure.WeakDecode(data, checkin)
+	return
+
+}
+
 // 保存checkin到 Redis 缓存
 func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) (err error) {
-	key := "user:" + strconv.Itoa(checkin.Id)
+	key := "checkin:" + strconv.Itoa(checkin.Id)
 	var data map[string]interface{}
 
 	err = mapstructure.WeakDecode(checkin, &data)

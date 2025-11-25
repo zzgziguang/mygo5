@@ -42,6 +42,18 @@ func AddUserCheckinHandler(c *gin.Context) {
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
 
+	endTime, err := service.GetCheckinEndTimeByCid(cid)
+	if err != nil {
+		service.Logger.Error("GetCheckinEndTimeByCid err", zap.Error(err))
+		MakeApiResponseError(c, CODE_SYS_ERROR)
+		return
+	}
+	if endTime < date {
+		service.Logger.Error("checkin err", zap.String("err为", "打卡已结束"))
+		MakeApiResponseError(c, CODE_SYS_ERROR)
+		return
+	}
+
 	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
 	if err != nil {
 		service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
@@ -172,6 +184,7 @@ func AddUserCheckinHandler(c *gin.Context) {
 		})
 		return
 	} else {
+
 		userCheckinRecord = &model.UserCheckinRecord{
 			Uid:      uid,
 			Cid:      cid,

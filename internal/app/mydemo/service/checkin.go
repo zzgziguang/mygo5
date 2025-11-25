@@ -14,8 +14,13 @@ func CreateCheckin(newcheckin *model.Checkin) (result *gorm.DB) {
 	return mysql.CreateCheckin(newcheckin)
 }
 
+// 获取打卡
+func GetCheckinFromCache(cid int) (checkin *model.Checkin, err error) {
+	return redis.GetCheckinFromCache(cid)
+}
+
 // 保存用户到 Redis 缓存
-func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) error {
+func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) (err error) {
 	return redis.SetCheckinToCache(checkin, ttl)
 }
 
@@ -32,10 +37,19 @@ func GetCheckinOrderId(page int, pagesize int, isasc bool) (checkins []model.Che
 	return mysql.GetCheckinOrderId(page, pagesize, isasc)
 }
 
-// 查询全部
-func GetCheckinAll() (checkins []model.Checkin, err error) {
+// 查询获取全部id
+func GetCheckinId() (checkinIds []int, err error) {
+	return mysql.GetCheckinId()
+}
 
-	return mysql.GetCheckinAll()
+// 查询全部
+func GetCheckinAll(date int) (checkins []model.Checkin, err error) {
+	return mysql.GetCheckinAll(date)
+}
+
+// 查询结束时间
+func GetCheckinEndTimeByCid(cid int) (endTime int, err error) {
+	return mysql.GetCheckinEndTimeByCid(cid)
 }
 
 // 查询全部joinnumber
