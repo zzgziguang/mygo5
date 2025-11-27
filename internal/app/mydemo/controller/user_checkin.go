@@ -39,12 +39,16 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
+	userCheckinCache, err := service.HGetUserCheckinFromCache(uid)
+	fmt.Println(userCheckinCache, err)
+	return
+
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
 
-	endTime, err := service.GetCheckinEndTimeByCid(cid)
+	endTime, err := service.GetRedisCheckinEndTimeByCid(cid)
 	if err != nil {
-		service.Logger.Error("GetCheckinEndTimeByCid err", zap.Error(err))
+		service.Logger.Error("GetRedisCheckinEndTimeByCid err", zap.Error(err))
 		MakeApiResponseError(c, CODE_SYS_ERROR)
 		return
 	}
