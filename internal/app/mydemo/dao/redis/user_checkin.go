@@ -80,9 +80,9 @@ func HGetUserCheckinFromCache(uid int) (userCheckin *model.UserCheckin, err erro
 			checkinJoinTimeMap[cid] = time.Unix(vInt, 0)
 		}
 
-		ok = strings.HasPrefix(k, "datetime")
+		ok = strings.HasPrefix(k, "datenum")
 		if ok {
-			cidStr := strings.TrimLeft(k, "datetime")
+			cidStr := strings.TrimLeft(k, "datenum")
 			var cid int64
 			cid, err = strconv.ParseInt(cidStr, 10, 64)
 			if err != nil {

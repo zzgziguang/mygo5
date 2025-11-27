@@ -39,36 +39,32 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
-	userCheckinCache, err := service.HGetUserCheckinFromCache(uid)
-	fmt.Println(userCheckinCache, err)
-	return
-
 	recordTime := time.Now()
 	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
 
-	endTime, err := service.GetRedisCheckinEndTimeByCid(cid)
-	if err != nil {
-		service.Logger.Error("GetRedisCheckinEndTimeByCid err", zap.Error(err))
-		MakeApiResponseError(c, CODE_SYS_ERROR)
-		return
-	}
-	if endTime < date {
-		service.Logger.Error("checkin err", zap.String("err为", "打卡已结束"))
-		MakeApiResponseError(c, CODE_SYS_ERROR)
-		return
-	}
+	// endTime, err := service.GetRedisCheckinEndTimeByCid(cid)
+	// if err != nil {
+	// 	service.Logger.Error("GetRedisCheckinEndTimeByCid err", zap.Error(err))
+	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	return
+	// }
+	// if endTime < date {
+	// 	service.Logger.Error("checkin err", zap.String("err为", "打卡已结束"))
+	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	return
+	// }
 
-	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
-	if err != nil {
-		service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
-		MakeApiResponseError(c, CODE_SYS_ERROR)
-		return
-	}
-	service.Logger.Info("rank uid", zap.Int("rank", int(rank)), zap.Int("uid", uid))
-	MakeApiResponseSuccess(c, map[string]interface{}{
-		"rank": rank, //今日打卡名次
-	})
-	return
+	// rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
+	// if err != nil {
+	// 	service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	return
+	// }
+	// service.Logger.Info("rank uid", zap.Int("rank", int(rank)), zap.Int("uid", uid))
+	// MakeApiResponseSuccess(c, map[string]interface{}{
+	// 	"rank": rank, //今日打卡名次
+	// })
+	// return
 
 	//get join from cache
 	userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
@@ -115,6 +111,14 @@ func AddUserCheckinHandler(c *gin.Context) {
 			}
 
 			service.Logger.Debug("AddUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+
+			//添加jointime缓存
+			err = service.HSetUserCheckinJoinTimeToCache(uid, cid, joinTime.Unix())
+			if err != nil {
+				service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
+				MakeApiResponseErrorDefault(c)
+				return
+			}
 
 			//添加kafka生产者
 			msg := model.CheckInMsg{
@@ -200,7 +204,39 @@ func AddUserCheckinHandler(c *gin.Context) {
 
 		err = service.AddUserCheckinRecord(userCheckinRecord)
 		if err != nil {
-			service.Logger.Error("AddUserCheckinRecord err", zap.String("err为", err.Error()))
+			service.Logger.Error("AddUserCheckinRecord err", zap.Error(err))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//上次打卡时间
+		err = service.HSetUserCheckinLastTimeToCache(uid, cid, recordTime.Unix())
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastTimeToCache err", zap.Error(err))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//某打卡天数
+		err = service.HSetUserCheckinDateNumToCache(uid, cid)
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinDateNumToCache err", zap.Error(err))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//用户上次打卡日期
+		err = service.HSetUserCheckinLastDateToCache(uid, strconv.Itoa(date))
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.Error(err))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//用户打卡总天数
+		err = service.HSetUserCheckinDayNumToCache(uid)
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.Error(err))
 			MakeApiResponseError(c, CODE_SYS_ERROR)
 			return
 		}
@@ -233,7 +269,15 @@ func AddUserCheckinHandler(c *gin.Context) {
 			return
 		}
 
+		userCheckinCache, err := service.HGetUserCheckinFromCache(uid)
+		if err != nil {
+			service.Logger.Error("HGetUserCheckinFromCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
 		MakeApiResponseSuccess(c, map[string]interface{}{
+			"userCheckin":       userCheckinCache,  //用户打卡数据
 			"userCheckinJoin":   userCheckinJoin,   //参与表中数据
 			"userCheckinRecord": userCheckinRecord, //打卡记录表数据
 			"rank":              rank,              //今日打卡名次
