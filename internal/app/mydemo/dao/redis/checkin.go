@@ -14,21 +14,66 @@ func GetCheckinFromCache(cid int) (checkin *model.Checkin, err error) {
 	key := "checkin:" + strconv.Itoa(cid)
 	data, err := RedisClient.HGetAll(Ctx, key).Result()
 	if err != nil {
+		if err == redis.Nil {
+			return nil, nil
+		}
 		return
+	}
+
+	if len(data) == 0 {
+		return nil, nil
 	}
 
 	checkin = &model.Checkin{}
 
 	// 使用 mapstructure 将 map 转为结构体
 	err = mapstructure.WeakDecode(data, checkin)
+	if err != nil {
+		return
+	}
+
+	//将hash中createatstr字符串转为时间格式createat
+	redisCheckinCreateAt, err := time.ParseInLocation("2006-01-02 15:04:05", checkin.CreateAtStr, time.Local)
+	if err != nil {
+		return
+	} else {
+		checkin.CreateAt = &redisCheckinCreateAt
+	}
+
+	//将hash中updateatstr字符串转为时间格式updateat
+	redisCheckinUpdateAt, err := time.ParseInLocation("2006-01-02 15:04:05", checkin.UpdateAtStr, time.Local)
+	if err != nil {
+		return
+	} else {
+		checkin.UpdateAt = &redisCheckinUpdateAt
+	}
 	return
 
+}
+
+// 根据cid获取打卡结束时间
+func GetRedisCheckinEndTimeByCid(cid int) (endTime int, err error) {
+	key := "checkin:" + strconv.Itoa(cid)
+	field := "endtime"
+	endTimeStr, err := RedisClient.HGet(Ctx, key, field).Result()
+	if err != nil {
+		if err == redis.Nil {
+			return
+		}
+		return
+	}
+	endTime, err = strconv.Atoi(endTimeStr)
+	return
 }
 
 // 保存checkin到 Redis 缓存
 func SetCheckinToCache(checkin *model.Checkin, ttl time.Duration) (err error) {
 	key := "checkin:" + strconv.Itoa(checkin.Id)
 	var data map[string]interface{}
+
+	//将结构体中时间转为字符串
+	checkin.CreateAtStr = checkin.CreateAt.Format("2006-01-02 15:04:05")
+	checkin.UpdateAtStr = checkin.UpdateAt.Format("2006-01-02 15:04:05")
 
 	err = mapstructure.WeakDecode(checkin, &data)
 	if err != nil {

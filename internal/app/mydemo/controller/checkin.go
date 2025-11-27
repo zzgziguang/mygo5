@@ -88,6 +88,13 @@ func AddCheckinHandler(c *gin.Context) {
 		return
 	}
 
+	//插入缓存
+	err = service.SetCheckinToCache(newCheckin, time.Duration(3*time.Hour))
+	if err != nil {
+		service.Logger.Error("err", zap.Error(err))
+		return
+	}
+
 	// 返回成功响应
 	MakeApiResponse(c, 0, newCheckin)
 
@@ -291,7 +298,7 @@ func GetCheckinHandlerAll(c *gin.Context) {
 			}
 		}()
 
-		weatherCtx, weatherCancel := context.WithTimeout(ctx, 500*time.Millisecond) //50*time.Millisecond
+		weatherCtx, weatherCancel := context.WithTimeout(ctx, 800*time.Millisecond) //50*time.Millisecond
 		defer weatherCancel()
 
 		todayWeather, weatherErr = service.GetWeather(weatherCtx, "北京")

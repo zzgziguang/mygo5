@@ -14,6 +14,11 @@ func CreateCheckin(newcheckin *model.Checkin) (result *gorm.DB) {
 	return mysql.CreateCheckin(newcheckin)
 }
 
+// 根据cid获取打卡结束时间
+func GetRedisCheckinEndTimeByCid(cid int) (endTime int, err error) {
+	return redis.GetRedisCheckinEndTimeByCid(cid)
+}
+
 // 获取打卡
 func GetCheckinFromCache(cid int) (checkin *model.Checkin, err error) {
 	return redis.GetCheckinFromCache(cid)

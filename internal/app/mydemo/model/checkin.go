@@ -3,10 +3,13 @@ package model
 import "time"
 
 type Checkin struct {
-	Id            int        `json:"id" gorm:"column:id" mapstructure:"id"`
-	Title         string     `json:"title" gorm:"column:title" mapstructure:"title"`
-	CreateAt      *time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"createAt"`
-	UpdateAt      *time.Time `json:"updateAt" gorm:"column:update_at" mapstructure:"updateAt"`
+	Id    int    `json:"id" gorm:"column:id" mapstructure:"id"`
+	Title string `json:"title" gorm:"column:title" mapstructure:"title"`
+	// CreateAt      *time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"createAt"`
+	CreateAt      *time.Time `json:"createAt" gorm:"column:create_at" mapstructure:"-"`
+	CreateAtStr   string     `json:"-" gorm:"-" mapstructure:"createAt"`
+	UpdateAt      *time.Time `json:"updateAt" gorm:"column:update_at" mapstructure:"-"`
+	UpdateAtStr   string     `json:"-" gorm:"-" mapstructure:"updateAt"`
 	CheckinStatus int        `json:"checkinStatus" gorm:"column:checkin_status" mapstructure:"checkinStatus"`
 	JoinNum       int        `json:"join_num" gorm:"column:join_num" mapstructure:"join_num"`
 	Weight        int        `json:"weight" gorm:"column:weight" mapstructure:"weight"`
