@@ -1,6 +1,7 @@
 package service
 
 import (
+	"demo1/internal/app/mydemo/dao/kafka"
 	"demo1/internal/app/mydemo/dao/redis"
 	"demo1/internal/app/mydemo/model"
 )
@@ -33,4 +34,14 @@ func HSetUserCheckinLastDateToCache(uid int, dateTime string) (err error) {
 // daynum添加 用户打卡总天数
 func HSetUserCheckinDayNumToCache(uid int) (err error) {
 	return redis.HSetUserCheckinDayNumToCache(uid)
+}
+
+// 添加usercheckinjoin kafka的数据
+func ProduceKafkaUserCheckinJoinMessage(userCheckinJoinMsg *model.UserCheckinJoin) (partition int32, offset int64, err error) {
+	return kafka.ProduceKafkaUserCheckinJoinMessage(userCheckinJoinMsg)
+}
+
+// 添加usercheckinrecord kafka的数据
+func ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg *model.UserCheckinRecord) (partition int32, offset int64, err error) {
+	return kafka.ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg)
 }

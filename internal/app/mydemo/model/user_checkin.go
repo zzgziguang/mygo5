@@ -23,9 +23,10 @@ type UserCheckin struct {
 func (u UserCheckin) TodayFristCheckinBool() (bool bool) {
 	daytime := time.Now()
 	if u.LastDate != daytime.Format("20060102") {
-		bool = true
-	} else {
+		//不是今日第一次
 		bool = false
+	} else {
+		bool = true
 	}
 
 	return

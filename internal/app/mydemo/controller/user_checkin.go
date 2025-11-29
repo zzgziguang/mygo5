@@ -39,8 +39,11 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
-	recordTime := time.Now()
-	date := recordTime.Year()*10000 + int(recordTime.Month())*100 + recordTime.Day()
+	createTime := time.Now()
+	date := createTime.Year()*10000 + int(createTime.Month())*100 + createTime.Day()
+
+	userCheckinJoinMsg := &model.UserCheckinJoin{}
+	userCheckinRecordMsg := &model.UserCheckinRecord{}
 
 	// endTime, err := service.GetRedisCheckinEndTimeByCid(cid)
 	// if err != nil {
@@ -65,6 +68,119 @@ func AddUserCheckinHandler(c *gin.Context) {
 	// 	"rank": rank, //今日打卡名次
 	// })
 	// return
+
+	//获取用户打卡信息缓存
+	userCheckinCache, err := service.HGetUserCheckinFromCache(uid)
+	if err != nil {
+		service.Logger.Error("HGetUserCheckinFromCache err", zap.String("err为", err.Error()))
+		MakeApiResponseError(c, CODE_SYS_ERROR)
+		return
+	}
+
+	//用户是否今日首次打卡
+	if userCheckinCache.TodayFristCheckinBool() == false {
+		service.Logger.Info("usertodayfirstcheckin", zap.String("usertodayfirstcheckin", "用户今日首次打卡"))
+	}
+
+	//cid是否首次打卡
+	if userCheckinCache.FristJoinCheckinBool(int64(cid)) == false {
+		service.Logger.Info("userfirstcheckincid", zap.String("userfirstcheckincid", "用户首次打卡cid"))
+		userCheckinJoinMsg = &model.UserCheckinJoin{
+			Uid:      uid,
+			Cid:      cid,
+			JoinTime: &createTime,
+			CreateAt: &createTime,
+			UpdateAt: &createTime,
+			Status:   model.JoinStatusNormal,
+		}
+
+		partition, offset, err := service.ProduceKafkaUserCheckinJoinMessage(userCheckinJoinMsg)
+		if err != nil {
+			service.Logger.Error("ProduceKafkaUserCheckinJoinMessage err", zap.Error(err))
+			MakeApiResponseErrorDefault(c)
+			return
+		}
+		service.Logger.Debug("ProduceKafkaUserCheckinJoinMessage", zap.Any("partition", partition), zap.Any("offset", offset))
+
+		//添加jointime缓存
+		err = service.HSetUserCheckinJoinTimeToCache(uid, cid, createTime.Unix())
+		if err != nil {
+			service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
+			MakeApiResponseErrorDefault(c)
+			return
+		}
+	}
+
+	//cid是否今日首次打卡
+	if userCheckinCache.FristDateJoinCheckinBool(int64(cid)) == true {
+		service.Logger.Info("usertodayfirstcheckincid", zap.String("userfirstcheckincid", "用户今日首次打卡cid"))
+
+		userCheckinRecordMsg = &model.UserCheckinRecord{
+			Uid:      uid,
+			Cid:      cid,
+			Date:     date,
+			CreateAt: &createTime,
+			UpdateAt: &createTime,
+			Status:   model.JoinStatusNormal,
+		}
+
+		partition, offset, err := service.ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg)
+		if err != nil {
+			service.Logger.Error("ProduceKafkaUserCheckinRecordMessage err", zap.Error(err))
+			MakeApiResponseErrorDefault(c)
+			return
+		}
+		service.Logger.Debug("ProduceKafkaUserCheckinRecordMessage", zap.Any("partition", partition), zap.Any("offset", offset))
+
+		//上次打卡时间
+		err = service.HSetUserCheckinLastTimeToCache(uid, cid, createTime.Unix())
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastTimeToCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//某打卡天数
+		err = service.HSetUserCheckinDateNumToCache(uid, cid)
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinDateNumToCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//用户上次打卡日期
+		err = service.HSetUserCheckinLastDateToCache(uid, strconv.Itoa(date))
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+		//用户打卡总天数
+		err = service.HSetUserCheckinDayNumToCache(uid)
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinDayNumToCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+	}
+
+	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
+	if err != nil {
+		service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+		MakeApiResponseError(c, CODE_SYS_ERROR)
+		return
+	}
+
+	MakeApiResponseSuccess(c, map[string]interface{}{
+		"userCheckin":       userCheckinCache,     //用户打卡数据
+		"userCheckinJoin":   userCheckinJoinMsg,   //参与表中数据
+		"userCheckinRecord": userCheckinRecordMsg, //打卡记录表数据
+		"rank":              rank,                 //今日打卡名次
+	})
+
+	return
 
 	//get join from cache
 	userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
@@ -111,14 +227,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 			}
 
 			service.Logger.Debug("AddUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
-
-			//添加jointime缓存
-			err = service.HSetUserCheckinJoinTimeToCache(uid, cid, joinTime.Unix())
-			if err != nil {
-				service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
 
 			//添加kafka生产者
 			msg := model.CheckInMsg{
@@ -197,46 +305,14 @@ func AddUserCheckinHandler(c *gin.Context) {
 			Uid:      uid,
 			Cid:      cid,
 			Date:     date,
-			CreateAt: &recordTime,
-			UpdateAt: &recordTime,
+			CreateAt: &createTime,
+			UpdateAt: &createTime,
 			Status:   model.JoinStatusNormal,
 		}
 
 		err = service.AddUserCheckinRecord(userCheckinRecord)
 		if err != nil {
 			service.Logger.Error("AddUserCheckinRecord err", zap.Error(err))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
-		//上次打卡时间
-		err = service.HSetUserCheckinLastTimeToCache(uid, cid, recordTime.Unix())
-		if err != nil {
-			service.Logger.Error("HSetUserCheckinLastTimeToCache err", zap.Error(err))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
-		//某打卡天数
-		err = service.HSetUserCheckinDateNumToCache(uid, cid)
-		if err != nil {
-			service.Logger.Error("HSetUserCheckinDateNumToCache err", zap.Error(err))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
-		//用户上次打卡日期
-		err = service.HSetUserCheckinLastDateToCache(uid, strconv.Itoa(date))
-		if err != nil {
-			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.Error(err))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
-		//用户打卡总天数
-		err = service.HSetUserCheckinDayNumToCache(uid)
-		if err != nil {
-			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.Error(err))
 			MakeApiResponseError(c, CODE_SYS_ERROR)
 			return
 		}
@@ -265,13 +341,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 		rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
 		if err != nil {
 			service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
-		userCheckinCache, err := service.HGetUserCheckinFromCache(uid)
-		if err != nil {
-			service.Logger.Error("HGetUserCheckinFromCache err", zap.String("err为", err.Error()))
 			MakeApiResponseError(c, CODE_SYS_ERROR)
 			return
 		}
