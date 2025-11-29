@@ -47,7 +47,12 @@ func SetUserCheckinJoinToCache(userRedisCheckinJoin *model.UserCheckinJoin) (err
 	return redis.SetUserCheckinJoinToCache(userRedisCheckinJoin)
 }
 
-// 添加kafka的数据
-func ProducerSend(value []byte) (partition int32, offset int64, err error) {
-	return kafka.ProducerSend(value)
+// 添加usercheckinjoin kafka的数据
+func ProduceKafkaUserCheckinJoinMessage(userCheckinJoinMsg *model.UserCheckinJoin) (partition int32, offset int64, err error) {
+	return kafka.ProduceKafkaUserCheckinJoinMessage(userCheckinJoinMsg)
+}
+
+// 添加usercheckinrecord kafka的数据
+func ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg *model.UserCheckinRecord) (partition int32, offset int64, err error) {
+	return kafka.ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg)
 }
