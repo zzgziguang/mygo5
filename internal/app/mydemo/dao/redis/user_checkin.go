@@ -6,6 +6,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"github.com/mitchellh/mapstructure"
 )
 
@@ -31,6 +32,10 @@ func HGetUserCheckinFromCache(uid int) (userCheckin *model.UserCheckin, err erro
 	key := "uid:" + strconv.Itoa(uid)
 	data, err := RedisClient.HGetAll(Ctx, key).Result()
 	if err != nil {
+		if err == redis.Nil {
+			err = nil
+			return
+		}
 		return
 	}
 

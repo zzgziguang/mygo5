@@ -3,7 +3,6 @@ package controller
 import (
 	"demo1/internal/app/mydemo/model"
 	"demo1/internal/app/mydemo/service"
-	"encoding/json"
 	"fmt"
 	"strconv"
 	"time"
@@ -44,6 +43,13 @@ func AddUserCheckinHandler(c *gin.Context) {
 
 	userCheckinJoinMsg := &model.UserCheckinJoin{}
 	userCheckinRecordMsg := &model.UserCheckinRecord{}
+	// userCheckin := &model.UserCheckin{
+	// 	LastDate:           string,
+	// 	DayNum:             int,
+	// 	CheckinDayNumMap:   map[int64]int,
+	// 	CheckinJoinTimeMap: map[int64]time.Time,
+	// 	CheckinLastTimeMap: make(map[int64]time.Time),
+	// }
 
 	// endTime, err := service.GetRedisCheckinEndTimeByCid(cid)
 	// if err != nil {
@@ -77,14 +83,48 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
+	if userCheckinCache == nil {
+
+		userCheckinCache = &model.UserCheckin{
+			LastDate: "",
+			DayNum:   0,
+			CheckinDayNumMap: map[int64]int{
+				int64(cid): 0,
+			},
+			CheckinJoinTimeMap: map[int64]time.Time{
+				int64(cid): time.Time{},
+			},
+			CheckinLastTimeMap: map[int64]time.Time{
+				int64(cid): time.Time{},
+			},
+		}
+
+	}
 	//用户是否今日首次打卡
 	if userCheckinCache.TodayFristCheckinBool() == false {
 		service.Logger.Info("usertodayfirstcheckin", zap.String("usertodayfirstcheckin", "用户今日首次打卡"))
-	}
 
+		//上次打卡日期
+		err = service.HSetUserCheckinLastDateToCache(uid, strconv.Itoa(date))
+		if err != nil {
+			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.String("err为", err.Error()))
+			MakeApiResponseError(c, CODE_SYS_ERROR)
+			return
+		}
+
+	}
 	//cid是否首次打卡
 	if userCheckinCache.FristJoinCheckinBool(int64(cid)) == false {
 		service.Logger.Info("userfirstcheckincid", zap.String("userfirstcheckincid", "用户首次打卡cid"))
+
+		//添加jointime缓存
+		err = service.HSetUserCheckinJoinTimeToCache(uid, cid, createTime.Unix())
+		if err != nil {
+			service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
+			MakeApiResponseErrorDefault(c)
+			return
+		}
+
 		userCheckinJoinMsg = &model.UserCheckinJoin{
 			Uid:      uid,
 			Cid:      cid,
@@ -102,36 +142,11 @@ func AddUserCheckinHandler(c *gin.Context) {
 		}
 		service.Logger.Debug("ProduceKafkaUserCheckinJoinMessage", zap.Any("partition", partition), zap.Any("offset", offset))
 
-		//添加jointime缓存
-		err = service.HSetUserCheckinJoinTimeToCache(uid, cid, createTime.Unix())
-		if err != nil {
-			service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
-			MakeApiResponseErrorDefault(c)
-			return
-		}
 	}
 
 	//cid是否今日首次打卡
 	if userCheckinCache.FristDateJoinCheckinBool(int64(cid)) == true {
 		service.Logger.Info("usertodayfirstcheckincid", zap.String("userfirstcheckincid", "用户今日首次打卡cid"))
-
-		userCheckinRecordMsg = &model.UserCheckinRecord{
-			Uid:      uid,
-			Cid:      cid,
-			Date:     date,
-			CreateAt: &createTime,
-			UpdateAt: &createTime,
-			Status:   model.JoinStatusNormal,
-		}
-
-		partition, offset, err := service.ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg)
-		if err != nil {
-			service.Logger.Error("ProduceKafkaUserCheckinRecordMessage err", zap.Error(err))
-			MakeApiResponseErrorDefault(c)
-			return
-		}
-		service.Logger.Debug("ProduceKafkaUserCheckinRecordMessage", zap.Any("partition", partition), zap.Any("offset", offset))
-
 		//上次打卡时间
 		err = service.HSetUserCheckinLastTimeToCache(uid, cid, createTime.Unix())
 		if err != nil {
@@ -148,14 +163,6 @@ func AddUserCheckinHandler(c *gin.Context) {
 			return
 		}
 
-		//用户上次打卡日期
-		err = service.HSetUserCheckinLastDateToCache(uid, strconv.Itoa(date))
-		if err != nil {
-			service.Logger.Error("HSetUserCheckinLastDateToCache err", zap.String("err为", err.Error()))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
-
 		//用户打卡总天数
 		err = service.HSetUserCheckinDayNumToCache(uid)
 		if err != nil {
@@ -163,8 +170,24 @@ func AddUserCheckinHandler(c *gin.Context) {
 			MakeApiResponseError(c, CODE_SYS_ERROR)
 			return
 		}
-
 	}
+
+	userCheckinRecordMsg = &model.UserCheckinRecord{
+		Uid:      uid,
+		Cid:      cid,
+		Date:     date,
+		CreateAt: &createTime,
+		UpdateAt: &createTime,
+		Status:   model.JoinStatusNormal,
+	}
+
+	partition, offset, err := service.ProduceKafkaUserCheckinRecordMessage(userCheckinRecordMsg)
+	if err != nil {
+		service.Logger.Error("ProduceKafkaUserCheckinRecordMessage err", zap.Error(err))
+		MakeApiResponseErrorDefault(c)
+		return
+	}
+	service.Logger.Debug("ProduceKafkaUserCheckinRecordMessage", zap.Any("partition", partition), zap.Any("offset", offset))
 
 	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
 	if err != nil {
@@ -173,6 +196,13 @@ func AddUserCheckinHandler(c *gin.Context) {
 		return
 	}
 
+	// err = service.AddUserCheckinRecord(userCheckinRecordMsg)
+	// if err != nil {
+	// 	service.Logger.Error("AddUserCheckinRecord err", zap.Error(err))
+	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	return
+	// }
+
 	MakeApiResponseSuccess(c, map[string]interface{}{
 		"userCheckin":       userCheckinCache,     //用户打卡数据
 		"userCheckinJoin":   userCheckinJoinMsg,   //参与表中数据
@@ -180,178 +210,178 @@ func AddUserCheckinHandler(c *gin.Context) {
 		"rank":              rank,                 //今日打卡名次
 	})
 
-	return
+	// return
 
-	//get join from cache
-	userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
-	if err != nil {
-		service.Logger.Error("GetUserCheckinJoinFromCache", zap.Error(err))
-		MakeApiResponseErrorDefault(c)
-		return
-	} else {
-		//无错误
-		//返回return
-	}
-	if userCheckinJoin != nil {
-		//缓存中有join数据
-		//直接使用缓存的join数据
-		service.Logger.Debug("userCheckinJoin!=nil", zap.String("userCheckinJoin=", fmt.Sprintf("%v", userCheckinJoin)))
-	} else {
-		//缓存中没有join数据
-		//从db中取join数据
-		userCheckinJoin, err = service.GetUserCheckinJoin(uid, cid)
-		if err != nil {
-			service.Logger.Error("userCheckinJoin!=nil", zap.Error(err))
-			MakeApiResponseErrorDefault(c)
-			return
-		}
+	// //get join from cache
+	// userCheckinJoin, err := service.GetUserCheckinJoinFromCache(uid, cid)
+	// if err != nil {
+	// 	service.Logger.Error("GetUserCheckinJoinFromCache", zap.Error(err))
+	// 	MakeApiResponseErrorDefault(c)
+	// 	return
+	// } else {
+	// 	//无错误
+	// 	//返回return
+	// }
+	// if userCheckinJoin != nil {
+	// 	//缓存中有join数据
+	// 	//直接使用缓存的join数据
+	// 	service.Logger.Debug("userCheckinJoin!=nil", zap.String("userCheckinJoin=", fmt.Sprintf("%v", userCheckinJoin)))
+	// } else {
+	// 	//缓存中没有join数据
+	// 	//从db中取join数据
+	// 	userCheckinJoin, err = service.GetUserCheckinJoin(uid, cid)
+	// 	if err != nil {
+	// 		service.Logger.Error("userCheckinJoin!=nil", zap.Error(err))
+	// 		MakeApiResponseErrorDefault(c)
+	// 		return
+	// 	}
 
-		if userCheckinJoin == nil {
-			//未参与
-			//参与，写db
-			joinTime := time.Now()
-			userCheckinJoin = &model.UserCheckinJoin{
-				Uid:      uid,
-				Cid:      cid,
-				JoinTime: &joinTime,
-				CreateAt: &joinTime,
-				UpdateAt: &joinTime,
-				Status:   model.JoinStatusNormal,
-			}
+	// 	if userCheckinJoin == nil {
+	// 		//未参与
+	// 		//参与，写db
+	// 		joinTime := time.Now()
+	// 		userCheckinJoin = &model.UserCheckinJoin{
+	// 			Uid:      uid,
+	// 			Cid:      cid,
+	// 			JoinTime: &joinTime,
+	// 			CreateAt: &joinTime,
+	// 			UpdateAt: &joinTime,
+	// 			Status:   model.JoinStatusNormal,
+	// 		}
 
-			err = service.AddUserCheckinJoin(userCheckinJoin)
-			if err != nil {
-				service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
+	// 		err = service.AddUserCheckinJoin(userCheckinJoin)
+	// 		if err != nil {
+	// 			service.Logger.Error("AddUserCheckinJoin err", zap.Error(err))
+	// 			MakeApiResponseErrorDefault(c)
+	// 			return
+	// 		}
 
-			service.Logger.Debug("AddUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+	// 		service.Logger.Debug("AddUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
 
-			//添加kafka生产者
-			msg := model.CheckInMsg{
-				Uid:       uid,
-				Cid:       cid,
-				Timestamp: time.Now().Unix(),
-				Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
-			}
+	// 		//添加kafka生产者
+	// 		msg := model.CheckInMsg{
+	// 			Uid:       uid,
+	// 			Cid:       cid,
+	// 			Timestamp: time.Now().Unix(),
+	// 			Msg:       fmt.Sprintf("恭喜%d打卡%d成功", uid, cid),
+	// 		}
 
-			// 序列化为 json
-			value, err := json.Marshal(msg)
-			if err != nil {
-				service.Logger.Error("Marshal Error", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
+	// 		// 序列化为 json
+	// 		value, err := json.Marshal(msg)
+	// 		if err != nil {
+	// 			service.Logger.Error("Marshal Error", zap.Error(err))
+	// 			MakeApiResponseErrorDefault(c)
+	// 			return
+	// 		}
 
-			for i := 1; i <= 10; i++ {
-				partition, offset, err := service.ProducerSend(value)
-				if err != nil {
-					service.Logger.Error("ProducerSend err", zap.Error(err))
-					MakeApiResponseErrorDefault(c)
-					return
-				}
-				service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
-			}
+	// 		for i := 1; i <= 10; i++ {
+	// 			partition, offset, err := service.ProducerSend(value)
+	// 			if err != nil {
+	// 				service.Logger.Error("ProducerSend err", zap.Error(err))
+	// 				MakeApiResponseErrorDefault(c)
+	// 				return
+	// 			}
+	// 			service.Logger.Debug("ProducerSend", zap.Any("partition", partition), zap.Any("offset", offset))
+	// 		}
 
-			//获取checkin表的id=cid，看看有没有这个打卡
-			checkin, err := service.GetCheckinBycid(cid)
-			if err != nil {
-				service.Logger.Error("GetCheckinBycid err", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
+	// 		//获取checkin表的id=cid，看看有没有这个打卡
+	// 		checkin, err := service.GetCheckinBycid(cid)
+	// 		if err != nil {
+	// 			service.Logger.Error("GetCheckinBycid err", zap.Error(err))
+	// 			MakeApiResponseErrorDefault(c)
+	// 			return
+	// 		}
 
-			//有打卡，就更新参与打卡人数
-			//更新
-			err = service.UpdateCheckinJoinNum(cid, checkin)
-			if err != nil {
-				service.Logger.Error("UpdateCheckinJoinNum err", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
+	// 		//有打卡，就更新参与打卡人数
+	// 		//更新
+	// 		err = service.UpdateCheckinJoinNum(cid, checkin)
+	// 		if err != nil {
+	// 			service.Logger.Error("UpdateCheckinJoinNum err", zap.Error(err))
+	// 			MakeApiResponseErrorDefault(c)
+	// 			return
+	// 		}
 
-			//将更新后打卡人数添加到zset
-			err = service.ZaddCheckinJoinNum(cid, checkin)
-			if err != nil {
-				service.Logger.Error("ZaddCheckinJoinNum err", zap.Error(err))
-				MakeApiResponseErrorDefault(c)
-				return
-			}
+	// 		//将更新后打卡人数添加到zset
+	// 		err = service.ZaddCheckinJoinNum(cid, checkin)
+	// 		if err != nil {
+	// 			service.Logger.Error("ZaddCheckinJoinNum err", zap.Error(err))
+	// 			MakeApiResponseErrorDefault(c)
+	// 			return
+	// 		}
 
-		} else {
-			service.Logger.Debug("GetUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
-		}
-	}
+	// 	} else {
+	// 		service.Logger.Debug("GetUserCheckinJoin", zap.String("userCheckinJoin", fmt.Sprintf("%V", userCheckinJoin)))
+	// 	}
+	// }
 
-	//get record
-	userCheckinRecord, err := service.GetUserCheckinRecord(uid, cid, date)
-	if err != nil {
-		service.Logger.Error("GetUserCheckinRecord err", zap.Error(err))
-		MakeApiResponseErrorDefault(c)
-		return
-	}
+	// //get record
+	// userCheckinRecord, err := service.GetUserCheckinRecord(uid, cid, date)
+	// if err != nil {
+	// 	service.Logger.Error("GetUserCheckinRecord err", zap.Error(err))
+	// 	MakeApiResponseErrorDefault(c)
+	// 	return
+	// }
 
-	if userCheckinRecord != nil {
-		//今日已打卡,返回已打卡
-		MakeApiResponseSuccess(c, map[string]interface{}{
-			"userCheckinJoin":   userCheckinJoin,   //参与表数据
-			"userCheckinRecord": userCheckinRecord, //打卡记录表数据
-		})
-		return
-	} else {
+	// if userCheckinRecord != nil {
+	// 	//今日已打卡,返回已打卡
+	// 	MakeApiResponseSuccess(c, map[string]interface{}{
+	// 		"userCheckinJoin":   userCheckinJoin,   //参与表数据
+	// 		"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+	// 	})
+	// 	return
+	// } else {
 
-		userCheckinRecord = &model.UserCheckinRecord{
-			Uid:      uid,
-			Cid:      cid,
-			Date:     date,
-			CreateAt: &createTime,
-			UpdateAt: &createTime,
-			Status:   model.JoinStatusNormal,
-		}
+	// 	userCheckinRecord = &model.UserCheckinRecord{
+	// 		Uid:      uid,
+	// 		Cid:      cid,
+	// 		Date:     date,
+	// 		CreateAt: &createTime,
+	// 		UpdateAt: &createTime,
+	// 		Status:   model.JoinStatusNormal,
+	// 	}
 
-		err = service.AddUserCheckinRecord(userCheckinRecord)
-		if err != nil {
-			service.Logger.Error("AddUserCheckinRecord err", zap.Error(err))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
+	// 	err = service.AddUserCheckinRecord(userCheckinRecord)
+	// 	if err != nil {
+	// 		service.Logger.Error("AddUserCheckinRecord err", zap.Error(err))
+	// 		MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 		return
+	// 	}
 
-		// rank, err := service.GetUserCheckinRecordByCount(cid, date, recordTime)
-		// if err != nil {
-		// 	service.Logger.Error("GetUserCheckinRecordByCount err", zap.String("err为", err.Error()))
-		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
-		// 	return
-		// }
+	// 	// rank, err := service.GetUserCheckinRecordByCount(cid, date, recordTime)
+	// 	// if err != nil {
+	// 	// 	service.Logger.Error("GetUserCheckinRecordByCount err", zap.String("err为", err.Error()))
+	// 	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	// 	return
+	// 	// }
 
-		// err = service.ZaddUserCheckinRecordCountToCache(cid, uid, recordTime, date)
-		// if err != nil {
-		// 	service.Logger.Error("ZaddUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
-		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
-		// 	return
-		// }
+	// 	// err = service.ZaddUserCheckinRecordCountToCache(cid, uid, recordTime, date)
+	// 	// if err != nil {
+	// 	// 	service.Logger.Error("ZaddUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+	// 	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	// 	return
+	// 	// }
 
-		// rank, err := service.ZrankUserCheckinRecordCountToCache(cid, uid, date)
-		// if err != nil {
-		// 	service.Logger.Error("ZrankUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
-		// 	MakeApiResponseError(c, CODE_SYS_ERROR)
-		// 	return
-		// }
+	// 	// rank, err := service.ZrankUserCheckinRecordCountToCache(cid, uid, date)
+	// 	// if err != nil {
+	// 	// 	service.Logger.Error("ZrankUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+	// 	// 	MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 	// 	return
+	// 	// }
 
-		rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
-		if err != nil {
-			service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
-			MakeApiResponseError(c, CODE_SYS_ERROR)
-			return
-		}
+	// 	rank, err := service.IncrUserCheckinRecordCountToCache(cid, date)
+	// 	if err != nil {
+	// 		service.Logger.Error("IncrUserCheckinRecordCountToCache err", zap.String("err为", err.Error()))
+	// 		MakeApiResponseError(c, CODE_SYS_ERROR)
+	// 		return
+	// 	}
 
-		MakeApiResponseSuccess(c, map[string]interface{}{
-			"userCheckin":       userCheckinCache,  //用户打卡数据
-			"userCheckinJoin":   userCheckinJoin,   //参与表中数据
-			"userCheckinRecord": userCheckinRecord, //打卡记录表数据
-			"rank":              rank,              //今日打卡名次
-		})
-	}
+	// 	MakeApiResponseSuccess(c, map[string]interface{}{
+	// 		"userCheckin":       userCheckinCache,  //用户打卡数据
+	// 		"userCheckinJoin":   userCheckinJoin,   //参与表中数据
+	// 		"userCheckinRecord": userCheckinRecord, //打卡记录表数据
+	// 		"rank":              rank,              //今日打卡名次
+	// 	})
+	// }
 }
 
 // list
